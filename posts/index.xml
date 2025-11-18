@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WentianGodlike&#39;s Blog</title>
-    <link>https://WentianGodlike.github.io/posts/</link>
+    <link>//WentianGodlike.github.io/posts/index.html</link>
     <description>Recent content on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
     <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
     <copyright>© 2025 WentianGodlike</copyright>
-    <lastBuildDate>Tue, 18 Nov 2025 14:09:49 +0800</lastBuildDate><atom:link href="https://WentianGodlike.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Nov 2025 14:09:49 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>trjconv中pbc参数对RMSD的影响</title>
-      <link>https://WentianGodlike.github.io/posts/trjconv_and_rmsd/</link>
+      <link>//WentianGodlike.github.io/posts/trjconv_and_rmsd.html</link>
       <pubDate>Tue, 18 Nov 2025 14:09:49 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>https://WentianGodlike.github.io/posts/trjconv_and_rmsd/</guid>
+      <guid>//WentianGodlike.github.io/posts/trjconv_and_rmsd.html</guid>
       <description></description>
       
     </item>

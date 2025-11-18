@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on WentianGodlike&#39;s Blog</title>
-    <link>https://WentianGodlike.github.io/tags/</link>
+    <link>//WentianGodlike.github.io/tags/index.html</link>
     <description>Recent content in Tags on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
     <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
     <copyright>© 2025 WentianGodlike</copyright>
-    <atom:link href="https://WentianGodlike.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//WentianGodlike.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
