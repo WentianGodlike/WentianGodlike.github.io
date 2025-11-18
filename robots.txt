@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://WentianGodlike.github.io/sitemap.xml
