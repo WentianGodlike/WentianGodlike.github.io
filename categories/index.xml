@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Blowfish</title>
+    <title>Categories on WentianGodlike&#39;s Blog</title>
     <link>https://WentianGodlike.github.io/categories/</link>
-    <description>Recent content in Categories on Blowfish</description>
+    <description>Recent content in Categories on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>© 2025 </copyright>
+    <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
+    <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
+    <copyright>© 2025 WentianGodlike</copyright>
     <atom:link href="https://WentianGodlike.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>

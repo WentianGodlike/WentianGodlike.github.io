@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Blowfish</title>
-    <link>https://WentianGodlike.github.io/blog/</link>
-    <description>Recent content in Blogs on Blowfish</description>
+    <title>Blogs on WentianGodlike&#39;s Blog</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Tue, 18 Nov 2025 14:09:49 +0800</lastBuildDate><atom:link href="https://WentianGodlike.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
+    <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
+    <copyright>© 2025 WentianGodlike</copyright>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

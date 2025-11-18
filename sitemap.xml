@@ -3,14 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://WentianGodlike.github.io/blog/</loc>
+    <loc>https://WentianGodlike.github.io/</loc>
     <lastmod>2025-11-18T14:09:49+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WentianGodlike.github.io/</loc>
+    <loc>https://WentianGodlike.github.io/posts/</loc>
     <lastmod>2025-11-18T14:09:49+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://WentianGodlike.github.io/posts/trjconv_and_rmsd/</loc>
+    <lastmod>2025-11-18T14:09:49+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://WentianGodlike.github.io/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
