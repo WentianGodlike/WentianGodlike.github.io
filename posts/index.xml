@@ -12,6 +12,16 @@
     <lastBuildDate>Wed, 19 Nov 2025 17:39:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>量子化学中变分法与久期方程的推导</title>
+      <link>//WentianGodlike.github.io/posts/variation_method_and_secular_equation/context1.html</link>
+      <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
+      <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
+      <guid>//WentianGodlike.github.io/posts/variation_method_and_secular_equation/context1.html</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>trjconv中pbc参数对RMSD的影响</title>
       <link>//WentianGodlike.github.io/posts/trjconv_and_rmsd/context.html</link>
       <pubDate>Tue, 18 Nov 2025 14:09:49 +0800</pubDate>
