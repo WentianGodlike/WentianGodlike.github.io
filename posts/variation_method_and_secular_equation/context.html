@@ -4,8 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head>
-	<meta name="generator" content="Hugo 0.152.2">
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -16,8 +15,8 @@
 
   
   
-    <title>WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="WentianGodlike&#39;s Blog">
+    <title>量子化学中变分法与久期方程的推导 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="量子化学中变分法与久期方程的推导 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -27,13 +26,7 @@
   
   
   
-  <link rel="canonical" href="//WentianGodlike.github.io/index.html">
-  
-    
-      <link rel="alternate" type="application/rss+xml" href="./index.xml" title="WentianGodlike's Blog" />
-  
-    
-      <link rel="alternate" type="application/json" href="./index.json" title="WentianGodlike's Blog" />
+  <link rel="canonical" href="//localhost:1313/posts/variation_method_and_secular_equation/context.html">
   
 
   
@@ -57,16 +50,19 @@
   
 
   
-  <meta property="og:url" content="//WentianGodlike.github.io/index.html">
+  <meta property="og:url" content="//localhost:1313/posts/variation_method_and_secular_equation/context.html">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="WentianGodlike&#39;s Blog">
+  <meta property="og:title" content="量子化学中变分法与久期方程的推导">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:modified_time" content="2025-11-19T17:39:51+08:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="WentianGodlike&#39;s Blog">
+  <meta name="twitter:title" content="量子化学中变分法与久期方程的推导">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -112,14 +108,14 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="./css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
+    href="../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
     integrity="sha512-xocikq/SF8P&#43;whpJeBLCl/gggW9poKWmLjdNlATZd9mEOpVZGhtVCxW5bxSYaOknWPMQjjFBH6ThmQdGVO9y2w==">
 
   
   
   <script
     type="text/javascript"
-    src="./js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    src="../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
     integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
   
   
@@ -128,7 +124,7 @@
   
   
     
-    <script src="./lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+    <script src="../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
   
 
   
@@ -152,7 +148,7 @@
       defer
       type="text/javascript"
       id="script-bundle"
-      src="./js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
+      src="../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
       integrity="sha512-8Wz0hlEES8ZmJcgAjrVgXMcCUwUw2qCBzn5JXlCt93i&#43;9s0HRzgpg8r15cx0XIGd16lp4X5UURnf8UNG9Py5dw=="
       data-copy="复制"
       data-copied="已复制"></script>
@@ -161,7 +157,7 @@
   
   
 
-<script src="./lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+<script src="../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
 
 
 
@@ -204,40 +200,45 @@
 
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
   
 
   
   <script type="application/ld+json">
-  {
+  [{
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "\/\/WentianGodlike.github.io\/index.html",
-    "name": "WentianGodlike\u0027s Blog",
-    "description": "一些各种各样的blog与备忘",
-    "inLanguage": "zh-cn",
-    "url": "\/\/WentianGodlike.github.io\/index.html",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "量子化学中变分法与久期方程的推导",
+    "headline": "量子化学中变分法与久期方程的推导",
     
-    "publisher" : {
+    
+    "inLanguage": "zh-cn",
+    "url" : "\/\/localhost:1313\/posts\/variation_method_and_secular_equation\/context.html",
+    "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
-    }
-  }
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-11-19T17:39:51\u002b08:00",
+    "datePublished": "2025-11-19T17:39:51\u002b08:00",
+    
+    "dateModified": "2025-11-19T17:39:51\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1181"
+  }]
   </script>
 
 
 
   
   
-    
-
-
-
-
-  
 
   
   
@@ -251,7 +252,38 @@
   
   
   
-  
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+
+  window.addEventListener("load", (event) => {
+    document.querySelectorAll("mjx-container").forEach(function (x) {
+      x.parentElement.classList += "has-jax";
+    });
+  });
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
 </head>
 <style>
   code.has-jax {
@@ -312,11 +344,11 @@
     
     
       <div>
-        <a href="./" class="flex">
+        <a href="../../" class="flex">
           <span class="sr-only">WentianGodlike&rsquo;s Blog</span>
           
             <img
-              src="./img/logo.png"
+              src="../../img/logo.png"
               width="470"
               height="470"
               class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
@@ -329,7 +361,7 @@
   <div class="flex flex-1 items-center justify-between">
     <nav class="flex space-x-3">
       
-        <a href="./" class="text-base font-medium">
+        <a href="../../" class="text-base font-medium">
           WentianGodlike&rsquo;s Blog
         </a>
       
@@ -340,7 +372,7 @@
       
         
   <a
-  href="./posts/index.html"
+  href="../../posts/index.html"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="Blog"
@@ -474,7 +506,7 @@
               
   <li class="mt-1">
   <a
-    href="./posts/index.html"
+    href="../../posts/index.html"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="Blog"
@@ -530,20 +562,119 @@
       <main id="main-content" class="grow">
         
   
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        量子化学中变分法与久期方程的推导
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
   
     
-<article
-  class="
-    h-full
-   flex flex-col items-center justify-center text-center">
-  <header class="relative px-1 py-1 flex flex-col items-center mb-3">
+  
+
+  
+
+  
     
-    <h1 class="text-4xl font-extrabold">
-      WentianGodlike
-    </h1>
+  
+
+  
+
+  
     
-    <div class="mt-1 text-2xl">
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>1181 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+    
+
+    
+    
+      <span class="ps-2"><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+</span>
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
       
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        WentianGodlike
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
     
       
@@ -574,20 +705,186 @@
     
   </div>
 
+</div>
+  </div>
+</div>
 
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>为了处理包含相互作用粒子的体系 (例如原子或分子) 的与不含时薛定谔方程, 必须采用近似方法. 变分法的意义在于能够通过测量体系有限的波函数, 对体系整体的能量与状态进行估计.</p>
+
+<h1 class="relative group">变分定理
+    <div id="变分定理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%98%e5%88%86%e5%ae%9a%e7%90%86" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+<p>设一个系统的不含时哈密顿算符 $\hat{H}$ , 其最低能量本征值为 $E_1$. 若 $\phi$ 是系统粒子坐标的一个归一化且性质良好的波函数, 并满足该系统的边界条件, 则</p>
+$$
+\begin{equation}
+\int \phi^{*} \hat{H} \phi d\tau \geq E_1.
+\end{equation}
+$$<p>即变分定理能够帮助我们计算基态能量的下限.</p>
+<p>变分定理的证明较为简单, 我们通过将波函数 $\phi$ 使用哈密顿算符 $\hat{H}$ 的特征完备正交本征函数 $\psi_i$
+进行展开, 即</p>
+$$
+\begin{equation}
+\phi=\sum_i a_i \times \psi_i,
+\end{equation}
+$$<p>满足 $\hat{H} \psi_i = E_i \times \psi_i$. 将(2)式带入(1)式, 假设(实际上符合数学要求)求和符号可以跟随系数 $a_i$ 和 $a_j$ 挪到积分符号外, 得</p>
+$$
+\int \phi^{*} \hat{H} \phi d\tau = \int\sum_i a_i^{*} \psi_i^{*} \hat{H} \sum_j a_j \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \hat{H}  \psi_j d\tau.
+$$<p>进一步, 应用本征函数的性质, 得:</p>
+$$
+\sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \hat{H}  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} E_j  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau.
+$$<p>因为所选择的本征函数彼此正交, 有 $\int \psi_i^{*} \psi_j d\tau = \delta_{ij}$, 且系数 $a_i, a_j$ 都为实数, 有</p>
+$$
+\begin{equation}
+\sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \delta_{ij} = \sum_j a_j^2 E_j.
+\end{equation}
+$$<p>因为波函数 $\phi$ 是归一化的, 根据归一化条件 $\int \phi^*\phi d\tau=1$, 有</p>
+$$
+\begin{equation}
+\int \phi^*\phi d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j \delta_{ij} = \sum_j a_j^2 = 1.
+\end{equation}
+$$<p>将式(3), (4)代回式(1), 有</p>
+$$
+\int \phi^{*} \hat{H} \phi d\tau = \sum_j a_j^2 E_j \geq E_1.
+$$<p>如果移除波函数 $\phi$ 已经归一化这个假设条件, 可以给 $\phi$ 乘一个归一化系数 $k$ 使其归一化, 即$\int k^*\phi^<em>k\phi d\tau = 1$. 此时有 $\int \phi^</em>\phi d\tau = \frac{1}{|k|^2}$, 式(1)则变为</p>
+$$
+\begin{equation}
+\frac{\int \phi^{*} \hat{H} \phi d\tau}{\int \phi^*\phi d\tau}\geq {E_1}.
+\end{equation}
+$$<p>为了得到基态能量的良好近似值, 我们会尝试许多不同的 $\phi$, 并寻找能使变分积分取到最低值的那个函数. 根据式(1), 变分积分的值越低, 我们所得到的近似就越精确.</p>
+<p>在实际运用中, 人们通常会将未知参数 $a_i$ 放入已知的函数 $\psi$ 中以构建未知波函数 $\phi$, 然后通过调整这些参数来使变分积分达到最小值.</p>
+<p>#对变分函数进行展开
+上一部分中, 通过变分定理得到了基态状态能量以及基态波函数. 此时我们考虑激发态, 将激发态能量从低到高依次排列</p>
+$$
+E_1\leq E_2\leq \ldots .
+$$<p>对于归一化的波函数, 变分函数为</p>
+$$
+\int \phi^{*} \hat{H} \phi d\tau = \sum_i a_i^2 E_i , \int \phi^{*} \phi d\tau = \sum_i a_i^2 = 1.
+$$<p>考虑第一激发态, 能量为$E_2$. 如果想类似上文一样应用变分函数得到下界, 则需要使基态能量消失, 即 $a_1 = 0$. 而什么时候 $a_1 = 0$ 成立呢? 通过上文的推导过程可以得知 $\langle \psi_1|\phi \rangle = 0$, 即 $\int \psi_1^* \phi d\tau = 0$ 时, $a_1 = 0 $ 成立. 推导过程省略, 重复上文步骤即可验证.此时</p>
+$$
+\int \phi^{*} \hat{H} \phi d\tau\geq E_2.
+$$<p>以此类推, $\langle \psi_1|\phi \rangle = 0$, 且 $\langle \psi_2|\phi \rangle = 0 $ 时, 有
+</p>
+$$ \int\phi^{1} \hat{H} \phi d\tau\geq E_3 .$$<p>当 $\langle \psi_1|\phi \rangle = 0, \langle \psi_2|\phi \rangle = 0 , \langle \psi_3|\phi \rangle = 0$ 时, 有 </p>
+$$\int \phi^{*} \hat{H} \phi d\tau\geq E_4$$<p> 等.</p>
+
+<h1 class="relative group">线性变分函数与久期方程
+    <div id="线性变分函数与久期方程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ba%bf%e6%80%a7%e5%8f%98%e5%88%86%e5%87%bd%e6%95%b0%e4%b8%8e%e4%b9%85%e6%9c%9f%e6%96%b9%e7%a8%8b" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+<p>在分子研究中广泛使用的一种特殊变分函数是线性变分函数, 目标函数, 即线性所求波函数的本征函数是由 $n$ 个线性无关函数 $f_i$ 的线性组合构成的.</p>
+$$
+\begin{equation}
+\phi = \sum_i^n c_i f_i
+\end{equation}
+$$<p>可以注意到此时线性变分函数使用的基函数 $f_i$ 已经无需是波函数 $\phi$ 的本征函数了, 但依然需要满足边界条件. 额外假设 $f_i$ 是实函数, $c_i$ 是实数. 此时进行与变分定理类似的推导</p>
+$$
+\begin{equation}
+\int \phi^{*} \hat{H} \phi d\tau
+\end{equation}
+$$
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts\variation_method_and_secular_equation\context.md"
+          data-oid-likes="likes_posts\variation_method_and_secular_equation\context.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="../../posts/trjconv_and_rmsd/context.html">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;trjconv中pbc参数对RMSD的影响
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+        </span>
+      </div>
     </div>
-  </header>
-  <section class="prose dark:prose-invert w-full"><p>11111</p>
-</section>
-</article>
-<section>
   
 
 
-
-</section>
-
-  
+      
+    </footer>
+  </article>
 
         
 
@@ -650,7 +947,7 @@
   
   <script
     type="text/javascript"
-    src="./js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    src="../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
     integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
@@ -658,7 +955,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//WentianGodlike.github.io/">
+  data-url="//localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
