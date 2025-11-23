@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -15,8 +15,8 @@
 
   
   
-    <title>trjconv中pbc参数对RMSD的影响 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="trjconv中pbc参数对RMSD的影响 &middot; WentianGodlike&#39;s Blog">
+    <title>微扰理论 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="微扰理论 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -24,11 +24,11 @@
     <meta name="description" content="一些各种各样的blog与备忘">
   
   
-    <meta name="keywords" content="分子模拟,Gromacs,">
+    <meta name="keywords" content="量子化学,">
   
   
   
-  <link rel="canonical" href="//WentianGodlike.github.io/posts/trjconv_and_rmsd/context.html">
+  <link rel="canonical" href="//localhost:1313/posts/perturbation_theory/centext.html">
   
 
   
@@ -58,21 +58,20 @@
   
 
   
-  <meta property="og:url" content="//WentianGodlike.github.io/posts/trjconv_and_rmsd/context.html">
+  <meta property="og:url" content="//localhost:1313/posts/perturbation_theory/centext.html">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="trjconv中pbc参数对RMSD的影响">
+  <meta property="og:title" content="微扰理论">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-11-18T14:09:49+08:00">
-    <meta property="article:modified_time" content="2025-11-18T14:09:49+08:00">
-    <meta property="article:tag" content="分子模拟">
-    <meta property="article:tag" content="Gromacs">
+    <meta property="article:published_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:modified_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:tag" content="量子化学">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="trjconv中pbc参数对RMSD的影响">
+  <meta name="twitter:title" content="微扰理论">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -222,26 +221,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "trjconv中pbc参数对RMSD的影响",
-    "headline": "trjconv中pbc参数对RMSD的影响",
+    "name": "微扰理论",
+    "headline": "微扰理论",
     
     
     "inLanguage": "zh-cn",
-    "url" : "\/\/WentianGodlike.github.io\/posts\/trjconv_and_rmsd\/context.html",
+    "url" : "\/\/localhost:1313\/posts\/perturbation_theory\/centext.html",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-11-18T14:09:49\u002b08:00",
-    "datePublished": "2025-11-18T14:09:49\u002b08:00",
+    "dateCreated": "2025-11-19T17:39:51\u002b08:00",
+    "datePublished": "2025-11-19T17:39:51\u002b08:00",
     
-    "dateModified": "2025-11-18T14:09:49\u002b08:00",
+    "dateModified": "2025-11-19T17:39:51\u002b08:00",
     
-    "keywords": ["分子模拟","Gromacs"],
+    "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "673"
+    "wordCount": "902"
   }]
   </script>
 
@@ -249,12 +248,6 @@
 
   
   
-    
-
-
-
-
-  
 
   
   
@@ -268,7 +261,38 @@
   
   
   
-  
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+
+  window.addEventListener("load", (event) => {
+    document.querySelectorAll("mjx-container").forEach(function (x) {
+      x.parentElement.classList += "has-jax";
+    });
+  });
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
 </head>
 <style>
   code.has-jax {
@@ -593,7 +617,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        trjconv中pbc参数对RMSD的影响
+        微扰理论
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -651,7 +675,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>673 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>902 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -665,7 +689,7 @@
     
   
   <span
-    id="views_posts\trjconv_and_RMSD\context.md"
+    id="views_posts\perturbation_theory\centext.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
@@ -687,7 +711,7 @@
     
   
   <span
-    id="likes_posts\trjconv_and_RMSD\context.md"
+    id="likes_posts\perturbation_theory\centext.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
@@ -713,6 +737,14 @@
     
 
     
+    
+      <span class="ps-2"><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+</span>
     
   </div>
 
@@ -825,64 +857,73 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>rmsd 是通过分析轨迹中结构与参照结构位置偏移量的均方根, 以判断轨迹中构象是否稳定的参数.</p>
-<p>而 <code>mdrun</code> 生成的 <code>md.xtc</code> 轨迹与参照的初始结构 <code>md.tpr</code> 并未进行 PBC 的处理, 假定盒子的 x 轴为 0-16, 因此靠近右侧边界的分子会有一部分原子的 x 坐标为 1 左右.</p>
-<p>如果直接使用</p>
-<pre tabindex="0"><code>gmx rms -s md.tpr -f md.xtc -o rmsd.xvg -tu ps
-</code></pre><p>进行 RMSD 分析, 会得到一个这样的图像.
-<figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="alt text"
-    src="./1-1.png"
-    ></figure>
+          <p>量子化学计算中使用较为广泛的近似方法除了之前提到过的变分法, 还有一个方法是微扰法. 假设某系统的不含时 $Hamilton$ 算符为 $\hat H$ 且我们无法准确求解 $Schr\ddot odinger$ 方程 $\hat H \psi_n = E_n \psi_n$. 假设算符 $\hat H$ 由另一算符 $\hat H^{0} $ 通过某一微小扰动 $\hat H&rsquo;$ 得到, 即 $\hat H = \hat H^{0}+\hat H&rsquo;$. 其中 $\hat H^{0}\psi^{0}_n=E_n^{0}\psi^{0}_n$, 且此 $Schr\ddot odinger$ 方程可求解.</p>
+<p>此时我们的任务是设法将 $\hat H$ 与 $\hat H^0$ 关联起来. 引入一个实数 $\lambda \in [0, 1]$, 用以使 $\hat H^0$ 逐渐接近 $\hat H$ .自然有</p>
+$$
+\hat H = \hat H^0+\lambda\hat H',
+$$<p>当 $\lambda=0$ 时, 表示 $\hat H^0$, 当 $\lambda=1$ 时则表示 $\hat H$.</p>
+<p>简并与非简并能级的微扰处理方式有所不同.</p>
 
-这样的结果显然是有问题的. 因为在变化的过程中原子可能会穿越边界, x 坐标从接近 16 突变为 1 左右, 而参考结构中该原子的坐标为接近 16 的数值, 此时的 RMSD 图像会有一个突变的过程.</p>
-<p>如果使用</p>
-<pre tabindex="0"><code>gmx trjconv -s md.tpr -f md.xtc -o md_noPBC.xtc -pbc mol
-</code></pre><p>对轨迹进行处理, 再使用</p>
-<pre tabindex="0"><code>gmx rms -s md.tpr -f md_noPBC.xtc -o rmsd_noPBC_mol.xvg -tu ps
-</code></pre><p>生成 rmsd 图像如下
-<figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="alt text"
-    src="./1-2.png"
-    ></figure>
-
-其中蓝色的线表示原始的 RMSD, 红色的线表示处理 PBC 之后的轨迹的 RMSD.</p>
-<p>此时的问题在于 RMSD 的初始值不是 0. 原因在于作为参照的初始结构并未进行 pbc 处理, 即参照结构的右侧分子的部分原子在盒子左侧, 但轨迹中的该原子被修正到了盒子右侧之外.</p>
-<p>使用</p>
-<pre tabindex="0"><code>gmx trjconv -s md.tpr -f md_noPBC1.xtc -o reference_noPBC1.gro -b 0 -e 0
-</code></pre><p>获取轨迹中第 0 帧作为参照, 得到图像
-<figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="alt text"
-    src="./1-3.png"
-    ></figure>
-
-现在 RMSD 的起点变为 0 了. 但过程中依旧存在突变, 因为使用<code>-pbc mol</code>修正周期性后, 若分子的质心跨过盒子边界, 依然会出现在盒子另一侧.</p>
-<p>如果使用<code>-pbc nojump</code>参数, 能够保证聚合物不会出现跨越盒子边界的情况, 使用上述方法可以得到图像
-<figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="alt text"
-    src="./1-4.png"
-    ></figure>
-
-在最后得到了很好的收敛.</p>
-<p>然而分析轨迹发现, 使用<code>-pbc nojump</code>得到的轨迹是初始在某一盒子内的 6 条聚合物的相互作用, 并不能反映除了稳定构象以外的其他东西.</p>
-<p>结论是, 判断是否达到平衡可以使用<code>-pbc mol</code>参数得到的轨迹对比第一帧的结构进行判断, 而对于氢键, 能量等数据似乎还是需要使用<code>-pbc mol</code>参数, 在特定盒子内进行研究.</p>
-
+<h1 class="relative group">非简并能级的微扰理论
+    <div id="非简并能级的微扰理论" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%9d%9e%e7%ae%80%e5%b9%b6%e8%83%bd%e7%ba%a7%e7%9a%84%e5%be%ae%e6%89%b0%e7%90%86%e8%ae%ba" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+<p>对于 $Schr\ddot odinger$ 方程</p>
+$$
+\hat H \psi_n = (\hat H^0+\lambda\hat H')\psi_n = E_n \psi_n,(1-1)
+$$<p>除了坐标, 波函数 $\psi_n$ 同时也是参数 $\lambda\in [0,1]$ 的函数, 即 $\psi_n=\psi_n(q,\lambda)$, 其中参数 $q$ 表示坐标. 同理体系能量 $E_n=E_n(\lambda)$. 能量无关坐标 $q$, 因为相对于包含坐标的函数 $\psi_n$ 而言能量是一个常数.</p>
+<p>能量 $E_n=E_n(\lambda)$ 和 波函数 $\psi_n=\psi_n(q,\lambda)$ 分别对参数 $\lambda$ 使用 $Taylor$ 展开</p>
+$$
+\psi_n=\psi_n|_{\lambda=0}+\lambda \frac{\partial \psi_n}{\partial \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{\partial^2 \psi_n}{\partial \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0},
+$$$$
+E_n=E_n|_{\lambda=0}+\lambda \frac{d E_n}{d \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{d^2 \psi_n}{d \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}
+$$<p>显然当 $\lambda\rightarrow0$ 时, $\psi_n|<em>{\lambda=0}=\psi_n^{(0)}, E_n|</em>{\lambda=0}=E_n^{(0)}$. 记</p>
+$$
+\psi_n^{(k)}\equiv\frac{1}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0}, E_n^{(k)}\equiv\frac{1}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}.
+$$<p>此时 $\psi_n$ 和 $E_n$ 可以表示为</p>
+$$
+\psi_n=\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)},(1-2)
+$$$$
+E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)}.(1-3)
+$$<p>称 $\psi_n^{(k)}$ 和 $E_n^{(k)}$ 为对 $\psi_n$ 和 $E_n$ 的 <code>k 阶修正</code>. 对于上述级数我们希望其在 $\lambda=1$ 处收敛, 但通常而言无法满足这一条件. 但哪怕这些级数发散, 应用修正后也可以有一个不错的近似效果.</p>
+<p>对于微扰法, 一般使用 $\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle=1$ 与 $\langle \psi_n^{(0)}|\psi_n\rangle=1$ 作为归一化条件, 如果 $\psi_n$ 不满足归一化条件, 可以乘一个系数 $1/\langle \psi_n^{(0)}|\psi_n\rangle$ 使其归一化. 后一个条件主要作用为简化计算, 因为应用此条件之后, 第 0 修正项与其他各阶修正项之间彼此正交. 若必要也可在计算最后将这个系数除掉以取得原始结果.</p>
+<p>将归一化条件代回式 (1-2) 中并左乘 $\psi_n^{(0)*}$再积分, 有</p>
+$$
+\int \psi_n^{(0)*}\psi_nd\tau=\langle \psi_n^{(0)}|\psi_n\rangle=\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle+\lambda\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+\ldots+\lambda^k\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle,
+$$<p>因为 $\lambda$ 不一定为 $0$, 应用归一化条件可得
+</p>
+$$\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_n^{(0)}|\psi_n^{(2)}\rangle=\ldots=\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle=0.$$<p>将式 (1-2) 和 (1-3) 代入 $Schr\ddot odinger$ 方程 (1-1) 中, 有</p>
+$$
+(\hat H^0+\lambda\hat H')(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})=(E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)})(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})
+$$<p>合并相同次数的 $\lambda$, 有</p>
+$$
+(\hat H^0\psi_n^{(0)})+\lambda(\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)})+\lambda^2(\hat H' \psi_n^{(1)}+\hat H^0\psi_n^{(2)})+\ldots=E_n^{(0)}\psi_n^{(0)}+\lambda(E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)})+\lambda^2(E_n^{(2)}\psi_n^{(0)}+E_n^{(1)}\psi_n^{(1)}+E_n^{(0)}\psi_n^{(2)})+\ldots.(1-4)
+$$<p>因为 $\lambda$ 不一定为 $0$, 要使上式成立, 必须使 $\lambda$ 的系数依次相等.</p>
+<p>对 $\lambda^0$, 式 (1-4) 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
+<p>对 $\lambda^1$, 有</p>
+$$
+\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)}=E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)}.(1-5)
+$$<p>对式 (1-5) 两边同时左乘 $\psi_m^{(0)*}$ 再积分, 有</p>
+$$
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=E_n^{(1)}\langle \psi_m^{(0)}|\psi_n^{(0)}\rangle+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.(1-6)
+$$<p>因为 $\hat H^0$ 是 $Hermitian$ 算符, 满足</p>
+$$
+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=\langle \psi_n^{(1)}|\hat H^0|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_n^{(1)}|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+$$<p>代回式 (1-6), 有</p>
+$$
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+$$<p>当 $m=n$ 时, $E_n^{(1)}$变为 $\hat H&rsquo;$的均值</p>
+$$
+\langle \psi_n^{(0)}|\hat H'|\psi_n^{(0)}\rangle=E_n^{(1)}=\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$<p>此时可以得到$E_n$的近似</p>
+$$
+E_n\approx E_n^{(0)}+E_n^{(1)}=E_n^{(0)}+\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$
           
           
           
@@ -909,8 +950,8 @@
           type="text/javascript"
           src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\trjconv_and_RMSD\context.md"
-          data-oid-likes="likes_posts\trjconv_and_RMSD\context.md"></script>
+          data-oid="views_posts\perturbation_theory\centext.md"
+          data-oid-likes="likes_posts\perturbation_theory\centext.md"></script>
       
     </section>
 
@@ -925,6 +966,19 @@
       <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
       <div class="flex justify-between pt-3">
         <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="../../posts/trjconv_and_rmsd/context.html">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;trjconv中pbc参数对RMSD的影响
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time>
+              </span>
+            
           
         </span>
         <span class="flex flex-col items-end">
@@ -1045,7 +1099,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//WentianGodlike.github.io/">
+  data-url="//localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
