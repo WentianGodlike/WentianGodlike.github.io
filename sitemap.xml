@@ -4,13 +4,19 @@
 
   <url>
     <loc>//WentianGodlike.github.io/index.html</loc>
-    <lastmod>2025-11-19T17:39:51+08:00</lastmod>
+    <lastmod>2025-11-30T15:00:51+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//WentianGodlike.github.io/posts/index.html</loc>
-    <lastmod>2025-11-19T17:39:51+08:00</lastmod>
+    <lastmod>2025-11-30T15:00:51+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</loc>
+    <lastmod>2025-11-30T15:00:51+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

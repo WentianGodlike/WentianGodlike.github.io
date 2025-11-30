@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂项 on WentianGodlike&#39;s Blog</title>
+    <link>//WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9.html</link>
+    <description>Recent content in 杂项 on WentianGodlike&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
+    <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
+    <copyright>© 2025 WentianGodlike</copyright>
+    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用remote SSH远程访问另一台电脑上的WSL2虚拟机</title>
+      <link>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</link>
+      <pubDate>Sun, 30 Nov 2025 15:00:51 +0800</pubDate>
+      <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
+      <guid>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

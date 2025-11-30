@@ -9,7 +9,17 @@
     <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
     <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
     <copyright>© 2025 WentianGodlike</copyright>
-    <lastBuildDate>Wed, 19 Nov 2025 17:39:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用remote SSH远程访问另一台电脑上的WSL2虚拟机</title>
+      <link>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</link>
+      <pubDate>Sun, 30 Nov 2025 15:00:51 +0800</pubDate>
+      <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
+      <guid>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>量子化学中变分法与久期方程的推导</title>
