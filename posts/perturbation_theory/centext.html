@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="//WentianGodlike.github.io/posts/perturbation_theory/centext.html">
+  <link rel="canonical" href="//localhost:1313/posts/perturbation_theory/centext.html">
   
 
   
@@ -58,7 +58,7 @@
   
 
   
-  <meta property="og:url" content="//WentianGodlike.github.io/posts/perturbation_theory/centext.html">
+  <meta property="og:url" content="//localhost:1313/posts/perturbation_theory/centext.html">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
   <meta property="og:title" content="微扰理论">
   <meta property="og:description" content="一些各种各样的blog与备忘">
@@ -226,7 +226,7 @@
     
     
     "inLanguage": "zh-cn",
-    "url" : "\/\/WentianGodlike.github.io\/posts\/perturbation_theory\/centext.html",
+    "url" : "\/\/localhost:1313\/posts\/perturbation_theory\/centext.html",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
@@ -240,7 +240,7 @@
     "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "915"
+    "wordCount": "927"
   }]
   </script>
 
@@ -248,12 +248,6 @@
 
   
   
-    
-
-
-
-
-  
 
   
   
@@ -267,7 +261,39 @@
   
   
   
-  
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+
+  window.addEventListener("load", (event) => {
+    document.querySelectorAll("mjx-container").forEach(function (x) {
+      x.parentElement.classList += "has-jax";
+    });
+  });
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
 </head>
 <style>
   code.has-jax {
@@ -277,6 +303,30 @@
     font-size: 100%;
   }
 </style>
+<script>
+  window.MathJax = {
+    tex: {
+      
+      
+      tags: "ams",
+
+      
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+    },
+    options: {
+      
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+</script>
+
 
 
 
@@ -650,7 +700,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>915 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>927 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -842,7 +892,9 @@ $$<p>当 $\lambda=0$ 时, 表示 $\hat H^0$, 当 $\lambda=1$ 时则表示 $\hat 
 </h1>
 <p>对于 $Schr\ddot odinger$ 方程</p>
 $$
-\hat H \psi_n = (\hat H^0+\lambda\hat H')\psi_n = E_n \psi_n,(1-1)
+\begin{equation}
+\hat H \psi_n = (\hat H^0+\lambda\hat H')\psi_n = E_n \psi_n,\label{1-1}
+\end{equation}
 $$<p>除了坐标, 波函数 $\psi_n$ 同时也是参数 $\lambda\in [0,1]$ 的函数, 即 $\psi_n=\psi_n(q,\lambda)$, 其中参数 $q$ 表示坐标. 同理体系能量 $E_n=E_n(\lambda)$. 能量无关坐标 $q$, 因为相对于包含坐标的函数 $\psi_n$ 而言能量是一个常数.</p>
 <p>能量 $E_n=E_n(\lambda)$ 和 波函数 $\psi_n=\psi_n(q,\lambda)$ 分别对参数 $\lambda$ 使用 $Taylor$ 展开</p>
 $$
@@ -854,34 +906,44 @@ $$
 \psi_n^{(k)}\equiv\frac{1}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0}, E_n^{(k)}\equiv\frac{1}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}.
 $$<p>此时 $\psi_n$ 和 $E_n$ 可以表示为</p>
 $$
-\psi_n=\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)},(1-2)
+\begin{equation}
+\psi_n=\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)},\label{1-2}
+\end{equation}
 $$$$
-E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)}.(1-3)
+\begin{equation}
+E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)}.\label{1-3}
+\end{equation}
 $$<p>称 $\psi_n^{(k)}$ 和 $E_n^{(k)}$ 为对 $\psi_n$ 和 $E_n$ 的 <code>k 阶修正</code>. 对于上述级数我们希望其在 $\lambda=1$ 处收敛, 但通常而言无法满足这一条件. 但哪怕这些级数发散, 应用修正后也可以有一个不错的近似效果.</p>
-<p>对于微扰法, 一般使用 $\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle=1$ 与 $\langle \psi_n^{(0)}|\psi_n\rangle=1$ 作为归一化条件, 称为 <code>间接归一化</code>. 如果 $\psi_n$ 不满足归一化条件, 可以乘一个系数 $1/\langle \psi_n^{(0)}|\psi_n\rangle$ 使其归一化. 后一个条件主要作用为简化计算, 因为应用此条件之后, 第 0 修正项与其他各阶修正项之间彼此正交. 若必要也可在计算最后将这个系数除掉以取得原始结果.</p>
-<p>将归一化条件代回式 (1-2) 中并左乘 $\psi_n^{(0)*}$再积分, 有</p>
+<p>对于微扰法, 一般使用 $\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle=1$ 与 $\langle \psi_n^{(0)}|\psi_n\rangle=1$ 作为归一化条件, 称为 <code>间接归一化</code>. 如果 $\psi_n$ 不满足归一化条件, 可以乘一个系数 $1/\langle \psi_n^{(0)}|\psi_n\rangle$ 使其归一化. 后一个条件主要作用为简化计算, 因为应用此条件之后, 第 $0$ 修正项与其他各阶修正项之间彼此正交. 若必要也可在计算最后将这个系数除掉以取得原始结果.</p>
+<p>将归一化条件代回式 \eqref{1-2} 中并左乘 $\psi_n^{(0)*}$再积分, 有</p>
 $$
 \int \psi_n^{(0)*}\psi_nd\tau=\langle \psi_n^{(0)}|\psi_n\rangle=\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle+\lambda\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+\ldots+\lambda^k\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle,
 $$<p>因为 $\lambda$ 不一定为 $0$, 应用归一化条件可得
 </p>
-$$\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_n^{(0)}|\psi_n^{(2)}\rangle=\ldots=\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle=0.$$<p>将式 (1-2) 和 (1-3) 代入 $Schr\ddot odinger$ 方程 (1-1) 中, 有</p>
+$$\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_n^{(0)}|\psi_n^{(2)}\rangle=\ldots=\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle=0.$$<p>将式 \eqref{1-2} 和 \eqref{1-3} 代入 $Schr\ddot odinger$ 方程 \eqref{1-1} 中, 有</p>
 $$
 (\hat H^0+\lambda\hat H')(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})=(E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)})(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})
 $$<p>合并相同次数的 $\lambda$, 有</p>
 $$
-(\hat H^0\psi_n^{(0)})+\lambda(\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)})+\lambda^2(\hat H' \psi_n^{(1)}+\hat H^0\psi_n^{(2)})+\ldots=E_n^{(0)}\psi_n^{(0)}+\lambda(E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)})+\lambda^2(E_n^{(2)}\psi_n^{(0)}+E_n^{(1)}\psi_n^{(1)}+E_n^{(0)}\psi_n^{(2)})+\ldots.(1-4)
+\begin{equation}
+(\hat H^0\psi_n^{(0)})+\lambda(\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)})+\lambda^2(\hat H' \psi_n^{(1)}+\hat H^0\psi_n^{(2)})+\ldots=E_n^{(0)}\psi_n^{(0)}+\lambda(E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)})+\lambda^2(E_n^{(2)}\psi_n^{(0)}+E_n^{(1)}\psi_n^{(1)}+E_n^{(0)}\psi_n^{(2)})+\ldots.\label{1-4}
+\end{equation}
 $$<p>因为 $\lambda$ 不一定为 $0$, 要使上式成立, 必须使 $\lambda$ 的系数依次相等.</p>
-<p>对 $\lambda^0$, 式 (1-4) 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
+<p>对 $\lambda^0$, 式 \eqref{1-4} 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
 <p>对 $\lambda^1$, 有</p>
 $$
-\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)}=E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)}.(1-5)
-$$<p>对式 (1-5) 两边同时左乘 $\psi_m^{(0)*}$ 再积分, 有</p>
+\begin{equation}
+\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)}=E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)}.\label{1-5}
+\end{equation}
+$$<p>对式 \eqref{1-5} 两边同时左乘 $\psi_m^{(0)*}$ 再积分, 有</p>
 $$
-\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=E_n^{(1)}\langle \psi_m^{(0)}|\psi_n^{(0)}\rangle+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.(1-6)
+\begin{equation}
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=E_n^{(1)}\langle \psi_m^{(0)}|\psi_n^{(0)}\rangle+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.\label{1-6}
+\end{equation}
 $$<p>因为 $\hat H^0$ 是 $Hermitian$ 算符, 满足</p>
 $$
 \langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=\langle \psi_n^{(1)}|\hat H^0|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_n^{(1)}|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
-$$<p>代回式 (1-6), 有</p>
+$$<p>代回式 \eqref{1-6}, 有</p>
 $$
 \langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
 $$<p>当 $m=n$ 时, $E_n^{(1)}$变为 $\hat H&rsquo;$的均值</p>
@@ -1066,7 +1128,7 @@ $$
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//WentianGodlike.github.io/">
+  data-url="//localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

@@ -3,8 +3,8 @@
   lang="cn"
   dir="ltr"
   class="scroll-smooth"
-  data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-default-appearance="auto"
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -15,8 +15,8 @@
 
   
   
-    <title>量子化学中变分法与久期方程的推导 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="量子化学中变分法与久期方程的推导 &middot; WentianGodlike&#39;s Blog">
+    <title>微扰理论 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="微扰理论 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="//localhost:1313/posts/variation_method_and_secular_equation/context.html">
+  <link rel="canonical" href="https://WentianGodlike.github.io/posts/perturbation_theory/centext/">
   
 
   
@@ -58,9 +58,9 @@
   
 
   
-  <meta property="og:url" content="//localhost:1313/posts/variation_method_and_secular_equation/context.html">
+  <meta property="og:url" content="https://WentianGodlike.github.io/posts/perturbation_theory/centext/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="量子化学中变分法与久期方程的推导">
+  <meta property="og:title" content="微扰理论">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
@@ -71,7 +71,7 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="量子化学中变分法与久期方程的推导">
+  <meta name="twitter:title" content="微扰理论">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -117,14 +117,14 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
+    href="../../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
     integrity="sha512-xocikq/SF8P&#43;whpJeBLCl/gggW9poKWmLjdNlATZd9mEOpVZGhtVCxW5bxSYaOknWPMQjjFBH6ThmQdGVO9y2w==">
 
   
   
   <script
     type="text/javascript"
-    src="../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    src="../../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
     integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
   
   
@@ -133,7 +133,7 @@
   
   
     
-    <script src="../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+    <script src="../../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
   
 
   
@@ -157,7 +157,7 @@
       defer
       type="text/javascript"
       id="script-bundle"
-      src="../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
+      src="../../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
       integrity="sha512-8Wz0hlEES8ZmJcgAjrVgXMcCUwUw2qCBzn5JXlCt93i&#43;9s0HRzgpg8r15cx0XIGd16lp4X5UURnf8UNG9Py5dw=="
       data-copy="复制"
       data-copied="已复制"></script>
@@ -166,7 +166,7 @@
   
   
 
-<script src="../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+<script src="../../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
 
 
 
@@ -209,10 +209,10 @@
 
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+    <link rel="manifest" href="../../../site.webmanifest">
   
 
   
@@ -221,12 +221,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "量子化学中变分法与久期方程的推导",
-    "headline": "量子化学中变分法与久期方程的推导",
+    "name": "微扰理论",
+    "headline": "微扰理论",
     
     
     "inLanguage": "zh-cn",
-    "url" : "\/\/localhost:1313\/posts\/variation_method_and_secular_equation\/context.html",
+    "url" : "https:\/\/WentianGodlike.github.io\/posts\/perturbation_theory\/centext\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
@@ -240,13 +240,19 @@
     "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2214"
+    "wordCount": "927"
   }]
   </script>
 
 
 
   
+  
+    
+
+
+
+
   
 
   
@@ -357,7 +363,13 @@
     </div>
     
     
-      
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    
 
 
 
@@ -378,11 +390,11 @@
     
     
       <div>
-        <a href="../../" class="flex">
+        <a href="../../../" class="flex">
           <span class="sr-only">WentianGodlike&rsquo;s Blog</span>
           
             <img
-              src="../../img/logo.png"
+              src="../../../img/logo.png"
               width="470"
               height="470"
               class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
@@ -395,7 +407,7 @@
   <div class="flex flex-1 items-center justify-between">
     <nav class="flex space-x-3">
       
-        <a href="../../" class="text-base font-medium">
+        <a href="../../../" class="text-base font-medium">
           WentianGodlike&rsquo;s Blog
         </a>
       
@@ -406,15 +418,15 @@
       
         
   <a
-  href="../../index.html"
+  href="../../../posts/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-  aria-label="Home"
+  aria-label="文章"
   title="">
   
   
     <p class="text-base font-medium">
-      Home
+      文章
     </p>
   
 </a>
@@ -424,15 +436,15 @@
       
         
   <a
-  href="../../posts/index.html"
+  href="../../../categories/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-  aria-label="Blog"
+  aria-label="分类"
   title="">
   
   
     <p class="text-base font-medium">
-      Blog
+      分类
     </p>
   
 </a>
@@ -442,15 +454,69 @@
       
         
   <a
-  href="../../tags/index.html"
+  href="../../../tags/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-  aria-label="Tags"
-  title="Tags">
+  aria-label="标签"
+  title="">
   
   
     <p class="text-base font-medium">
-      Tags
+      标签
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../series/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="专栏"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      专栏
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../about/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="关于"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      关于
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="https://github.com/WentianGodlike"
+  target="_blank"
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="GitHub"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      GitHub
     </p>
   
 </a>
@@ -558,15 +624,15 @@
               
   <li class="mt-1">
   <a
-    href="../../index.html"
+    href="../../../posts/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-    aria-label="Home"
+    aria-label="文章"
     title="">
     
     
       <p class="text-bg font-bg">
-        Home
+        文章
       </p>
     
   </a>
@@ -578,15 +644,15 @@
               
   <li class="mt-1">
   <a
-    href="../../posts/index.html"
+    href="../../../categories/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-    aria-label="Blog"
+    aria-label="分类"
     title="">
     
     
       <p class="text-bg font-bg">
-        Blog
+        分类
       </p>
     
   </a>
@@ -598,15 +664,77 @@
               
   <li class="mt-1">
   <a
-    href="../../tags/index.html"
+    href="../../../tags/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
-    aria-label="Tags"
-    title="Tags">
+    aria-label="标签"
+    title="">
     
     
       <p class="text-bg font-bg">
-        Tags
+        标签
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../series/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="专栏"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        专栏
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../about/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="关于"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        关于
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="https://github.com/WentianGodlike"
+    
+      target="_blank"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="GitHub"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        GitHub
       </p>
     
   </a>
@@ -629,6 +757,16 @@
 
 
 
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="../../../js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+  data-blur-id="menu-blur"></script>
+
     
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
@@ -641,8 +779,39 @@
     
     <header id="single_header" class="mt-5 max-w-prose">
       
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../"
+      ></a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/"
+      >posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/perturbation_theory/centext/"
+      >微扰理论</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        量子化学中变分法与久期方程的推导
+        微扰理论
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -681,15 +850,9 @@
   
 
   
-    
-  
 
   
-    
-  
 
-  
-    
   
 
   
@@ -700,65 +863,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>2214 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span
-    id="views_posts\variation_method_and_secular_equation\context.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="views"
-    >loading</span
-  >
-  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
-</span>
-<span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span
-    id="likes_posts\variation_method_and_secular_equation\context.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes"
-    >loading</span
-  >
-  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
-</span>
-<span class="px-2 text-primary-500">&middot;</span><span>
-  <button
-    id="button_likes"
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
-      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
-    </span>
-    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
-      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
-    >
-    <span id="button_likes_text">&nbsp;Like</span>
-  </button>
-</span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>927 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -768,6 +873,34 @@
   
 
   
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="../../../tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    量子化学
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
   
 
   
@@ -874,162 +1007,85 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>为了处理包含相互作用粒子的体系 (例如原子或分子) 的与不含时$Schr\ddot odinger$ 方程, 必须采用近似方法. 变分法的意义在于能够通过测量体系有限的波函数, 对体系整体的能量与状态进行估计.</p>
+          <p>量子化学计算中使用较为广泛的近似方法除了之前提到过的变分法, 还有一个方法是微扰法. 假设某系统的不含时 $Hamilton$ 算符为 $\hat H$ 且我们无法准确求解 $Schr\ddot odinger$ 方程 $\hat H \psi_n = E_n \psi_n$. 假设算符 $\hat H$ 由另一算符 $\hat H^{0} $ 通过某一微小扰动 $\hat H&rsquo;$ 得到, 即 $\hat H = \hat H^{0}+\hat H&rsquo;$. 其中 $\hat H^{0}\psi^{0}_n=E_n^{0}\psi^{0}_n$, 且此 $Schr\ddot odinger$ 方程可求解.</p>
+<p>此时我们的任务是设法将 $\hat H$ 与 $\hat H^0$ 关联起来. 引入一个实数 $\lambda \in [0, 1]$, 用以使 $\hat H^0$ 逐渐接近 $\hat H$ .自然有</p>
+$$
+\hat H = \hat H^0+\lambda\hat H',
+$$<p>当 $\lambda=0$ 时, 表示 $\hat H^0$, 当 $\lambda=1$ 时则表示 $\hat H$.</p>
+<p>简并与非简并能级的微扰处理方式有所不同.</p>
 
-<h1 class="relative group">变分理论
-    <div id="变分理论" class="anchor"></div>
+<h1 class="relative group">非简并能级的微扰理论
+    <div id="非简并能级的微扰理论" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%98%e5%88%86%e7%90%86%e8%ae%ba" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%9d%9e%e7%ae%80%e5%b9%b6%e8%83%bd%e7%ba%a7%e7%9a%84%e5%be%ae%e6%89%b0%e7%90%86%e8%ae%ba" aria-label="锚点">#</a>
     </span>
     
 </h1>
-<p>设一个系统的不含时 $Hamilton$ 算符 $\hat{H}$ , 其最低能量本征值为 $E_1$. 若 $\phi$ 是系统粒子坐标的一个归一化且性质良好的波函数, 并满足该系统的边界条件, 则</p>
-<p>\begin{equation}
-\int \phi^{*} \hat{H} \phi d\tau \geq E_1.\label{1-1}
-\end{equation}</p>
-<p>即变分定理能够帮助我们计算基态能量的下限.</p>
-<p>变分定理的证明较为简单, 我们通过将波函数 $\phi$ 使用 $Hamilton$ 算符 $\hat{H}$ 的完备正交本征函数 $\psi_i$
-进行展开, 即</p>
-<p>\begin{equation}
-\phi=\sum_i a_i \times \psi_i,\label{1-2}
-\end{equation}</p>
-<p>满足 $\hat{H} \psi_i = E_i \times \psi_i$. 将 \eqref{1-2} 式带入 \eqref{1-1} 式, 假设 (实际上也确实符合数学要求) 求和符号可以跟随系数 $a_i$ 和 $a_j$ 挪到积分符号外, 得</p>
+<p>对于 $Schr\ddot odinger$ 方程</p>
 $$
-\int \phi^{*} \hat{H} \phi d\tau = \int\sum_i a_i^{*} \psi_i^{*} \hat{H} \sum_j a_j \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \hat{H}  \psi_j d\tau.
-$$<p>进一步, 应用本征函数的性质, 得:</p>
-$$
-\sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \hat{H}  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} E_j  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau.
-$$<p>因为所选择的本征函数彼此正交, 有 $\int \psi_i^{*} \psi_j d\tau = \delta_{ij}$, 且系数 $a_i, a_j$ 都为实数, 有
 \begin{equation}
-\sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \delta_{ij} = \sum_j |a_j|^2 E_j.\label{1-3}
-\end{equation}</p>
-<p>因为波函数 $\phi$ 是归一化的, 根据归一化条件 $\int \phi^*\phi d\tau=1$, 有</p>
-<p>\begin{equation}
-\int \phi^* \phi , d\tau = \sum_i \sum_j a_i^* a_j \int \psi_i^* \psi_j , d\tau = \sum_i \sum_j a_i^* a_j \delta_{ij} = \sum_j |a_j|^2 = 1.\label{1-4}
-\end{equation}</p>
-<p>将式 \eqref{1-3}, \eqref{1-4} 代回式 \eqref{1-1}, 有</p>
+\hat H \psi_n = (\hat H^0+\lambda\hat H')\psi_n = E_n \psi_n,\label{1-1}
+\end{equation}
+$$<p>除了坐标, 波函数 $\psi_n$ 同时也是参数 $\lambda\in [0,1]$ 的函数, 即 $\psi_n=\psi_n(q,\lambda)$, 其中参数 $q$ 表示坐标. 同理体系能量 $E_n=E_n(\lambda)$. 能量无关坐标 $q$, 因为相对于包含坐标的函数 $\psi_n$ 而言能量是一个常数.</p>
+<p>能量 $E_n=E_n(\lambda)$ 和 波函数 $\psi_n=\psi_n(q,\lambda)$ 分别对参数 $\lambda$ 使用 $Taylor$ 展开</p>
 $$
-\int \phi^{*} \hat{H} \phi d\tau = \sum_j a_j^2 E_j \geq E_1.
-$$<p>如果移除波函数 $\phi$ 已经归一化这个假设条件, 可以给 $\phi$ 乘一个归一化系数 $k$ 使其归一化, 即$\int k^* \phi^* k\phi d\tau = 1$. 此时有 $\int \phi^*\phi d\tau = \frac{1}{|k|^2}$, 式 \eqref{1-1} 则变为</p>
-$$
-\frac{\int \phi^{*} \hat{H} \phi d\tau}{\int \phi^*\phi d\tau}\geq {E_1}.
-$$<p>为了得到基态能量的良好近似值, 我们会尝试许多不同的 $\phi$, 并寻找能使变分积分取到最低值的那个函数. 根据式 \eqref{1-1}, 变分积分的值越低, 我们所得到的近似就越精确.</p>
-<p>在实际运用中, 人们通常会将未知参数 $a_i$ 放入已知的函数 $\psi$ 中以构建未知波函数 $\phi$, 然后通过调整这些参数来使变分积分达到最小值.</p>
-<p>#对变分函数进行展开
-上一部分中, 通过变分定理得到了基态状态能量以及基态波函数. 此时我们考虑激发态, 将激发态能量从低到高依次排列</p>
-$$
-E_1\leq E_2\leq \ldots .
-$$<p>对于归一化的波函数, 变分函数为</p>
-$$
-\int \phi^{*} \hat{H} \phi d\tau = \sum_i a_i^2 E_i , \int \phi^{*} \phi d\tau = \sum_i a_i^2 = 1.
-$$<p>考虑第一激发态, 能量为$E_2$. 如果想类似上文一样应用变分函数得到下界, 则需要使基态能量消失, 即 $a_1 = 0$. 而什么时候 $a_1 = 0$ 成立呢? 通过上文的推导过程可以得知 $\langle \psi_1|\phi \rangle = 0$, 即 $\int \psi_1^* \phi d\tau = 0$ 时, $a_1 = 0 $ 成立. 推导过程省略, 重复上文步骤即可验证. 此时</p>
-<p>以此类推, $\langle \psi_1|\phi \rangle = 0$, 且 $\langle \psi_2|\phi \rangle = 0 $ 时, 有 $\int \phi^{*} \hat{H} \phi d\tau\geq E_2.$</p>
-<p>当 $\langle \psi_1|\phi \rangle = 0, \langle \psi_2|\phi \rangle = 0 , \langle \psi_3|\phi \rangle = 0$ 时, 有 $\int \phi^{*} \hat{H} \phi d\tau\geq E_4$ 等.</p>
-
-<h1 class="relative group">线性变分函数与久期方程
-    <div id="线性变分函数与久期方程" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ba%bf%e6%80%a7%e5%8f%98%e5%88%86%e5%87%bd%e6%95%b0%e4%b8%8e%e4%b9%85%e6%9c%9f%e6%96%b9%e7%a8%8b" aria-label="锚点">#</a>
-    </span>
-    
-</h1>
-<p>在分子研究中广泛使用的一种特殊变分函数是线性变分函数, 目标函数, 即线性所求波函数的本征函数是由 $n$ 个已知的线性无关函数 $f_i$ 的线性组合构成的.</p>
-$$
-\phi = \sum_i^n c_i f_i
-$$<p>可以注意到此时线性变分函数使用的基函数 $f_i$ 已经无需是波函数 $\phi$ 的本征函数了, 但依然需要满足边界条件. 额外假设 $f_i$ 是实函数, $c_i$ 是实数. 此时进行与变分定理类似的推导</p>
-$$
-\int \phi^{*} \hat{H} \phi d\tau = \int \sum_i^n c_i^* f_i^* \hat{H} \sum_j^n c_j f_j d\tau = \sum_i^n \sum_j^n c_i^* c_j \int f_i^* \hat{H} f_j d\tau.
+\psi_n=\psi_n|_{\lambda=0}+\lambda \frac{\partial \psi_n}{\partial \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{\partial^2 \psi_n}{\partial \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0},
 $$$$
-\int \phi^{*} \phi d\tau = \int \sum_i^n c_i^* f_i^* \sum_j^n c_j f_j d\tau = \sum_i^n \sum_j^n c_i^* c_j \int f_i^* f_j d\tau.
-$$<p>记 $\int f_i^* \hat{H} f_j d\tau$ 为 $H_{ij}$, $\int f_i^* f_j d\tau$为 $S_{ij}$.</p>
-<p>记 $W$为</p>
+E_n=E_n|_{\lambda=0}+\lambda \frac{d E_n}{d \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{d^2 \psi_n}{d \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}
+$$<p>显然当 $\lambda\rightarrow0$ 时, $\psi_n |  _{\lambda=0}=\psi_n^{(0)} $, $E _n| _{\lambda=0}=E_n^{(0)}$. 记</p>
 $$
-W=\frac{\int \phi^{*} \hat{H} \phi d\tau}{\int \phi^{*} \phi d\tau}=\frac{\sum_i^n \sum_j^n c_i^* c_j H_{ij}}{\sum_i^n \sum_j^n c_i^* c_j S_{ij}}.
-$$<p>此时有</p>
-<p>\begin{equation}
-W\times \sum_i^n \sum_j^n c_i^* c_j S_{ij} = \sum_i^n \sum_j^n c_i^* c_j H_{ij}. \label{2-1}
-\end{equation}</p>
-<p>$W$ 作为 $c_1, c_2, \ldots ,c_n$ 的函数, 可以通过使 $W$ 对各个系数的一阶偏导为 $0$ 求得最小值(与此同时 $W\geq E_1$ ), 即</p>
+\psi_n^{(k)}\equiv\frac{1}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0}, E_n^{(k)}\equiv\frac{1}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}.
+$$<p>此时 $\psi_n$ 和 $E_n$ 可以表示为</p>
 $$
-\frac{\partial W}{\partial c_k} = 0,\qquad k = 1, 2, \ldots, n.
-$$<p>对式 \eqref{2-1} 两边对 $c_i$ 求偏导</p>
+\begin{equation}
+\psi_n=\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)},\label{1-2}
+\end{equation}
+$$$$
+\begin{equation}
+E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)}.\label{1-3}
+\end{equation}
+$$<p>称 $\psi_n^{(k)}$ 和 $E_n^{(k)}$ 为对 $\psi_n$ 和 $E_n$ 的 <code>k 阶修正</code>. 对于上述级数我们希望其在 $\lambda=1$ 处收敛, 但通常而言无法满足这一条件. 但哪怕这些级数发散, 应用修正后也可以有一个不错的近似效果.</p>
+<p>对于微扰法, 一般使用 $\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle=1$ 与 $\langle \psi_n^{(0)}|\psi_n\rangle=1$ 作为归一化条件, 称为 <code>间接归一化</code>. 如果 $\psi_n$ 不满足归一化条件, 可以乘一个系数 $1/\langle \psi_n^{(0)}|\psi_n\rangle$ 使其归一化. 后一个条件主要作用为简化计算, 因为应用此条件之后, 第 $0$ 修正项与其他各阶修正项之间彼此正交. 若必要也可在计算最后将这个系数除掉以取得原始结果.</p>
+<p>将归一化条件代回式 \eqref{1-2} 中并左乘 $\psi_n^{(0)*}$再积分, 有</p>
 $$
-\frac{\partial W}{\partial c_k}\sum_i^n\sum_j^n c_i^* c_j S_{ij} + W \frac{\partial }{\partial c_k}\sum_i^n\sum_j^n c_i^* c_j S_{ij} = \frac{\partial }{\partial c_k}\sum_i^n\sum_j^n c_i^* c_j H_{ij}, \quad k = 1, 2,\ldots,n.
-$$<p>偏导符号可以移动到求和符号内部, 且因为 $c_i$ 均为实数, 有 $c_i^*=c_i$, 且因为要求最小值, $\frac{\partial W}{\partial c_k} = 0$ 自动成立</p>
-$$
-W \sum_i^n\sum_j^n \frac{\partial }{\partial c_k} c_i c_j S_{ij} = \sum_i^n\sum_j^n \frac{\partial }{\partial c_k} c_i c_j H_{ij}, \quad k = 1, 2,\ldots,n.
-$$<p>此时对于求和内部的 $\frac{\partial }{\partial c_k} c_i c_j$, 只有当 $k = i$ 或 $k = j$ 时才能有值, 而当 $k=i=j$ 时被记两遍, 所以系数为 $2$ 有</p>
-$$
-2W \sum_i^n  c_i S_{ki} = 2\sum_i^n  c_i H_{ki}, \quad k = 1, 2,\ldots,n.
-$$<p>移一下项</p>
-$$
-\sum_i^n  c_i (H_{ki} - W\times S_{ki}) = 0, \quad k = 1, 2,\ldots,n.
-$$<p>此时变成 $n$ 个方程组成的 $n$ 维其次线性方程组如下</p>
-$$
-\begin{align*}
-c_1 (H_{11} - W\times S_{11}) + c_2(H_{12} - W\times S_{12}) + \ldots + c_2(H_{1n} - W\times S_{1n}) &= 0\\
-c_1 (H_{21} - W\times S_{21}) + c_2(H_{22} - W\times S_{22}) + \ldots + c_2(H_{2n} - W\times S_{2n}) &= 0\\
-...................................................................&.....\\
-c_1 (H_{n1} - W\times S_{n1}) + c_2(H_{n2} - W\times S_{n2}) + \ldots + c_2(H_{nn} - W\times S_{nn}) &= 0
-\end{align*}
-$$<p>这个线性方程组可以被写成矩阵形式
+\int \psi_n^{(0)*}\psi_nd\tau=\langle \psi_n^{(0)}|\psi_n\rangle=\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle+\lambda\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+\ldots+\lambda^k\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle,
+$$<p>因为 $\lambda$ 不一定为 $0$, 应用归一化条件可得
 </p>
+$$\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_n^{(0)}|\psi_n^{(2)}\rangle=\ldots=\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle=0.$$<p>将式 \eqref{1-2} 和 \eqref{1-3} 代入 $Schr\ddot odinger$ 方程 \eqref{1-1} 中, 有</p>
+$$
+(\hat H^0+\lambda\hat H')(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})=(E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)})(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})
+$$<p>合并相同次数的 $\lambda$, 有</p>
 $$
 \begin{equation}
-\left(
-\begin{matrix}
-H_{11} - W\times S_{11} & H_{12} - W\times S_{12} & \cdots & H_{1n} - W\times S_{1n}\\
-H_{21} - W\times S_{21} & H_{22} - W\times S_{22} & \cdots & H_{2n} - W\times S_{2n}\\
-\vdots & \vdots & \vdots & \vdots\\
-H_{n1} - W\times S_{n1} & H_{n2} - W\times S_{n2} & \cdots & H_{nn} - W\times S_{nn}
-\end{matrix}
-\right)\times
-\left(
-\begin{matrix}
-c_1\\
-c_2\\
-\vdots\\
-c_n
-\end{matrix}
-\right)=
-\left(
-\begin{matrix}
-0\\
-0\\
-\vdots\\
-0
-\end{matrix}
-\right).\label{2-2}
+(\hat H^0\psi_n^{(0)})+\lambda(\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)})+\lambda^2(\hat H' \psi_n^{(1)}+\hat H^0\psi_n^{(2)})+\ldots=E_n^{(0)}\psi_n^{(0)}+\lambda(E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)})+\lambda^2(E_n^{(2)}\psi_n^{(0)}+E_n^{(1)}\psi_n^{(1)}+E_n^{(0)}\psi_n^{(2)})+\ldots.\label{1-4}
 \end{equation}
-$$<p>
-因为这是 $n$ 个方程组成的 $n$ 维其次线性方程组, 其有非零解的条件是系数行列式 $det(H_{ij} - W\times S_{ij})$ 为零, 即</p>
+$$<p>因为 $\lambda$ 不一定为 $0$, 要使上式成立, 必须使 $\lambda$ 的系数依次相等.</p>
+<p>对 $\lambda^0$, 式 \eqref{1-4} 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
+<p>对 $\lambda^1$, 有</p>
 $$
 \begin{equation}
-\left|
-\begin{matrix}
-H_{11} - W S_{11} & H_{12} - W S_{12} & \cdots & H_{1n} - W S_{1n} \\
-H_{21} - W S_{21} & H_{22} - W S_{22} & \cdots & H_{2n} - W S_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-H_{n1} - W S_{n1} & H_{n2} - W S_{n2} & \cdots & H_{nn} - W S_{nn}
-\end{matrix}
-\right| = 0. \label{2-3}
+\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)}=E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)}.\label{1-5}
 \end{equation}
-$$<p>式 \eqref{2-3} 被称为 <code>久期方程</code>. 由代数知识可知, 这个行列式是一个关于 $W$ 的 $n$ 次方程, 可以解得 $n$ 个 $W$. 将其从小到大排列</p>
+$$<p>对式 \eqref{1-5} 两边同时左乘 $\psi_m^{(0)*}$ 再积分, 有</p>
 $$
-W_1\leq W_2\leq W_3\leq \ldots \leq W_n.
-$$<p>式 \eqref{2-2} 可以解出当 $W$ 最小时的 $c_1, c_2,\ldots, c_n$. 根据 $c_1, c_2,\ldots, c_n$ 可以组合出 基态和 $n-1$ 个激发态的能量, 将其从小到大排列</p>
+\begin{equation}
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=E_n^{(1)}\langle \psi_m^{(0)}|\psi_n^{(0)}\rangle+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.\label{1-6}
+\end{equation}
+$$<p>因为 $\hat H^0$ 是 $Hermitian$ 算符, 满足</p>
 $$
-E_1\leq E_2\leq E_3\leq \ldots \leq E_n.
-$$<p>已经有证明 [J. K. L. MacDonald, Phys. Rev., 43, 830 (1933); R. H. Young, Int. J. Quantum Chem., 6, 596 (1972)],</p>
+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=\langle \psi_n^{(1)}|\hat H^0|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_n^{(1)}|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+$$<p>代回式 \eqref{1-6}, 有</p>
 $$
-E_1\leq W_1,\quad E_2\leq W_2,\quad E_3\leq W_3,\quad \ldots,\quad E_n\leq W_n.
-$$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统的真正波函数. 然而, 通常我们需要无穷多个函数才能形成一个完备集.</p>
-<p>为了得到基态波函数的近似值, 我们取久期方程的最小根 $W_1$, 并将其代入方程 \eqref{2-2} 中. 然后求解方程, 能够得到一组系数 $c_1^1, c_2^1,\ldots, c_n^1$. 上标 $i$ 表示这组系数是通过带入 $W_i$ 确定的. 然而因为式 \eqref{2-3} 表明行列式的值为 $0$, 可以确定有方程没有发挥作用, 所以无法得到这一组数据的精确值, 只能得到其比率. 幸运的是, 我们还有一个归一化条件可以使用. 这样就可以得到 $\phi_1=\sum_i^n c_i f_i$ 作为一个近似的基态波函数, 类似地用索引更高的根 $W_i$ 可以计算出激发态的波函数. 可以证明这 $n$ 个近似基态波函数是相互正交的.</p>
-
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+$$<p>当 $m=n$ 时, $E_n^{(1)}$变为 $\hat H&rsquo;$的均值</p>
+$$
+\langle \psi_n^{(0)}|\hat H'|\psi_n^{(0)}\rangle=E_n^{(1)}=\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$<p>此时可以得到能量 $E_n$ 的一阶近似</p>
+$$
+E_n\approx E_n^{(0)}+E_n^{(1)}=E_n^{(0)}+\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$
           
           
           
@@ -1054,10 +1110,10 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
         
         <script
           type="text/javascript"
-          src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          src="../../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\variation_method_and_secular_equation\context.md"
-          data-oid-likes="likes_posts\variation_method_and_secular_equation\context.md"></script>
+          data-oid="views_posts\perturbation_theory\centext.md"
+          data-oid-likes="likes_posts\perturbation_theory\centext.md"></script>
       
     </section>
 
@@ -1075,14 +1131,14 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
           
             <a
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/perturbation_theory/centext.html">
+              href="../../../posts/trjconv_and_rmsd/context/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;微扰理论
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;trjconv中pbc参数对RMSD的影响
               </span>
             </a>
             
               <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time>
+                <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time>
               </span>
             
           
@@ -1091,14 +1147,14 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/remote_ssh_to_wsl/context.html">
+              href="../../../posts/variation_method_and_secular_equation/context/">
               <span class="leading-6">
-                使用remote SSH远程访问另一台电脑上的WSL2虚拟机&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                量子化学中变分法与久期方程的推导&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             
               <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-11-30T15:00:51&#43;08:00">2025 年 11 月 30 日</time>
+                <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time>
               </span>
             
           
@@ -1138,30 +1194,6 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
   
   
     
-      
-      
-        
-          
-          
-      
-      
-      
-      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
-        <ul class="flex list-none flex-col sm:flex-row">
-          
-            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
-              <a
-                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
-                href="../../tags/index.html"
-                title="Tags">
-                
-                Tags
-              </a>
-            </li>
-          
-        </ul>
-      </nav>
-    
   
   <div class="flex items-center justify-between">
     
@@ -1197,7 +1229,7 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
   
   <script
     type="text/javascript"
-    src="../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    src="../../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
     integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
@@ -1205,7 +1237,7 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="//localhost:1313/">
+  data-url="https://WentianGodlike.github.io/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

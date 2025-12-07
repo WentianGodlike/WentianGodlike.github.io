@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on WentianGodlike&#39;s Blog</title>
-    <link>//WentianGodlike.github.io/tags/index.html</link>
+    <link>https://WentianGodlike.github.io/tags/</link>
     <description>Recent content in Tags on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
     <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
     <copyright>© 2025 WentianGodlike</copyright>
-    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="https://WentianGodlike.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>杂项</title>
-      <link>//WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9.html</link>
+      <link>https://WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9/</link>
       <pubDate>Sun, 30 Nov 2025 15:00:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9.html</guid>
+      <guid>https://WentianGodlike.github.io/tags/%E6%9D%82%E9%A1%B9/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>量子化学</title>
-      <link>//WentianGodlike.github.io/tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6.html</link>
+      <link>https://WentianGodlike.github.io/tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6/</link>
       <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6.html</guid>
+      <guid>https://WentianGodlike.github.io/tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Gromacs</title>
-      <link>//WentianGodlike.github.io/tags/gromacs.html</link>
+      <link>https://WentianGodlike.github.io/tags/gromacs/</link>
       <pubDate>Tue, 18 Nov 2025 14:09:49 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/tags/gromacs.html</guid>
+      <guid>https://WentianGodlike.github.io/tags/gromacs/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>分子模拟</title>
-      <link>//WentianGodlike.github.io/tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F.html</link>
+      <link>https://WentianGodlike.github.io/tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F/</link>
       <pubDate>Tue, 18 Nov 2025 14:09:49 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F.html</guid>
+      <guid>https://WentianGodlike.github.io/tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F/</guid>
       <description></description>
       
     </item>

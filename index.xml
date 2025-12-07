@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WentianGodlike&#39;s Blog</title>
-    <link>//WentianGodlike.github.io/index.html</link>
+    <link>https://WentianGodlike.github.io/</link>
     <description>Recent content on WentianGodlike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>wentiangodlikeqaq@gmail.com (WentianGodlike)</managingEditor>
     <webMaster>wentiangodlikeqaq@gmail.com (WentianGodlike)</webMaster>
     <copyright>© 2025 WentianGodlike</copyright>
-    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="//WentianGodlike.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Nov 2025 15:00:51 +0800</lastBuildDate><atom:link href="https://WentianGodlike.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用remote SSH远程访问另一台电脑上的WSL2虚拟机</title>
-      <link>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</link>
+      <link>https://WentianGodlike.github.io/posts/remote_ssh_to_wsl/context/</link>
       <pubDate>Sun, 30 Nov 2025 15:00:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/posts/remote_ssh_to_wsl/context.html</guid>
+      <guid>https://WentianGodlike.github.io/posts/remote_ssh_to_wsl/context/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>量子化学中变分法与久期方程的推导</title>
-      <link>//WentianGodlike.github.io/posts/variation_method_and_secular_equation/context.html</link>
+      <link>https://WentianGodlike.github.io/posts/variation_method_and_secular_equation/context/</link>
       <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/posts/variation_method_and_secular_equation/context.html</guid>
+      <guid>https://WentianGodlike.github.io/posts/variation_method_and_secular_equation/context/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>微扰理论</title>
-      <link>//WentianGodlike.github.io/posts/perturbation_theory/centext.html</link>
+      <link>https://WentianGodlike.github.io/posts/perturbation_theory/centext/</link>
       <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/posts/perturbation_theory/centext.html</guid>
+      <guid>https://WentianGodlike.github.io/posts/perturbation_theory/centext/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>trjconv中pbc参数对RMSD的影响</title>
-      <link>//WentianGodlike.github.io/posts/trjconv_and_rmsd/context.html</link>
+      <link>https://WentianGodlike.github.io/posts/trjconv_and_rmsd/context/</link>
       <pubDate>Tue, 18 Nov 2025 14:09:49 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/posts/trjconv_and_rmsd/context.html</guid>
+      <guid>https://WentianGodlike.github.io/posts/trjconv_and_rmsd/context/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title></title>
-      <link>//WentianGodlike.github.io/about.html</link>
+      <link>https://WentianGodlike.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
-      <guid>//WentianGodlike.github.io/about.html</guid>
+      <guid>https://WentianGodlike.github.io/about/</guid>
       <description></description>
       
     </item>
