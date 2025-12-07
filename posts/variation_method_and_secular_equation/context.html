@@ -240,7 +240,7 @@
     "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2208"
+    "wordCount": "2207"
   }]
   </script>
 
@@ -267,38 +267,7 @@
   
   
   
-  <script>
-  MathJax = {
-    tex: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"],
-      ],
-      displayMath: [
-        ["$$", "$$"],
-        ["\\[", "\\]"],
-      ],
-      processEscapes: true,
-      processEnvironments: true,
-    },
-    options: {
-      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
-    },
-  };
-
-  window.addEventListener("load", (event) => {
-    document.querySelectorAll("mjx-container").forEach(function (x) {
-      x.parentElement.classList += "has-jax";
-    });
-  });
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script
-  type="text/javascript"
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-></script>
+  
 </head>
 <style>
   code.has-jax {
@@ -681,7 +650,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>2208 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>2207 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -867,9 +836,10 @@
     
 </h1>
 <p>设一个系统的不含时 $Hamilton$ 算符 $\hat{H}$ , 其最低能量本征值为 $E_1$. 若 $\phi$ 是系统粒子坐标的一个归一化且性质良好的波函数, 并满足该系统的边界条件, 则</p>
-$$
+<p>\begin{equation}
 \int \phi^{*} \hat{H} \phi d\tau \geq E_1.(1-1)
-$$<p>即变分定理能够帮助我们计算基态能量的下限.</p>
+\end{equation}</p>
+<p>即变分定理能够帮助我们计算基态能量的下限.</p>
 <p>变分定理的证明较为简单, 我们通过将波函数 $\phi$ 使用 $Hamilton$ 算符 $\hat{H}$ 的完备正交本征函数 $\psi_i$
 进行展开, 即</p>
 $$
