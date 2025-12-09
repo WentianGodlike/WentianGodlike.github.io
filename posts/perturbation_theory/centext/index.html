@@ -240,7 +240,7 @@
     "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "927"
+    "wordCount": "1166"
   }]
   </script>
 
@@ -863,7 +863,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>927 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>1166 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -1001,6 +1001,147 @@
       
       
       
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一阶修正">一阶修正</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一阶修正">一阶修正</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
@@ -1063,6 +1204,16 @@ $$
 \end{equation}
 $$<p>因为 $\lambda$ 不一定为 $0$, 要使上式成立, 必须使 $\lambda$ 的系数依次相等.</p>
 <p>对 $\lambda^0$, 式 \eqref{1-4} 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
+
+<h2 class="relative group">一阶修正
+    <div id="一阶修正" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%80%e9%98%b6%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 <p>对 $\lambda^1$, 有</p>
 $$
 \begin{equation}
@@ -1076,15 +1227,66 @@ $$
 $$<p>因为 $\hat H^0$ 是 $Hermitian$ 算符, 满足</p>
 $$
 \langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=\langle \psi_n^{(1)}|\hat H^0|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_n^{(1)}|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
-$$<p>代回式 \eqref{1-6}, 有</p>
+$$<p>代回式 \eqref{1-6} 并稍加化简, 有</p>
 $$
-\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+\begin{equation}
+(E_m^{(0)}-E_n^{(0)})\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}-\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle.\label{1-7}
+\end{equation}
 $$<p>当 $m=n$ 时, $E_n^{(1)}$变为 $\hat H&rsquo;$的均值</p>
 $$
 \langle \psi_n^{(0)}|\hat H'|\psi_n^{(0)}\rangle=E_n^{(1)}=\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
-$$<p>此时可以得到能量 $E_n$ 的一阶近似</p>
+$$<p>此时可以得到能量 $E_n$ 的一阶修正</p>
 $$
 E_n\approx E_n^{(0)}+E_n^{(1)}=E_n^{(0)}+\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$<p>对于波函数的一阶修正, 将$\psi_n^{(1)}$ 使用完备正交基 $\psi_k^{(0)}$ 展开
+</p>
+$$
+\begin{equation}
+\psi_n^{(1)}=\sum_k a_k\psi_k^{(0)}.\label{1-8}
+\end{equation}
+$$<p>
+两边同时乘 $\psi_m^{(0)*}$ 并积分, 有
+</p>
+$$
+\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=\sum_k a_k\langle \psi_m^{(0)}|\psi_k^{(0)}\rangle=\sum_k\delta_{mk}a_k.
+$$<p>
+当 $m=k$ 时, $\delta_{mk}a_k$ 才有值 $a_m$. 此时上式变为
+</p>
+$$
+\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=a_m.
+$$<p>
+因此可以将式 \eqref{1-8} 转为更习惯的记法
+</p>
+$$
+\begin{equation}
+\psi_n^{(1)}=\sum_m a_m\psi_m^{(0)}, \text{ 其中 } a_m= \langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.\label{1-9}
+\end{equation}
+$$<p>
+将式 \eqref{1-9} 中的 $a_m$ 代回式 \eqref{1-7}, 且假设 $n\neq m $, 此时 $\delta_{nm}=0$
+</p>
+$$
+(E_m^{(0)}-E_n^{(0)})a_m=\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle
+$$<p>
+那么 $a_m$ 也可表示为
+</p>
+$$
+a_m=\frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}.
+$$<p>
+将新的 $a_m$ 代回式 \eqref{1-9}
+</p>
+$$
+\psi_n^{(1)}=\sum_m \frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}\psi_m^{(0)}, n\neq m.
+$$<p>
+而如果当 $n=m$, 式 \eqref{1-9} 中的 $a_m$则变为
+</p>
+$$
+a_m= \langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_m^{(0)}|\psi_m^{(1)}\rangle.
+$$<p>
+根据间接归一化条件, 有 $\langle \psi_m^{(0)}|\psi_m^{(1)}\rangle=0$. 所以对于 $\psi_n^{(1)}$ 则无需考虑 $n=m$ 项.</p>
+<p>综上, 当 $\lambda=1$ 时 $\psi_n$ 可以记为
+</p>
+$$
+\psi_n\approx\psi_n^{(0)}+\sum_{n\neq m} \frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}\psi_m^{(0)}.
 $$
           
           
