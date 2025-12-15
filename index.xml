@@ -12,6 +12,16 @@
     <lastBuildDate>Mon, 15 Dec 2025 17:39:51 +0800</lastBuildDate><atom:link href="https://WentianGodlike.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>拉格朗日量与哈密顿量</title>
+      <link>https://WentianGodlike.github.io/posts/lagrangian-mechanics/</link>
+      <pubDate>Mon, 15 Dec 2025 17:39:51 +0800</pubDate>
+      <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
+      <guid>https://WentianGodlike.github.io/posts/lagrangian-mechanics/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>使用remote SSH远程访问另一台电脑上的WSL2虚拟机</title>
       <link>https://WentianGodlike.github.io/posts/remote_ssh_to_wsl/</link>
       <pubDate>Sun, 30 Nov 2025 15:00:51 +0800</pubDate>
@@ -27,6 +37,16 @@
       <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
       <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
       <guid>https://WentianGodlike.github.io/posts/variation_method_and_secular_equation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>微扰理论</title>
+      <link>https://WentianGodlike.github.io/posts/perturbation_theory/</link>
+      <pubDate>Wed, 19 Nov 2025 17:39:51 +0800</pubDate>
+      <author>wentiangodlikeqaq@gmail.com (WentianGodlike)</author>
+      <guid>https://WentianGodlike.github.io/posts/perturbation_theory/</guid>
       <description></description>
       
     </item>
