@@ -1,0 +1,2224 @@
+<!doctype html>
+<html
+  lang="cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="auto"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-cn">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>第一章 Introduction &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="第一章 Introduction &middot; WentianGodlike&#39;s Blog">
+  
+
+  
+  
+    <meta name="description" content="一些各种各样的blog与备忘">
+  
+  
+    <meta name="keywords" content="分子模拟,">
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/computer-simulation-of-liquids_/introduction/">
+  
+
+  
+  
+    <meta name="author" content="WentianGodlike">
+  
+  
+    
+      
+        
+          <link href="wentiangodlikeqaq@gmail.com" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://github.com/WentianGodlike" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://steamcommunity.com/profiles/76561198866497901/" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/computer-simulation-of-liquids_/introduction/">
+  <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
+  <meta property="og:title" content="第一章 Introduction">
+  <meta property="og:description" content="一些各种各样的blog与备忘">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:modified_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:tag" content="分子模拟">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="第一章 Introduction">
+  <meta name="twitter:description" content="一些各种各样的blog与备忘">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="../../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
+    integrity="sha512-xocikq/SF8P&#43;whpJeBLCl/gggW9poKWmLjdNlATZd9mEOpVZGhtVCxW5bxSYaOknWPMQjjFBH6ThmQdGVO9y2w==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="../../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="../../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="../../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
+      integrity="sha512-8Wz0hlEES8ZmJcgAjrVgXMcCUwUw2qCBzn5JXlCt93i&#43;9s0HRzgpg8r15cx0XIGd16lp4X5UURnf8UNG9Py5dw=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+
+  
+  
+
+<script src="../../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+    <link rel="manifest" href="../../../site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "第一章 Introduction",
+    "headline": "第一章 Introduction",
+    
+    
+    "inLanguage": "zh-cn",
+    "url" : "http:\/\/localhost:1313\/posts\/computer-simulation-of-liquids_\/introduction\/",
+    "author" : {
+      "@type": "Person",
+      "name": "WentianGodlike"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-11-19T17:39:51\u002b08:00",
+    "datePublished": "2025-11-19T17:39:51\u002b08:00",
+    
+    "dateModified": "2025-11-19T17:39:51\u002b08:00",
+    
+    "keywords": ["分子模拟"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "23513"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+
+  window.addEventListener("load", (event) => {
+    document.querySelectorAll("mjx-container").forEach(function (x) {
+      x.parentElement.classList += "has-jax";
+    });
+  });
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+</head>
+<style>
+  code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+  }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      
+      
+      tags: "ams",
+
+      
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+    },
+    options: {
+      
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        跳过正文
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="../../../" class="flex">
+          <span class="sr-only">WentianGodlike&rsquo;s Blog</span>
+          
+            <img
+              src="../../../img/logo.png"
+              width="470"
+              height="470"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="../../../" class="text-base font-medium">
+          WentianGodlike&rsquo;s Blog
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="../../../posts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="文章"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      文章
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../categories/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="分类"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      分类
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../tags/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="标签"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      标签
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../series/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="专栏"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      专栏
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="../../../about/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="关于"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      关于
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="https://github.com/WentianGodlike"
+  target="_blank"
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="GitHub"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      GitHub
+    </p>
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../posts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="文章"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        文章
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../categories/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="分类"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        分类
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../tags/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="标签"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        标签
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../series/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="专栏"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        专栏
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="../../../about/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="关于"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        关于
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="https://github.com/WentianGodlike"
+    
+      target="_blank"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="GitHub"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        GitHub
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="../../../js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../"
+      ></a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/"
+      >posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/computer-simulation-of-liquids_/introduction/"
+      >第一章 Introduction</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        第一章 Introduction
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>23513 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">47 分钟</span>
+    
+
+    
+    
+      <span class="ps-2"><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+</span>
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="../../../tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    分子模拟
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        WentianGodlike
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="wentiangodlikeqaq@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          title="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/WentianGodlike"
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/76561198866497901/"
+          target="_blank"
+          aria-label="Steam"
+          title="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机模拟简史">计算机模拟简史</a></li>
+    <li><a href="#计算机模拟动机与应用">计算机模拟：动机与应用</a></li>
+    <li><a href="#模型系统与相互作用势">模型系统与相互作用势</a>
+      <ul>
+        <li><a href="#引言">引言</a></li>
+        <li><a href="#原子体系">原子体系</a></li>
+        <li><a href="#分子体系">分子体系</a></li>
+        <li><a href="#粗粒化势能模型">粗粒化势能模型</a></li>
+        <li><a href="#计算势能">计算势能</a></li>
+      </ul>
+    </li>
+    <li><a href="#从第一性原理构建分子间势能">从第一性原理构建分子间势能</a>
+      <ul>
+        <li><a href="#引言-1">引言</a></li>
+        <li><a href="#调整模型势能">调整模型势能</a></li>
+      </ul>
+    </li>
+    <li><a href="#力场">力场</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机模拟简史">计算机模拟简史</a></li>
+    <li><a href="#计算机模拟动机与应用">计算机模拟：动机与应用</a></li>
+    <li><a href="#模型系统与相互作用势">模型系统与相互作用势</a>
+      <ul>
+        <li><a href="#引言">引言</a></li>
+        <li><a href="#原子体系">原子体系</a></li>
+        <li><a href="#分子体系">分子体系</a></li>
+        <li><a href="#粗粒化势能模型">粗粒化势能模型</a></li>
+        <li><a href="#计算势能">计算势能</a></li>
+      </ul>
+    </li>
+    <li><a href="#从第一性原理构建分子间势能">从第一性原理构建分子间势能</a>
+      <ul>
+        <li><a href="#引言-1">引言</a></li>
+        <li><a href="#调整模型势能">调整模型势能</a></li>
+      </ul>
+    </li>
+    <li><a href="#力场">力场</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+  <details
+    class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5"
+    >
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
+    Computer simulation of liquids -
+    这篇文章属于一个选集。
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § :
+        本文
+      </div>
+    
+  
+
+
+  </details>
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">计算机模拟简史
+    <div id="计算机模拟简史" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%a8%a1%e6%8b%9f%e7%ae%80%e5%8f%b2" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>什么是液体？当你阅读本书时，你可能正在混合、饮用、航行于或游弋在液体之中。液体会流动，尽管它们可能非常粘稠。它们可能是透明的，也可能强烈地散射光线。液体可以大量存在（体相），也可以微小液滴的形式存在。它们可以被气化或冻结。我们所知的生命很可能是在液相中进化而来的，而我们的身体依靠发生在液体中的化学反应来维持生存。关于类液（liquid-like）行为，有许多涵盖热力学、结构和运动的迷人细节。为什么液体的行为是这样的？</p>
+<p>对物质液态的研究，无论是从理论还是实验的角度来看，都有着悠久而丰富的历史。从早期对布朗运动（Brownian motion）的观察到近期的中子散射（neutron-scattering）实验，实验学家们一直致力于提高对表征液体的结构和粒子动力学的理解。与此同时，理论学家们也试图构建简单的模型来解释液体的行为方式。在本书中，我们将专注于液体的原子和分子模型，以及通过计算机模拟对其进行的分析。关于液体科学现状的精彩论述，读者应查阅标准参考文献 (Barker and Henderson, 1976; Rowlinson and Widom, 1982; Barrat and Hansen, 2003; Hansen and McDonald, 2013)。</p>
+<p>早期的液体模型 (Morrell and Hildebrand, 1936) 涉及对代表分子的明胶球（gelatine balls）进行物理操作和堆积分析；这产生了一幅令人惊讶的、关于液体（或许是无规玻璃态）结构的良好三维图像，该技术的后续应用也已有描述 (Bernal and King, 1968)。通过机械振动保持运动的金属滚珠轴承集合体 (Pieranski et al., 1978) 已被用作颗粒材料（granular materials）的模型，并显示出与分子系统的一些类比性 (Olafsen and Urbach, 2005)。显然，使用大量的宏观物理物体来代表分子是非常耗时的；且它们之间相互作用的类型存在明显的局限性，重力的影响也难以消除。然而，关于胶体悬浮液（colloidal suspensions）的现代研究——其典型粒子尺寸位于 $1 \text{ nm} \sim 1000 \text{ nm}$ 范围内，且具备通过操控单个粒子来研究大规模集体行为的能力——极大地复兴了这一领域 (Pusey and van Megen, 1986; Ebert et al., 2009; Lekkerkerker and Tuinier, 2011; Bechinger et al., 2013)。</p>
+<p>这种方法的自然延伸是采用数学模型而非物理模型，并通过计算机进行分析。距离美国洛斯阿拉莫斯国家实验室（Los Alamos National Laboratories）进行首次液体计算机模拟（Metropolis et al., 1953），至今已过去 60 多年。当时的洛斯阿拉莫斯计算机，名为 MANIAC，是当时最强大的计算机之一；而如今，具有同等算力的手持设备已能以低廉的成本普及大众，这正是计算机技术持续飞速发展的衡量标准。</p>
+<p>计算机硬件的快速发展意味着计算能力正以惊人的速度持续增长。利用现代并行计算机架构，我们要有望在 2020 年享受到艾萨级（exaflop）计算（1 exaflop 等于每秒 $10^{18}$ 次浮点运算）。这与研究人员和公众可获得的数据存储容量的巨大增长相匹配。我们在本书中描述的这类计算机模拟，在从笔记本电脑到洲际超级计算机的大多数机器上都是可能实现的，我们在附录 A 中概述了与该领域相关的架构和计算语言的一些机会。</p>
+<p>最早期的工作（Metropolis et al., 1953）奠定了现代蒙特卡罗（Monte Carlo）模拟的基础（因随机数在该方法中扮演的角色而得名）。该研究中采用的确切技术至今仍被广泛使用，通常简称为“Metropolis 蒙特卡罗”方法。最初的模型是分子的高度理想化表征，例如硬球（hard spheres）和硬盘（disks），但在几年内，针对 Lennard-Jones 相互作用势的蒙特卡罗 (MC) 模拟便已开展（Wood and Parker, 1957）（见 1.3 节）。这使得比较实验数据（例如液态氩）与从模型推导出的计算机生成的热力学数据成为可能。</p>
+<p>为了获得多粒子系统的动力学性质，需要一种不同的技术。分子动力学（Molecular dynamics, MD）是用于描述一组分子的经典运动方程（牛顿方程）解的术语。这最初是由 Alder 和 Wainwright (1957; 1959) 针对硬球系统实现的。在这种情况下，粒子在完全弹性碰撞之间以恒定速度运动，并且可以在机器精度限制内不加任何近似地求解动力学问题。数年后，人们才成功尝试求解一组 Lennard-Jones 粒子的运动方程（Rahman, 1964）。在这里，由于力随着粒子的移动而连续变化，因此需要一种近似的、逐步的程序。自那时起，Lennard-Jones 模型的性质得到了彻底的研究（Verlet, 1967; 1968; Johnson et al., 1993）。</p>
+<p>在对原子系统进行了最初的基础工作之后，计算机模拟迅速发展。模拟双原子分子液体的早期尝试（Harp and Berne, 1968; Berne and Harp, 1970）使用的是分子动力学，紧随其后的是两个模拟液态水的雄心勃勃的尝试，首先是使用 MC 方法（Barker and Watts, 1969），然后是 MD 方法（Rahman and Stillinger, 1971）。水仍然是模拟研究中最有趣但也最困难的液体之一（Morse and Rice, 1982; McCoustra et al., 2009; Lynden-Bell, 2010; Lin et al., 2012）。从对小型刚性分子（Barojas et al., 1973）和柔性碳氢化合物（Ryckaert and Bellemans, 1975）的早期研究开始，模拟已经发展到可以模拟更复杂的系统，如聚合物（Binder, 1995）、蛋白质、脂质、核酸和碳水化合物（Monticelli and Salonen, 2013）。包含五十万个原子的模拟已经进行了 5000 万个时间步，以研究小液滴的表面张力（van Giessen and Blokhuis, 2009）；大规模并行分子动力学代码 ls1 mardyn 已被用于模拟一万亿个 Lennard-Jones 原子（Niethammer et al., 2014）。现在，甚至可以在专用计算机上通过微秒到毫秒范围内的模拟（约 $10^9 - 10^{12}$ 个时间步）来跟踪溶剂化蛋白质的折叠过程（Piana et al., 2014）。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="816"
+          height="755"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_1_hu_f313a9e5be8d7f97.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_1_hu_f313a9e5be8d7f97.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_1_hu_a27fea8c10db1b3d.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_1.png"
+        />
+  
+  <figcaption>图1.1 每个完整十年内发表的关于凝聚相计算机模拟的文章的大致数量。搜索是使用 Web of Science® 进行的，在 TITLE（标题）和 TOPIC（主题）搜索字段中搜索了 Monte Carlo（蒙特卡罗）、molecular dynamics（分子动力学）、Brownian dynamics（布朗动力学）、lattice Boltzmann（格子玻尔兹曼）、dynamical density functional theory（动态密度泛函理论）、Car–Parrinello、QM/MM。</figcaption>
+  </figure>
+<p>过去 60 年来计算机模拟领域的增长（以同行评审期刊的出版物数量为证）是戏剧性的。在 图 1.1 中，我们尝试计算了在每个完整十年期间该领域发表的论文数量。虽然这类文献计量工作难免会遗漏一些重要论文，并且通常会包含相关学科中一些不需要的论文，但文章数量的总体趋势是显而易见的。</p>
+<p>这在一定程度上归因于计算能力的持续大幅增长，在此期间一直遵循着著名的摩尔定律曲线（见附录 A）。这也归因于这些方法被应用于材料和生命科学中广泛的、以前难以处理的问题。然而，这在很大程度上也归功于从业者的聪明才智，他们将早期方法扩展到了诸如以下的领域：自由能和相图的计算（第 9 章）；稀有事件的模拟（第 10 章）；用于计算输运系数的非平衡态方法的开发（第 11 章）；粗粒化方法的开发，以扩展可模拟的长度和时间尺度（第 12 章）；以及扩展到包含量子力学效应（第 13 章）。这种活跃程度表明，计算机模拟现在与实验和理论并列，成为现代科学中第三个同等重要的工具。我们首先要问：什么是计算机模拟？它是如何工作的？它能告诉我们什么？</p>
+
+<h2 class="relative group">计算机模拟：动机与应用
+    <div id="计算机模拟动机与应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%a8%a1%e6%8b%9f%e5%8a%a8%e6%9c%ba%e4%b8%8e%e5%ba%94%e7%94%a8" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>统计力学中的某些问题是精确可解的。对此，我们的意思是，对系统微观性质的完整规范（例如理想气体或爱因斯坦晶体等理想化模型的哈密顿量）可以直接且可能很容易地导出一组有用的结果或宏观性质（例如状态方程 $PV = Nk_B T$）。统计力学中只有极少数非平凡的、精确可解的问题（Baxter, 1982）；二维伊辛（Ising）模型就是一个著名的例子。</p>
+<p>统计力学中的一些问题虽然不能精确求解，但很容易通过基于直接近似方案的分析来解决。计算机在此类工作中可能扮演辅助的、计算性的角色；例如，计算稀释、非完美气体的维里展开（virial expansion）中的簇积分（cluster integrals）（Rosenbluth and Rosenbluth, 1954; Wheatley, 2013）。问题在于，像维里展开一样，许多“直接”的近似方案在应用于液体时根本不起作用。对于某些液体性质，甚至可能不清楚如何以合理的方式开始构建近似理论。问题越困难、越有趣，就越希望能获得精确的结果，既可以用来检验现有的近似方法，也可以为新方法指明方向。同样重要的是，能够做到这一点，而不必引入关于特定模型（可能是非常理想化的）模仿真实液体的紧密程度这一额外问题，尽管这也可能是一个令人感兴趣的问题。计算机模拟在为统计力学中的问题提供本质上精确的结果方面发挥着宝贵的作用，否则这些问题只能通过近似方法求解，或者可能完全难以处理。在这个意义上，计算机模拟是对理论的检验，从历史上看，模拟确实区分了建立良好的方法（如积分方程理论，Hansen and McDonald, 2013）和那些看似合理但实际上不太成功的想法（如旧的液体元胞理论，Lennard-Jones and Devonshire, 1939a,b）。计算机模拟的结果也可以与真实实验的结果进行比较。首先，这是对计算机模拟中所使用的底层模型的一种测试。最终，如果模型是一个好模型，模拟者希望为实验者提供见解，并协助解释新结果。模拟的这种双重作用——一方面作为模型与理论预测之间的桥梁，另一方面作为模型与实验结果之间的桥梁——在 图 1.2 中进行了说明。由于这种联系作用，以及进行和分析模拟的方式，这些技术通常被称为“计算机实验”。</p>
+<p>计算机模拟提供了一条从系统的微观细节（原子的质量、它们之间的相互作用、分子几何形状等）到实验感兴趣的宏观性质（状态方程、输运系数、结构序参数等）的直接途径。这种类型的信息除了具有学术意义外，在技术上也是有用的。在极端温度和压力下进行实验可能很困难或不可能，而对这种材料（例如在冲击波、高温等离子体、核反应堆或行星核心中）进行计算机模拟则是完全可行的。分子运动和结构的相当微妙的细节（例如在多相催化、快离子传导或酶作用中）很难通过实验探测，但可以很容易地从计算机模拟中提取出来。最后，虽然分子事件的速度本身是实验的一个困难，但它对模拟者来说并不构成障碍。从分子尺度到星系尺度的广泛物理现象（Hockney and Eastwood, 1988），都可以使用某种形式的计算机模拟来研究。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="484"
+          height="351"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_2_hu_84202d52869e2320.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_2_hu_84202d52869e2320.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_2_hu_f7e1cd89d4c7c188.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_2.png"
+        />
+  
+  <figcaption>图 1.2 实验、理论和计算机模拟之间的联系。</figcaption>
+  </figure>
+
+<h2 class="relative group">模型系统与相互作用势
+    <div id="模型系统与相互作用势" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%a8%a1%e5%9e%8b%e7%b3%bb%e7%bb%9f%e4%b8%8e%e7%9b%b8%e4%ba%92%e4%bd%9c%e7%94%a8%e5%8a%bf" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">引言
+    <div id="引言" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bc%95%e8%a8%80" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>在本书的大部分内容中，系统的微观状态可以用一组组成粒子（原子和分子）的位置和动量来规定。在玻恩-奥本海默（Born-Oppenheimer, BO）近似（另见第 13 章）下，可以将系统的哈密顿量表示为核变量的函数，而电子的（快速）运动则被平均化了。在经典描述已经足够的额外近似下，我们可以将 $N$ 个分子的系统的哈密顿量 $\mathcal{H}$ 写为这组坐标 $\mathbf{q}_i$ 和每个分子 $i$ 的动量 $\mathbf{p}_i$ 的动能和势能函数之和。采用简写符号：</p>
+$$\mathbf{q} = (\mathbf{q}_1, \mathbf{q}_2, \cdots, \mathbf{q}_N) \tag{1.1a}$$$$\mathbf{p} = (\mathbf{p}_1, \mathbf{p}_2, \cdots, \mathbf{p}_N) \tag{1.1b}$$<p>我们有</p>
+$$\mathcal{H}(\mathbf{q}, \mathbf{p}) = \mathcal{K}(\mathbf{p}) + \mathcal{V}(\mathbf{q}). \tag{1.2}$$<p>通常，哈密顿量将等于系统的总内能 $E$。广义坐标 $\mathbf{q}_i$ 可能仅仅是系统中每个原子（或原子核）的一组笛卡尔坐标 $\mathbf{r}_i$，但是，正如我们将看到的，有时将分子视为刚体是有用的，在这种情况下，$\mathbf{q}$ 将包括每个分子质心的笛卡尔坐标以及一组指定分子取向的变量 $\mathbf{\Omega}_i$。在任何情况下，$\mathbf{p}$ 代表相应的一组共轭动量。对于一个简单的原子系统，动能 $\mathcal{K}$ 采取以下形式：</p>
+$$\mathcal{K} = \sum_{i=1}^N \sum_{\alpha} p_{i\alpha}^2 / 2m_i \tag{1.3}$$<p>其中 $m_i$ 是分子质量，下标 $\alpha$ 遍历原子 $i$ 动量的不同 ($x, y, z$) 分量。势能 $\mathcal{V}$ 包含关于分子间相互作用的有趣信息：假设 $\mathcal{V}$ 表现得相当合理，我们将可能从 $\mathcal{H}$ 构建支配系统整个时间演化及其所有力学性质的（哈密顿、拉格朗日或牛顿形式的）运动方程（Goldstein, 1980）。该方程的解通常涉及根据 $\mathcal{V}$ 计算作用在分子上的力 $\mathbf{f}_i$ 和力矩 $\boldsymbol{\tau}_i$（见第 3 章）。哈密顿量还决定了分子位置和动量的平衡分布函数（见第 2 章）。因此，通常 $\mathcal{H}$（或 $\mathcal{V}$）是计算机模拟程序的基本输入。在计算机模拟中几乎普遍使用的方法是将势能分离为涉及分子对、三体等的项。在接下来的章节中，我们将详细讨论这一点。</p>
+<p>最近，避免使用有效势而通过使用密度泛函理论（density functional theory）显式考虑电子的模拟研究数量有了惊人的增长（Martin, 2008）。在一种早期方法中，电子密度由电子气理论的扩展来表示（LeSar and Gordon, 1982; 1983; LeSar, 1984）。在目前的大多数工作中，电子自由度被显式包含在描述中。受原子核外场影响的电子，被允许通过一组辅助的动力学方程在模拟过程中演化（Car and Parrinello, 1985）。这种方法被称为从头算分子动力学（ab initio molecular dynamics）（Marx and Hutter, 2012），现在已经充分发展，随着计算机速度的提高，它有望成为材料科学与生命科学领域模拟研究的首选方法。我们将在第13章中更详细地探讨这一方法。</p>
+
+<h3 class="relative group">原子体系
+    <div id="原子体系" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8e%9f%e5%ad%90%e4%bd%93%e7%b3%bb" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>首先考虑一个包含 $N$ 个原子的体系。其势能可以划分为取决于单个原子、原子对、原子三体等坐标的各项之和：
+</p>
+$$\mathcal{V} = \sum_i v_1(\mathbf{r}_i) + \sum_i \sum_{j>i} v_2(\mathbf{r}_i, \mathbf{r}_j) + \sum_i \sum_{j>i} \sum_{k>j} v_3(\mathbf{r}_i, \mathbf{r}_j, \mathbf{r}_k) + \dots \tag{1.4}$$<p>
+符号 $\sum_i \sum_{j>i}$ 表示对所有不同的原子对 $i$ 和 $j$ 进行求和，且不重复计算任何一对（即不区分 $ij$ 和 $ji$）；对于三体项也必须采取同样的注意。方程 (1.4) 中的第一项 $v_1(\mathbf{r}_i)$ 代表外场（例如包括容器壁）对体系的影响。其余各项代表粒子间的相互作用。第二项 $v_2$，即对势（pair potential），是最重要的一项。对势仅取决于对间距的大小 $r_{ij} = |\mathbf{r}_{ij}| = |\mathbf{r}_i - \mathbf{r}_j|$，因此可以写为 $v_{2} (r_{ij})$。图 1.3 展示了两个氩原子之间对势随间距变化的最新估算值之一（Patkowski 和 Szalewicz, 2010）。该势能是通过拟合对氩二聚体非常精确的从头算（ab initio）计算结果确定的。该势能提供的最小值位置和势阱深度与实验值非常接近。它可以用来计算孤立氩二聚体的光谱，并且产生的转动常数和解离能与实验吻合得非常好（Patkowski 等, 2005）。事实上，计算出的势能足够精确，以至于对推荐的、实验测得的高温下氩的第二维里系数（second virial coefficient）值提出了一些质疑（Dymond 和 Smith, 1980）。
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="899"
+          height="668"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_3_hu_e4dca886859917a1.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_3_hu_e4dca886859917a1.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_3_hu_1ba5f6bfb8aff4d1.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_3.png"
+        />
+  
+  <figcaption>图 1.3 氩的对势。我们展示了（实线）通过从头算（ab initio）方法计算得到的最新氩对势（见 Patkowski 和 Szalewicz, 2010）。同时显示的还有用于液氩计算机模拟的 Lennard-Jones 12-6 势（虚线）。</figcaption>
+  </figure></p>
+<p>该势能显示了分子间相互作用的典型特征。在间距较大时存在一个由吸引尾部，这本质上是由于围绕原子的电子云之间的相关性（“范德华”或“伦敦”色散力）引起的。此外，对于带电物种，还会存在库仑项。在凝聚相中，存在一个负责内聚力的负势阱。最后，在短距离处有一个急剧上升的排斥壁，这是由于非键合电子云之间的重叠造成的。</p>
+<p>方程 (1.4) 中的 $v_3$ 项涉及分子三体，毫无疑问在液体密度下是显著的。对于固态面心立方（fcc）晶格中的惰性气体，已经估算过主导的、三偶极（triple-dipole）、三体贡献的大小（Axilrod 和 Teller, 1943；Doran 和 Zucker, 1971；Barker 和 Henderson, 1976）。研究发现，氩（对于极化率更高的物种则更多）高达 10% 的晶格能可能归因于势能中的这些非加和项；我们可以预期在液相中也保持相同数量级。与 $v_2$ 和 $v_3$ 相比，方程 (1.4) 中的四体（及更高阶）项预计很小。</p>
+<p>尽管势能中三体项的大小不可忽视，但在计算机模拟中极少直接包含它们（Barker 等, 1971；Attard, 1992；Marcelli 和 Sadus, 2012）。这是因为，正如我们将很快看到的，计算任何涉及分子三体求和的量在计算机上都将非常耗时。在大多数情况下，成对近似（pairwise approximation）给出了对液体性质非常好的描述，因为平均三体效应可以通过定义一个“有效”对势部分地包含在内。为此，我们将方程 (1.4) 重写为如下形式：</p>
+$$\mathcal{V} \approx \sum_i v_1(\mathbf{r}_i) + \sum_i \sum_{j>i} v_2^{\text{eff}}(r_{ij}) \tag{1.5}$$<p>出现在计算机模拟中的对势通常应被视为这种有效对势，代表了所有的多体效应；为简单起见，我们将仅使用符号 $v(r_{ij})$ 或 $v(r)$。这种近似的一个后果是，重现实验数据所需的有效对势可能最终取决于密度、温度等，而真正的二体势 $v_2(r_{ij})$ 当然不会。</p>
+<p>现在我们转向在计算机模拟中常用的更简单、更理想化的对势。这些势能以一般的、通常是经验的方式反映了真实相互作用的显著特征。图 1.3 中与精确氩对势一同展示的是一个简单的 Lennard-Jones 12-6 势：</p>
+$$v^{\text{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right] \tag{1.6}$$<p>如果适当地选择参数 $\epsilon$ 和 $\sigma$，它能通过计算机模拟对氩的性质提供合理的描述。该势能具有形式为 $-1/r^6$ 的长程吸引尾部，深度为 $\epsilon$ 的负势阱，以及在距离小于 $r \sim \sigma$ 时急剧上升的排斥壁。势阱深度通常以温度为单位引用，即 $\epsilon/k_{\text{B}}$，其中 $k_{\text{B}}$ 是玻尔兹曼常数；$\epsilon/k_{\text{B}} = 120\text{ K}$ 和 $\sigma = 0.34\text{ nm}$ 的值提供了与液氩实验性质的合理吻合。我们必须再次强调，这些值并不适用于孤立的氩原子对，这一点从图 1.3 中可以清楚地看出。</p>
+<p>为了研究液体的一般性质以及与理论进行比较，高度理想化的对势可能是有价值的。在图 1.4 中，我们展示了三种形式，虽然不切实际，但在计算机模拟和液态理论中使用起来非常简单方便。它们是：
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="809"
+          height="797"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_4_hu_936ff627ac8e0642.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_4_hu_936ff627ac8e0642.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_4_hu_d041695a39c9f2a7.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_4.png"
+        />
+  
+  <figcaption>图 1.4 理想化的对势。(a) 硬球势；(b) 方阱势；(c) 排斥参数 $\nu=1$ 的软球势；(d) 排斥参数 $\nu=12$ 的软球势。垂直和水平刻度是任意的。</figcaption>
+  </figure></p>
+<p>硬球势（The hard-sphere potential）</p>
+$$v^{\text{HS}}(r) = \begin{cases} \infty & \text{if } r < \sigma \\ 0 & \text{if } \sigma \le r; \end{cases} \tag{1.7}$$<p>方阱势（The square-well potential）</p>
+$$v^{\text{SW}}(r) = \begin{cases} \infty & \text{if } r < \sigma_1 \\ -\epsilon, & \text{if } \sigma_1 \le r < \sigma_2 \\ 0, & \text{if } \sigma_2 \le r; \end{cases} \tag{1.8}$$<p>以及软球势（The soft-sphere potential）</p>
+$$v^{\text{SS}}(r) = \epsilon (\sigma/r)^{\nu} = a r^{-\nu}, \tag{1.9}$$<p>其中 $\nu$ 是一个参数，通常选择为整数。随着 $\nu$ 的增加，软球势变得越来越“硬”。软球势不包含吸引部分。通常将更真实的势能划分为单独的吸引和排斥分量是更高效的。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="757"
+          height="584"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_5_hu_a3bdde82238b69bf.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_5_hu_a3bdde82238b69bf.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_5_hu_1d81e069263d6416.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_5.png"
+        />
+  
+  <figcaption>图 1.5 Lennard-Jones 势 $v^{\text{LJ}}$ 分离为吸引和排斥分量，分别为 $v^{\text{ALJ}}$ 和 $v^{\text{RLJ}}$。垂直虚线显示了 $r_{\text{min}}$ 的位置。</figcaption>
+  </figure>
+<p>Weeks 等人 (1971) 提出的分离方法涉及在最小值处分割势能。对于 Lennard-Jones 势，其排斥和吸引部分如图 1.5 所示：
+</p>
+$$v^{\text{RLJ}}(r) = \begin{cases} v^{\text{LJ}}(r) + \epsilon & \text{if } r < r_{\text{min}} \\ 0 & \text{if } r_{\text{min}} \le r \end{cases} \tag{1.10a}$$$$v^{\text{ALJ}}(r) = \begin{cases} -\epsilon & \text{if } r < r_{\text{min}} \\ v^{\text{LJ}}(r) & \text{if } r_{\text{min}} \le r, \end{cases} \tag{1.10b}$$<p>其中 $r_{\text{min}} = 2^{1/6}\sigma \approx 1.12\sigma$。在微扰理论（Weeks 等, 1971）中，通过排斥势 $v^{\text{RLJ}}$ 相互作用的分子组成的假想流体被视为参考体系，而吸引部分 $v^{\text{ALJ}}$ 是微扰。值得注意的是，势能 $v^{\text{RLJ}}$ 明显比 $r^{-12}$ 的软球势更硬，后者有时也被认为是 $v^{\text{LJ}}(r)$ 的“排斥”部分。</p>
+<p>当然，对于离子而言，这些势能不足以代表长程相互作用。一种简单的方法是用库仑电荷-电荷相互作用来补充这些对势之一：
+</p>
+$$v^{qq}(r_{ij}) = \frac{q_i q_j}{4\pi \epsilon_0 r_{ij}} \tag{1.11}$$<p>
+其中 $q_i, q_j$ 是离子 $i$ 和 $j$ 上的电荷，$\epsilon_0$ 是真空介电常数（不要与方程 (1.6)-(1.10) 中的 $\epsilon$ 混淆）。对于离子体系，诱导相互作用是重要的：离子电荷会在邻近离子上诱导出一个偶极子。这一项不是成对可加的，因此很难包含在模拟中。壳层模型（shell model）是考虑这种极化率的一种粗略尝试（Dixon 和 Sangster, 1976; Lindan, 1995）。</p>
+<p>每个离子被表示为一个被壳层包围的核心。离子电荷的一部分位于壳层上，其余部分位于核心中。这种划分总是安排成使壳层电荷为负（它代表电子云）。离子间的相互作用只是库仑壳层-壳层、核心-核心和壳层-核心贡献的总和。给定离子的壳层和核心通过谐振弹簧势耦合。壳层被认为质量为零。在模拟过程中，它们的位置被迭代调整，以使作用在每个壳层上的净力为零：这个过程使得模拟变得昂贵。我们将在 1.3.3 节回到可极化体系的模拟。</p>
+<p>当一个势能仅取决于少数几个参数，例如 $\epsilon$ 和 $\sigma$ 时，可能可以选择一套适当的单位，使这些参数的值为 1。这导致了对模型性质的更简单的描述，并且在模拟程序中也可能存在技术优势。对于库仑体系，方程 (1.11) 中的因子 $4\pi\epsilon_0$ 通常被省略，这对应于选择非标准的电荷单位。我们在附录 B 中讨论这种约化单位。约化密度、温度等通常用星号表示，即 $\rho^*, T^*$ 等。</p>
+
+<h3 class="relative group">分子体系
+    <div id="分子体系" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e5%ad%90%e4%bd%93%e7%b3%bb" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>原则上，在处理分子体系时没有理由放弃原子方法：化学键仅仅是原子间势能项（Chandler, 1982）。理想情况下，我们希望以适当的量子力学方式处理化学键的所有方面，包括形成和断裂键的反应。这项艰巨的任务尚未完成，但有两种常见的简化方法。我们可以将键视为经典谐振弹簧（或莫尔斯振子），或者我们可以将分子视为刚性或半刚性单元，具有固定的键长，有时还有固定的键角和扭转角。</p>
+<p>键振动的频率非常高（因此难以处理，尤其是在经典模拟中）。高频振动很有可能无法与周围的流体处于热平衡。这些振动的幅度也很低（因此对许多液体性质并不重要）。基于这些原因，我们倾向于将键长约束在其平衡值的方法。因此，具有强结合原子间势能面的双原子分子可能会被具有刚性原子间键的“哑铃”代替。</p>
+<p>一对分子 $i$ 和 $j$ 的原子核与电子云之间的相互作用显然是相对位置 $\mathbf{r}_i, \mathbf{r}_j$ 和取向 $\Omega_i, \Omega_j$ 的复杂函数（Gray 和 Gubbins, 1984）。图 1.6 展示了双原子分子极大简化的“原子-原子”或“位点-位点”近似。总相互作用是来自分子 $i$ 中位置 $\mathbf{r}_{ia}$ 处的不同位点 $a$ 与分子 $j$ 中位置 $\mathbf{r}_{jb}$ 处的位点 $b$ 的成对贡献之和：
+</p>
+$$v(\mathbf{r}_{ij}, \Omega_i, \Omega_j) = \sum_a \sum_b v_{ab}(r_{ab}) \tag{1.12}$$
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="642"
+          height="471"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_6_hu_fe0ca84688094ff6.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_6_hu_fe0ca84688094ff6.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_6_hu_83a14b0fc3dc7584.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_6.png"
+        />
+  
+  <figcaption>图 1.6 双原子分子的原子-原子模型。总相互作用是涉及距离 $|\mathbf{r}_{ia} - \mathbf{r}_{jb}|$ 的各项之和，如图中虚线所示。</figcaption>
+  </figure>
+<p>这里 $a, b$ 取值 1, 2，$v_{ab}$ 是作用在位点 $a$ 和 $b$ 之间的对势，$r_{ab}$ 是位点间距 $r_{ab} = |\mathbf{r}_{ab}| = |\mathbf{r}_{ia} - \mathbf{r}_{jb}|$ 的简写。相互作用位点通常或多或少地以真实分子中的原子核位置为中心，以便代表分子“形状”的基本效应。硬球模型的一个非常简单的扩展是考虑由两个融合在一起的硬球组成的双原子分子（Streett 和 Tildesley, 1976），但更逼真的模型涉及连续势。因此，氮、氟、氯等已被描述为由固定键长隔开的两个“Lennard-Jones 原子”（Barojas 等, 1973; Cheung 和 Powles, 1975; Singer 等, 1977）。</p>
+<p>通过在电荷中心引入点多极矩，可以稍微改进对分子电荷分布的描述（Streett 和 Tildesley, 1977）。这些多极子可以等于已知的（孤立分子）值，或者是为了更好地描述液体结构和热力学性质而简单选择的“有效”值。Gray 和 Gubbins (1984) 给出了多极矩值的有用汇编。Price 等 (1984) 开发了一种有效的方法来计算任意对称性分子之间的多极能量、力和力矩，最高可达 $O(r_{ij}^{-5})$ 项。然而，现在普遍认为，基于分子质心的静电势多极展开并不是快速收敛的。</p>
+<p>对于离子和极性体系，一种务实的替代方法是使用一组分布在分子周围“物理上合理方式”的虚拟“部分电荷”（partial charges），以重现已知的多极矩（Murthy 等, 1983）。例如，氮分子之间的相互作用的静电部分可以使用沿轴放置的五个部分电荷来建模，而对于甲烷，部分电荷的四面体排列是合适的。这些在图 1.7 中进行了说明。对于 $\text{N}_2$ 的情况，取分子轴沿 $z$ 轴，四极矩 $Q$ 由下式给出（Gray 和 Gubbins, 1984）：
+</p>
+$$Q = \sum_{a=1}^5 q_a z_a^2 \tag{1.13}$$<p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1017"
+          height="311"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_7_hu_9a8acbe70c02ee41.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_7_hu_9a8acbe70c02ee41.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_7_hu_c7a7af71da6eda10.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_7.png"
+        />
+  
+  <figcaption>图 1.7 部分电荷模型：(a) $\text{N}_2$ 的五电荷模型。在键中心有一个电荷，在原子核位置有两个，另外两个位于原子核之外。典型值（其中 $e = 1.602 \times 10^{-19}\text{ C}$）：$q = +5.2366\,e, q' = -4.0469\,e$，给出 $Q = -4.67 \times 10^{-40}\text{ C m}^2$（Murthy 等, 1983）。(b) $\text{CH}_4$ 的五电荷模型。中心有一个电荷，另外四个在氢核位置。典型值为 C-H 键长 $0.1094\text{ nm}, q = 0.143\,e$，给出 $O = 5.77 \times 10^{-50}\text{ C m}^3$（Righini 等, 1981）。</figcaption>
+  </figure>
+对于更高阶的多极子也有类似的表达式（对于 $\text{N}_2$，所有奇数阶多极子都消失）。甲烷的第一个非零矩是八极矩 $O$：
+</p>
+$$O = \frac{5}{2} \sum_{a=1}^5 q_a x_a y_a z_a \tag{1.14}$$<p>
+坐标系与图 1.7 所示的立方体对齐。所有这些方法的目的都是近似分子中完整的电荷分布。在势能计算中，不同分子上的部分电荷之间的相互作用将与其他位点-位点相互作用相同的方式进行求和。</p>
+<p>近年来，高阶多极子的使用经历了复兴。这是因为我们可以通过在分子内的不同位点放置多极子来获得静电势的精确表示。这些位点可以在原子位置，或者在键中心或孤对电子内，通常在任何特定位点放置电荷、偶极子和四极子就足够了。这种方法被称为分布多极分析（Distributed Multipole Analysis, Stone, 1981; 2013, 第7章），图 1.8 以 $\text{N}_2$ 和 $\text{CO}$ 为例进行了说明。在 $\text{N}_2$ 的情况下，多极子放置在键中心和两个氮原子上，其 $z$ 轴沿键方向。每个位点都有一个电荷和一个四极子，此外，两个原子具有相等且相反的偶极子。这些是使用精确的密度泛函理论 B3LYP 计算的（Martin, 2008）。在原子单位中（见附录 B），从这种分布计算出的分子总四极矩为 $-1.170\,ea_0^2$，对应于实验估计值 $(-1.09 \pm 0.07)\,ea_0^2$。对 $\text{CO}$ 的类似计算在所有三个位点（C 和 O 原子以及键中心）产生了电荷、偶极子和四极子。这种分布的总偶极矩和四极矩分别为 $0.036\,ea_0$ 和 $-1.515\,ea_0^2$，而实验估计值分别为 $0.043\,ea_0$ 和 $-1.4\,ea_0^2$。两个分子之间的静电能现在是不同分子中原子或位点之间的多极相互作用之和。位于 $\mathbf{r}_a$ 和 $\mathbf{r}_b$ 的原子 $a$ 和 $b$ 上的两组分布多极子 $\{q_a, \boldsymbol{\mu}_a, \mathbf{Q}_a\}$ 和 $\{q_b, \boldsymbol{\mu}_b, \mathbf{Q}_b\}$ 之间的相互作用能由下式给出：
+</p>
+$$\begin{aligned}
+v_{ab}^{\text{elec}} &= T q_a q_b + T_\alpha (\mu_{a\alpha} q_b - q_a \mu_{b\alpha}) \\
+&\quad + T_{\alpha\beta} (\tfrac{1}{3} q_a Q_{b\alpha\beta} - \mu_{a\alpha} \mu_{b\beta} + \tfrac{1}{3} Q_{a\alpha\beta} q_b) \\
+&\quad + \tfrac{1}{3} T_{\alpha\beta\gamma} (\mu_{a\alpha} Q_{b\beta\gamma} - Q_{a\alpha\beta} \mu_{b\gamma}) + \tfrac{1}{9} T_{\alpha\beta\gamma\delta} Q_{a\alpha\beta} Q_{b\gamma\delta}
+\end{aligned} \tag{1.15}$$<p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="809"
+          height="279"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_8_hu_75f14bb372c8abd5.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_8_hu_75f14bb372c8abd5.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_8_hu_9600b70a27f62e40.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_8.png"
+        />
+  
+  <figcaption>图 1.8 表示 $\text{N}_2$ 和 $\text{CO}$ 分子静电势所需的分布多极子，使用 cc-pVQZ 基组计算。多极子放置在原子位置（黑圆圈）和键中点（白圆圈）。距离以原子单位为单位，$a_0 = 0.529\,\text{\AA}$；电荷 $q$ 单位为 $e = 1.602 \times 10^{-19}\text{ C}$；偶极子 $\mu$ 单位为 $ea_0 = 8.478 \times 10^{-30}\text{ C m}$；四极子 $Q$ 单位为 $ea_0^2 = 4.487 \times 10^{-40}\text{ C m}^2$（见附录 B）。数据来自 Stone (2013)。</figcaption>
+  </figure></p>
+<p>这里我们要对重复的笛卡尔指数 $\alpha, \beta$ 等进行求和。相互作用或“$T$”张量由下式给出：</p>
+$$T_{\alpha, \beta \dots \gamma} = (-1)^n \nabla_\alpha \nabla_\beta \dots \nabla_\gamma \frac{1}{r_{ab}}, \tag{1.16}$$<p>其中 $n$ 是张量的阶数。因此</p>
+$$T = \frac{1}{r_{ab}}, \quad T_\alpha = \frac{(r_{ab})_\alpha}{r_{ab}^3}, \quad T_{\alpha\beta} = \frac{3(r_{ab})_\alpha (r_{ab})_\beta - r_{ab}^2 \delta_{\alpha\beta}}{r_{ab}^5}, \tag{1.17}$$<p>依此类推。注意 $T$ 张量是针对 $r_{ab} = \mathbf{r}_a - \mathbf{r}_b$ 定义的。这是计算机模拟中静电能的一个有用公式，其中 $T$ 张量很容易用原子的笛卡尔坐标表示。此外，计算势能的导数以获得力（场）或场梯度也很直接。距离电荷 $q$ 为 $r$ 处的静电势 $\phi$ 为 $\phi(r) = q/r$，相应的电场为 $\boldsymbol{\mathcal{E}} = -\nabla \phi(r)$。场仅仅是单位电荷受到的力。例如，由 $b$ 处的电荷 $q_b$ 产生的场 $(\boldsymbol{\mathcal{E}})$ 和场梯度 $(\boldsymbol{\mathcal{E}}')$ 为</p>
+$$\mathcal{E}_\alpha = -\nabla_\alpha q_b T = q_b T_\alpha$$$$\mathcal{E}'_{\alpha\beta} = -\nabla_\alpha \nabla_\beta q_b T = -q_b T_{\alpha\beta}. \tag{1.18}$$<p>方程 (1.15) 中使用的四极矩张量被定义为无迹的（traceless），</p>
+$$Q_{\alpha\beta} = \sum_a q_a (\tfrac{3}{2} (r_a)_\alpha (r_a)_\beta - \tfrac{1}{2} r_a^2 \delta_{\alpha\beta}). \tag{1.19}$$<p>偶极子和四极子的分量最初将在以原子（或位点）为中心的原子固定坐标系中定义，并且在模拟中的任何给定点，都必须将这些属性转换到空间固定坐标系以用于方程 (1.15)（Dykstra, 1988; Ponder 等, 2010）。这可以通过我们将在 3.3.1 节讨论的旋转矩阵简单地实现。</p>
+<p>电子极化是指由来自其他分子的静电场引起的电子电荷云的畸变。在分子流体中，这可能是对能量的重要贡献。它本质上是一个多体势，与本章中讨论的许多相互作用不同，它不能分解为对相互作用之和。由于这个原因，它的计算成本很高，并且早期的模拟通常将其省略。在这些情况下，通过增强模型中的永久静电相互作用获得了一些补偿。例如，在水的早期模拟中，分子的总永久偶极矩被设置为约 $2.2\,\text{D}$，而不是气相值 $1.85\,\text{D}$（其中 $1\,\text{D} = 0.299\,79 \times 10^{-30}\text{ C m}$），以便在没有极化的情况下拟合凝聚相性质（Watanabe 和 Klein, 1989）。尽管如此，极化可以明确地包含在模型中，常见的有三种方法：诱导点多极模型（induced point multipole model）；电荷涨落模型（fluctuating charge model）；以及 Drude 振子模型（Drude oscillator model）（Antila 和 Salonen, 2013; Rick 和 Stuart, 2003）。</p>
+<p>诱导多极方法（Applequist 等, 1972）是基于对特定原子 $a$ 上的原子偶极极化率 $\alpha_{\alpha\beta}^a$ 的了解。考虑一个分子，其每个原子上包含一组电荷 $q_a$。$a$ 处的诱导偶极子包含两项</p>
+$$\Delta \mu_\gamma^a = \alpha_{\alpha\gamma}^a \left( \mathcal{E}_\alpha^a + \sum_{b \neq a} T_{\alpha\beta} \Delta \mu_\beta^b \right), \tag{1.20}$$<p>其中我们对重复的指数 $\alpha, \beta$ 求和。场 $\boldsymbol{\mathcal{E}}$ 中的第一项来自其他原子上的永久电荷，第二项来自在这些原子上诱导出的偶极子。我们通过将高阶极化率设为零来忽略原子 $a$ 处的场梯度的贡献。方程 (1.20) 可以形式上解出诱导偶极子</p>
+$$\Delta \mu_\alpha^a = \sum_{b\beta} A_{\alpha\beta} \mathcal{E}_\beta^b \tag{1.21}$$<p>其中中继矩阵（relay matrix） $\mathbf{A} = \mathbf{B}^{-1}$，并且</p>
+$$B_{\alpha\beta} = \begin{cases} (\alpha^a)^{-1} & \text{if } a = b \\ -T_{\alpha\beta} & \text{if } a \neq b. \end{cases} \tag{1.22}$$<p>这里 $\mathbf{A}$ 和 $\mathbf{B}$ 的维数是参与极化的位点数量；这可能是一个很大的矩阵，因此在实际模拟中，方程 (1.20) 通常通过迭代诱导偶极子直到达到收敛来求解（Warshel 和 Levitt, 1976）。这种方法也可以与分布多极分析结合使用，其中可极化原子处的场可能包含来自相邻原子的电荷、偶极子和四极子的项，而诱导仍然通过偶极极化率发生（Ponder 等, 2010）。</p>
+<p>这些点极化率模型存在一个众所周知的问​​题，即 $\mathbf{A}$ 的元素在短距离分离时会发散：这就是所谓的极化灾难（polarization catastrophe）。这是由多极展开在这些距离下的正常失效引起的。可以通过“涂抹”（smearing）特定位点上的电荷来缓解这一问题（Thole, 1981）。这种修正的效果是将相互作用张量更改为</p>
+$$\tilde{T}_{\alpha\beta} = \frac{3f_t(r_{ab})_\alpha (r_{ab})_\beta - f_e r_{ab}^2 \delta_{\alpha\beta}}{4\pi\epsilon_0 r_{ab}^5} \tag{1.23}$$<p>其中 $f_e$ 和 $f_t$ 是两个简单的阻尼函数。Stone (2013) 对这些阻尼函数的各种可能选择进行了有用的讨论。修改后的张量 $\tilde{T}_{\alpha\beta}$ 现在可以用于方程 (1.20) 来计算诱导矩。一旦一致地确定了原子 $a$ 处的诱导偶极子，则与该原子相关的感应能为
+</p>
+$$
+v_a^{\text{ind}} = -\tfrac{1}{2} \boldsymbol{\mathcal{E}}_\alpha^a \Delta \mu_\alpha^a. \tag{1.24}
+$$<p>
+在模型中包含极化的第二种方法是涨落电荷模型（fluctuating charge model），有时也被称为电负性均衡模型（electronegativity equalization model）。部分电荷被允许作为动力学量进行涨落。我们可以通过考虑水的一个模型（Sprik, 1991）来说明这种方法。除了通常用于表示静电矩的三个永久电荷外，四个额外的涨落电荷被布置在中心氧原子周围的四面体中（见图 1.9）。电荷 $q_i(t)$ 的大小随时间涨落，但它们保持整体电荷中性</p>
+$$\sum_{i=1}^4 q_i(t) = 0 \tag{1.25}$$<p>并产生一个诱导偶极子</p>
+$$\Delta \boldsymbol{\mu} = \sum_{i=1}^4 q_i(t) \mathbf{r}_i \tag{1.26}$$<p>其中 $\mathbf{r}_i$ 是描述四面体电荷相对于 O 原子位置的向量。如果 $|\mathbf{r}_i| \ll r_{\text{OH}}$，则可以忽略涨落电荷分布的高阶矩。来自四个电荷的势能是静电能 $(-\Delta \boldsymbol{\mu} \cdot \boldsymbol{\mathcal{E}})$ 和自能项 $(\Delta \mu^2 / 2\alpha_{\text{O}})$ 的总和，其中 $\alpha_{\text{O}}$ 是与氧原子相关的偶极极化率。该模型中的涨落电荷可以通过在给定构型下，在电荷中性约束方程 (1.25) 下最小化势能来确定，
+</p>
+$$
+\frac{\partial}{\partial q_i} \left( \frac{\left| \sum_{i=1}^4 q_i \mathbf{r}_i \right|^2}{2\alpha_{\text{O}}} - \sum_{i=1}^4 q_i \mathbf{r}_i \cdot \boldsymbol{\mathcal{E}} \right) = 0. \tag{1.27}
+$$<p>
+这种方法可以通过添加适当数量的涨落电荷扩展到更复杂的分子；也可以通过仅在球形核心内包含两个涨落电荷来简化以研究球形离子。在这些模型中，涨落电荷 $q_i$ 是电子电荷密度的粗略表示，这些可以有效地被更真实的、宽度为 $\sigma$ 的高斯电荷分布所取代
+</p>
+$$
+\rho_i(\mathbf{r}) = q_i \left( \frac{1}{2\pi\sigma^2} \right)^{3/2} \exp \left( -\frac{|\mathbf{r} - \mathbf{r}_i|^2}{2\sigma^2} \right). \tag{1.28}
+$$<p>
+这改善了对极化的描述，特别是在短分子间距处（Sprik 和 Klein, 1988）。我们注意到，通过为涨落电荷建立单独的运动方程，这些模型可以很容易地包含在分子动力学模拟中（Sprik 和 Klein, 1988; Rick 等, 1994），我们将在 3.11 节中考虑这种方法。</p>
+<p>第三种方法是 Drude 振子模型（Drude oscillator model）或壳层模型（shell model）。一个可极化位点由一个电荷为 $q_{\text{d}}$ 的重核心粒子和一个电荷为 $-q_{\text{d}}$ 的无质量或轻壳层粒子表示。这两个粒子通过弹簧常数为 $k$ 的谐振弹簧连接。当核心和壳层重合时，弹簧势能达到最小值。小的电荷 $q_{\text{d}}$ 是特定位点永久电荷之外的电荷。壳层和核心可以分离以产生诱导偶极矩</p>
+$$\Delta \boldsymbol{\mu} = -q_{\text{d}} \Delta \mathbf{r} \tag{1.29}$$<p>其中 $\Delta \mathbf{r}$ 是从核心到壳层的向量。与特定位点相关的排斥-色散相互作用通常以该位点的壳层部分为中心。</p>
+<p>在绝热实现中，壳层是无质量的，并且在模拟的每一步，壳层的位置被迭代调整以达到最小能量构型。在动态模型中，壳层被赋予一个小质量 ($0.5\,\text{u}$)，并使用扩展拉格朗日方法（extended Lagrangian approach）来求解短时间步长的动力学。在这种情况下，壳层粒子在低温下与热浴耦合（见 3.11 节）。对于这些模型，原子极化率是各向同性的，由 $\alpha^a = q_{\text{d}}^2 / k$ 给出。已有用于参数化壳层模型的程序，以产生正确的分子极化率和静电矩（Anisimov 等, 2005）。</p>
+<p>图 1.9 所示的水模型引出了一个问题：我们是否需要使用单独的分子间势能来表示两个分子之间的氢键。氢键，即一个分子中的 H 原子与另一个分子中的强电负性原子之间的键，部分是永久静电相互作用，部分是诱导相互作用，还有一些电荷转移。正如 Stone (2013) 所综述的证据表明，吸引性静电相互作用是决定氢键二聚体结构的最重要项，但诱导相互作用在凝聚相中将做出重要贡献。通过包含对静电相互作用的精确描述（例如，通过使用分布多极方法）并包含极化，应该可以避免使用单独的氢键势能。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="629"
+          height="518"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_9_hu_1d23e3f8819d9b39.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_9_hu_1d23e3f8819d9b39.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_9_hu_c467deab2610e007.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_9.png"
+        />
+  
+  <figcaption>图 1.9 水的可极化模型（Sprik, 1991）。氧原子核 O 位于小四面体的中心。三个永久电荷 $+q, +q$ 和 $-2q$ 位于填充的黑色球体处，用于模拟水的永久静电势。四个位于白色球体处的涨落电荷 $q_i(t)$ 对周围的场做出响应，可用于模拟分子的极化。</figcaption>
+  </figure>
+<p>对于较大的分子，“固定”所有内部自由度可能是不合理的。特别是围绕键的扭转运动，这会导致构象互变，例如在烷烃中，通常不能被忽略（因为这些运动涉及的能量变化与正常热能相当）。正丁烷 $\text{CH}_3\text{CH}_2\text{CH}_2\text{CH}_3$ 的早期模拟（Ryckaert 和 Bellemans, 1975; Maréchal 和 Ryckaert, 1983）提供了一个很好的例子，说明了如何在简单模型中包含这些特征。丁烷可以表示为一个四中心分子，具有固定的键长和键角，这些数据源自已知的实验（结构）数据（见图 1.10）。该模型内置了一个非常常见的简化特征：整个原子团，如 $\text{CH}_3$ 和 $\text{CH}_2$，被压缩成球对称的有效“联合原子”（united atoms）。事实上，对于丁烷，这些基团之间的相互作用可以用普遍存在的 Lennard-Jones 势很好地表示，参数通过经验选择。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1036"
+          height="438"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_10_hu_ec820a523ee508ea.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_10_hu_ec820a523ee508ea.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_10_hu_56868eeb7b68fa57.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_10.png"
+        />
+  
+  <figcaption>图 1.10 (a) 丁烷模型的几何结构，定义了键角 $\theta, \theta'$ 和扭转角 $\phi$（Ryckaert 和 Bellemans, 1975）。(b) Padilla 和 Toxvaerd (1991) 的 AUA(2) 模型中的扭转势，综述见 Dysthe 等 (2000)。</figcaption>
+  </figure>
+<p>在模拟中，$\text{C}_1-\text{C}_2, \text{C}_2-\text{C}_3$ 和 $\text{C}_3-\text{C}_4$ 的键长通过一种约束方法保持固定，该方法将在第 3 章详细描述。角度 $\theta$ 和 $\theta'$ 可以通过额外约束 $\text{C}_1-\text{C}_3$ 和 $\text{C}_2-\text{C}_4$ 的距离来固定；也就是说，通过引入“虚键”（phantom bonds）。如果这样做，每个分子只剩下一个内部自由度，即围绕 $\text{C}_2-\text{C}_3$ 键的旋转（由角度 $\phi$ 测量）是不受约束的；因此，哈密顿量中会出现势能的一个额外项 $v^{\text{torsion}}(\phi)$。该势能将在对应于丁烷反式（trans）构象的 $\phi$ 值处具有最小值，并在旁式（gauche）构象处具有次级最小值。很容易看出这种方法可以扩展到更大的柔性分子。约束键长和键角的后果将在第 2 章和第 4 章更详细地处理。</p>
+<p>随着分子模型变得越来越复杂，由于分子相互作用引起的势能、力和力矩的表达式也变得越来越复杂。在附录 C 中，我们给出了一些这些公式的例子，用于通过位点-位点对势（包括多极项）相互作用的刚性和柔性分子。我们还展示了如何从简单的三体势推导出力。</p>
+
+<h3 class="relative group">粗粒化势能模型
+    <div id="粗粒化势能模型" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%b2%97%e7%b2%92%e5%8c%96%e5%8a%bf%e8%83%bd%e6%a8%a1%e5%9e%8b" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>粗粒化势能涉及避免分子的全原子表示，以寻找在更长或更粗的长度尺度上对相互作用的描述。我们已经在丁烷的亚甲基和甲基基团的联合原子（united-atom）势的使用中看到了这方面的一个简单示例。粗粒化将减少计算特定体系的能量和力所需的显式对的数量，并将减少计算机时间，或者允许我们研究更大的体系。通常，模型中特征长度尺度的增加与我们在问题的动力学模拟中可以使用的由时间步长的增加是并行的。粗粒化将允许我们使用更长的时间步长，并在模拟中覆盖更多的“真实”时间。</p>
+<p>一种粗粒化模型已被广泛用于研究液晶体系，表现出某种长程取向有序。例如，对于致向列液晶分子（nematogen）五苯（quinquaphenyl），这是一种形成向列相的大型刚性分子，模拟其排斥核心将需要大量的位点。一个粗略的模型，将五个苯环中的每一个表示为单个 Lennard-Jones 位点，将需要每对分子之间进行 25 次位点-位点相互作用；基于每个碳原子的位点将更逼真，但每对分子需要 900 次位点-位点相互作用。由 Corner (1948) 引入的另一种分子间势能的粗粒化表示，涉及一对分子之间的单个位点-位点相互作用，其特征在于依赖于分子相对取向的能量和长度参数。</p>
+<p>该分子势能家族中已用于计算机模拟研究的一个版本是 Gay-Berne 势（Gay and Berne, 1981）。这是高斯重叠模型（Gaussian overlap model）推广到 Lennard-Jones 形式的扩展（Berne and Pechukas, 1972）。作用在两个线性分子之间的基本势能为：
+</p>
+$$
+v^{\text{GB}}(\mathbf{r}_{ij}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) = 4\epsilon(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) \left[ \left( \frac{\sigma_s}{\rho_{ij}} \right)^{12} - \left( \frac{\sigma_s}{\rho_{ij}} \right)^6 \right], \tag{1.30a}
+$$<p>
+其中
+</p>
+$$
+\rho_{ij} = r_{ij} - \sigma(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) + \sigma_s. \tag{1.30b}
+$$<p>
+这里，$r_{ij}$ 是 $i$ 和 $j$ 中心之间的距离，$\hat{\mathbf{r}} = \mathbf{r}_{ij}/r_{ij}$ 是沿 $r_{ij}$ 的单位向量，而 $\hat{\mathbf{e}}_i$ 和 $\hat{\mathbf{e}}_j$ 是沿分子轴的单位向量。该分子可以（近似地）被视为一个由两个直径 $\sigma_s$ 和 $\sigma_e$ 表征的椭球体，这两个直径分别是并排（side-by-side）势能和端对端（end-to-end）势能变为零时的主要间距。因此
+</p>
+$$
+\sigma(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) = \sigma_s \left[ 1 - \frac{\chi}{2} \left( \frac{(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{r}} + \hat{\mathbf{e}}_j \cdot \hat{\mathbf{r}})^2}{1 + \chi(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{e}}_j)} + \frac{(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{r}} - \hat{\mathbf{e}}_j \cdot \hat{\mathbf{r}})^2}{1 - \chi(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{e}}_j)} \right) \right]^{-1/2} \tag{1.31a}
+$$<p>
+其中
+</p>
+$$
+\chi = \frac{\kappa^2 - 1}{\kappa^2 + 1}, \quad \text{and} \quad \kappa = \sigma_e / \sigma_s. \tag{1.31b}
+$$<p>
+$\kappa$ 是伸长率（elongation），$\chi$ 是形状各向异性参数（对于球形粒子，$\kappa=1, \chi=0$；对于非常长的棒，$\kappa \to \infty, \chi \to 1$；对于非常薄的圆盘，$\kappa \to 0, \chi \to -1$）。</p>
+<p>能量项是两个函数的乘积：
+</p>
+$$
+\epsilon(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) = \epsilon_0 \epsilon_1^{\nu}(\hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) \epsilon_2^{\mu}(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) \tag{1.32a}
+$$<p>
+其中
+</p>
+$$
+\epsilon_1(\hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) = \left( 1 - \chi^2 (\hat{\mathbf{e}}_i \cdot \hat{\mathbf{e}}_j)^2 \right)^{-1/2} \tag{1.32b}
+$$<p>
+</p>
+$$
+\epsilon_2(\hat{\mathbf{r}}, \hat{\mathbf{e}}_i, \hat{\mathbf{e}}_j) = 1 - \frac{\chi'}{2} \left( \frac{(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{r}} + \hat{\mathbf{e}}_j \cdot \hat{\mathbf{r}})^2}{1 + \chi'(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{e}}_j)} + \frac{(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{r}} - \hat{\mathbf{e}}_j \cdot \hat{\mathbf{r}})^2}{1 - \chi'(\hat{\mathbf{e}}_i \cdot \hat{\mathbf{e}}_j)} \right) \tag{1.32c}
+$$<p>
+且能量各向异性参数为
+</p>
+$$\chi' = \frac{\kappa'^{1/\mu} - 1}{\kappa'^{1/\mu} + 1}, \quad \text{where} \quad \kappa' = \epsilon_{ss} / \epsilon_{ee}. \tag{1.32d}
+$$<p>
+$\epsilon_{ss}$ 和 $\epsilon_{ee}$ 分别是并排和端对端构型下的势阱深度。图 1.11 展示了这些排列以及 T 形和交叉构型的势能。原始模型使用了指数 $\mu=2, \nu=1$ 以及参数 $\kappa=3, \kappa'=5$，用于模拟四个共线的 Lennard-Jones 位点（Gay and Berne, 1981）。该势能及相应的力和力矩可以很容易地评估，且其函数形式足够丰富，可以创建不同形状和能量各向异性的液晶基元（mesogens），从而形成全范围的向列相、近晶相和盘状液晶相（Luckhurst et al., 1990; Berardi et al., 1993; Allen, 2006a; Luckhurst, 2006）。附录 C 中对此进行了进一步讨论。Zannoni (2001) 讨论了该势能的扩展及其在液晶建模中的应用。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="885"
+          height="708"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_11_hu_c0f48cdf6b1614f7.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_11_hu_c0f48cdf6b1614f7.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_11_hu_22db992fbf443df2.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_11.png"
+        />
+  
+  <figcaption>图 1.11 Gay-Berne 势，参数为 $\mu=1, \nu=3, \kappa=3, \kappa'=5$（Berardi 等, 1993），作为不同分子取向下中心-中心间距的函数。</figcaption>
+  </figure>
+<p>MARTINI 方法是一种主要为模拟脂质双层（Marrink 等, 2004; 2007）和蛋白质（Monticelli 等, 2008）而开发的粗粒化势能。在该模型中，键合的氢原子被包含在其较重的伙伴原子（如 C、N 或 O）中。然后，使用 4:1 的映射将这些联合原子进一步组合以创建更大的珠子（beads）（但在环的情况下，映射通常为 3:1）。对于这些较大的珠子，有四种不同的珠子类型：带电（Q）、极性（P）、非极性（N）和非极性（C）。根据珠子的氢键形成倾向或其极性，每种类型又被进一步细分。总体而言，共有 18 种珠子类型，每对珠子通过 Lennard-Jones 势相互作用，其中 $\sigma$ 和 $\epsilon$ 参数特定于所涉及的原子类型。带电珠子还通过库仑势相互作用。分子内相互作用（键、角和扭转）源自晶体结构的全原子模拟。这种中等程度的粗粒化已成功应用于膜结合蛋白 syntaxin-1A 的聚类行为模拟（van den Bogaart 等, 2011）以及膜肽的结构域划分模拟（Schäfer 等, 2011）。</p>
+<p>我们可以以产生更大珠子的方式对势能进行粗粒化，这些珠子可能包含聚合物的 1-3 个库恩（Kuhn）链段或大约十个溶剂分子。我们将在第 12 章更全面地考虑这种方法。然而，在这一点上，我们提到了 Kremer 和 Grest (1990) 提出的一个非常简单的聚合物链粗粒化模型，称为有限延展非线性弹性（FENE）模型。链内珠子之间的键由以下势能表示：
+</p>
+$$
+v^{\text{FENE}}(r) = \begin{cases} -\frac{1}{2} k R_0^2 \ln(1 - (r/R_0)^2) & r < R_0 \\ \infty & r \ge R_0. \end{cases} \tag{1.33}
+$$<p>这与方程 (1.10a) 中的势能 $v^{\text{RLJ}}(r)$ 相结合，代表每对珠子（包括那些键合在一起的珠子）之间的排除体积效应。该势能的关键特征是它不能扩展到 $r=R_0$ 之外。这在研究纠缠效应时非常重要：原则上，在某些情况下，更简单的谐振势可能延伸得足够长，以让链彼此穿过。</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="708"
+          height="575"
+          src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_12_hu_7b7a28131f11874b.png"
+          srcset="../../../posts/computer-simulation-of-liquids_/introduction/fig1_12_hu_7b7a28131f11874b.png 800w,/posts/computer-simulation-of-liquids_/introduction/fig1_12_hu_7d9940958de2e87d.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="../../../posts/computer-simulation-of-liquids_/introduction/fig1_12.png"
+        />
+  
+  <figcaption>图 1.12 粗粒化聚合物中键合原子之间的势能（实线）及其组成部分（虚线）：吸引性的 FENE 势，方程 (1.33)，其中 $R_0 = 1.5\sigma$ 且 $k = 30\epsilon/\sigma^2$，以及排斥性的 Lennard-Jones 势，方程 (1.10a)。图中还显示了（点线）拟合到最小值处曲率的谐振势。详见 Kremer 和 Grest (1990)。</figcaption>
+  </figure>
+<p>最后，人们在开发简单的、单位点的水粗粒化势能方面付出了相当大的努力。一种方法（Molinero 和 Moore, 2009; Moore 和 Molinero, 2011）是放弃通常与氢键相关的长程静电作用，转而使用先前用于模拟硅的那种短程定向相互作用（Stillinger 和 Weber, 1985）。由此产生的单原子水（mW）模型模拟起来非常便宜，但在重现实验结构和热力学性质方面却出奇地成功。我们还能走得更远吗？很难想象一个球形的、各向同性的势能能够捕捉到流体中的强缔合相互作用。尽管如此，Lobanova 等 (2015) 还是使用了 Mie 势，这是标准 Lennard-Jones 势的一种通用形式，其中
+</p>
+$$
+v_{\text{Mie}}(r) = C\epsilon \left[ \left( \frac{\sigma}{r} \right)^n - \left( \frac{\sigma}{r} \right)^m \right], \quad \text{with} \quad C = \left( \frac{n}{n-m} \right) \left( \frac{n}{m} \right)^{m/(n-m)}. \tag{1.34}
+$$<p>
+使用 $n=8$ 和 $m=6$ 的势能，配合温度依赖的能量和长度参数，可以用来表示水在广泛条件下的热物理性质。然而，一种更简单的、其中 $\epsilon$ 和 $\sigma$ 独立于温度的形式，可用于表示水以计算混合物相图，例如 $\text{CO}_2/\text{H}_2\text{O}$（Müller 和 Jackson, 2014）。我们在 12.7.3 节简要讨论这种粗粒化方法。刚才给出的例子是众多以粗粒化方式模拟水的尝试中的两个（综述见 Hadley 和 McCabe, 2012）。</p>
+
+<h3 class="relative group">计算势能
+    <div id="计算势能" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%ae%a1%e7%ae%97%e5%8a%bf%e8%83%bd" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>这是一个介绍一段计算机代码的适当时机，该代码说明了 Lennard-Jones 原子体系中势能的计算。模拟程序通常使用多种语言编写：Fortran、C 和 C++ 是最常见的，有时也会使用 Python 或 Java 编写的封装器。在这里，我们将使用 Fortran，因为它具有紧凑的数组和数组操作符号，并且足够简单，可以像“伪代码”一样阅读。附录 A 包含了一些关于不同编程方法的讨论，以及影响效率的一些问题的总结。</p>
+<p>我们要假设原子的坐标向量存储在一个秩为 2 的数组 r 中，维度为 (3,n)，其中第一个索引覆盖 $x, y$ 和 $z$ 分量，第二个索引从 1 变化到 n（等于 $N$，即粒子数）。势能将存储在变量 pot 中，该变量最初被清零，然后在对所有不同原子对的双重循环中进行累加，注意每一对只计算一次。这在代码 1.2 中展示。</p>
+<p>Lennard-Jones 参数 $\epsilon$ 和 $\sigma$ 假定分别存储在变量 epslj 和 sigma 中。冒号“:”是对相应索引的隐式循环的简写，因此语句 rij(:) = r(:,i) - r(:,j) 代表向量赋值 $\mathbf{r}_{ij} = \mathbf{r}_i - \mathbf{r}_j$。SUM 函数简单地将其（数组）参数的分量相加，在本例中给出 $r_{ij}^2 = x_{ij}^2 + y_{ij}^2 + z_{ij}^2$。代码 1.2 没有考虑周期性边界条件（我们将在 1.6.2 节回到这一点）。这里采取了一些措施来避免不必要的计算机时间使用。$\sigma^2$ 的值预先计算一次，并存储在变量 sigma_sq 中；出现在每个对势项中的因子 $4\epsilon$ 在最后被乘一次。目的是为了避免在对索引 j 的关键“内循环”中进行许多不必要的操作。关于程序这一部分的省时技巧的更一般性问题将在第 5 章中讨论。将这种类型的双重循环扩展到处理其他形式的对势，以及在计算势能项之外计算力，是直截了当的，稍后的章节将给出示例。</p>
+<p>对于分子体系，适用同样的一般原则，但可能需要对分子中的不同位点或原子进行额外的循环。例如，考虑方程 (1.12) 和图 1.6 的位点-位点双原子模型。那么分子间相互作用可以像代码 1.3 那样计算。</p>
+<p>代码 1.2 Lennard-Jones 势的双重循环</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Fortran" data-lang="Fortran"><span class="line"><span class="cl"><span class="c">!代码 1.2 Lennard-Jones 势的双重循环
+</span></span></span><span class="line"><span class="cl"><span class="c">!此代码片段说明了使用原子索引上的双重循环计算 Lennard-Jones 原子体系的势能。开始处的声明仅用于提醒我们变量和数组的类型和大小.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">INTEGER</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="p">,</span><span class="w"> </span><span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="p">,</span><span class="w"> </span><span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">rij</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">epslj</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="p">,</span><span class="w"> </span><span class="n">sigma_sq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">pot</span><span class="p">,</span><span class="w"> </span><span class="n">rij_sq</span><span class="p">,</span><span class="w"> </span><span class="n">sr2</span><span class="p">,</span><span class="w"> </span><span class="n">sr6</span><span class="p">,</span><span class="w"> </span><span class="n">sr12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sigma_sq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">pot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DO</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">DO</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">rij</span><span class="p">(:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(:,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">(:,</span><span class="n">j</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">rij_sq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">SUM</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">rij</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">sr2</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sigma_sq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">rij_sq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">sr6</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sr2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">sr12</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">sr6</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">pot</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">pot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sr12</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sr6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">pot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">epslj</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pot</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>请注意，除了 j 循环的范围依赖于索引 i 之外，循环嵌套的顺序是一个选择问题。在这里，我们将分子索引上的循环放在最内层；假设 n 相对较大，并且取决于机器架构，这可能会提高从内存中获取相关坐标的效率（在 Fortran 中，数组是按列存储的，因此第一个索引变化最快，最后一个索引变化最慢，因此按顺序访问连续的内存块或缓存通常具有优势）。分子体系的模拟也涉及分子内能量的计算，对于位点-位点势，这将需要三重求和（对 i、a 和 b）。</p>
+<p>这些示例本质上是对体系中相互作用位点对的求和。当然，任何三体相互作用的计算都将涉及对不同的索引三元组 i、j 和 k 的三重求和；这将比这里描述的双重求和更耗时。即使对于成对可加势，能量或力的计算也是计算机模拟中最昂贵的部分。我们将在第 5 章回到程序的这一关键部分。</p>
+<p>代码 1.3 位点-位点势能计算</p>
+<p>分子 $i$ 中位点 $a$ 的坐标 $\mathbf{r}_{ia}$ 存储在秩为 3 的数组 r(:,i,a) 的元素中；对于双原子分子体系 na=2。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Fortran" data-lang="Fortran"><span class="line"><span class="cl"><span class="k">INTEGER</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="p">,</span><span class="w"> </span><span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">na</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">REAL</span><span class="p">,</span><span class="w"> </span><span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">rij</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DO</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">na</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">DO</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">na</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">DO</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">DO</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">rij</span><span class="p">(:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(:,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">(:,</span><span class="n">j</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">...</span><span class="w"> </span><span class="err">计算</span><span class="w"> </span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="w"> </span><span class="err">相互作用</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">END</span><span class="w"> </span><span class="k">DO</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 class="relative group">从第一性原理构建分子间势能
+    <div id="从第一性原理构建分子间势能" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%8e%e7%ac%ac%e4%b8%80%e6%80%a7%e5%8e%9f%e7%90%86%e6%9e%84%e5%bb%ba%e5%88%86%e5%ad%90%e9%97%b4%e5%8a%bf%e8%83%bd" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">引言
+    <div id="引言-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bc%95%e8%a8%80-1" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>构建用于模拟的分子间势能有两种方法。对于小的、简单的分子及其混合物，可以定制模型，在选择势能的函数形式和调整手头问题的参数方面有相当大的自由度。对于较大的分子，如聚合物、蛋白质或 DNA，无论是在溶液中还是在表面上，或者是对于包含许多不同类型分子的多组分混合物，通常会使用标准力场之一（由固定的势能函数形式组成，结合对应于模拟中许多不同原子类型的参数）。我们将将在本节涵盖模型构建的第一个方面，并在 1.5 节考虑力场。</p>
+<p>建立一个用于给定体系真实模拟的模型基本上有两个阶段。第一阶段是“入门”，即构建势能模型的初步猜测。这将允许进行一些初步模拟。第二阶段是使用模拟结果，通过与实验比较，以系统的方式改进势能模型，如果需要，重复该过程几次。我们依次考虑这两个阶段。
+###构建模型势能
+为了说明从第一性原理构建分子间势能的过程，我们考虑一个小分子，如 $\text{N}_2$、$\text{OCS}$ 或 $\text{CH}_4$，它们可以使用 1.3 节讨论的相互作用位点势来建模。该模型的基本特征将是一个各向异性的排斥核心以代表形状，一个各向异性的色散相互作用，以及一些部分电荷或分布多极子以模拟永久静电效应。这个粗略的有效对势随后可以通过用它计算气体、液体和固体的性质并与实验比较来进行改进。</p>
+<p>每个短程位点-位点相互作用可以使用 Lennard-Jones 势来建模。不同分子中相同原子对之间相互作用的合适能量和长度参数可从许多模拟研究中获得。表 1.1 给出了其中一些参数。能量参数 $\epsilon$ 随着极化率的上升随原子序数增加；$\sigma$ 也是沿着周期表的一族向下增加，但从左到右穿过一个周期随着核电荷的增加而减小。对于未出现在表 1.1 中的元素，$\epsilon$ 和 $\sigma$ 的指南可以分别由极化率和范德华半径提供。这些值仅作为合理的初步猜测：它们不考虑化学环境，也并未设计为可移植的。例如，表中给出的 $\text{CS}_2$ 中的碳原子参数与石墨中碳原子的适用值完全不同（Crowell, 1958）。</p>
+<p><strong>表 1.1 原子-原子相互作用参数</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">原子</th>
+          <th style="text-align: center">来源</th>
+          <th style="text-align: center">ϵ/kB​ (K)</th>
+          <th style="text-align: center">σ (nm)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">H</td>
+          <td style="text-align: center">Murad and Gubbins (1978)</td>
+          <td style="text-align: center">8.6</td>
+          <td style="text-align: center">0.281</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">He</td>
+          <td style="text-align: center">Maitland et al. (1981)</td>
+          <td style="text-align: center">10.2</td>
+          <td style="text-align: center">0.228</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">Tildesley and Madden (1981)</td>
+          <td style="text-align: center">51.2</td>
+          <td style="text-align: center">0.335</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">Cheung and Powles (1975)</td>
+          <td style="text-align: center">37.3</td>
+          <td style="text-align: center">0.331</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">O</td>
+          <td style="text-align: center">English and Venables (1974)</td>
+          <td style="text-align: center">61.6</td>
+          <td style="text-align: center">0.295</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">Singer et al. (1977)</td>
+          <td style="text-align: center">52.8</td>
+          <td style="text-align: center">0.283</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Ne</td>
+          <td style="text-align: center">Maitland et al. (1981)</td>
+          <td style="text-align: center">47.0</td>
+          <td style="text-align: center">0.272</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">S</td>
+          <td style="text-align: center">Tildesley and Madden (1981)</td>
+          <td style="text-align: center">183.0</td>
+          <td style="text-align: center">0.352</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Cl</td>
+          <td style="text-align: center">Singer et al. (1977)</td>
+          <td style="text-align: center">173.5</td>
+          <td style="text-align: center">0.335</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Ar</td>
+          <td style="text-align: center">Maitland et al. (1981)</td>
+          <td style="text-align: center">119.8</td>
+          <td style="text-align: center">0.341</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Br</td>
+          <td style="text-align: center">Singer et al. (1977)</td>
+          <td style="text-align: center">257.2</td>
+          <td style="text-align: center">0.354</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Kr</td>
+          <td style="text-align: center">Maitland et al. (1981)</td>
+          <td style="text-align: center">164.0</td>
+          <td style="text-align: center">0.383</td>
+      </tr>
+  </tbody>
+</table>
+<p>可以使用古老的 Lorentz-Berthelot 组合规则（Lorentz-Berthelot combining rules）来近似不同分子中不同原子之间的相互作用。例如，在 $\text{CS}_2$ 中，交叉项为
+</p>
+$$
+\sigma_{\text{CS}} = \tfrac{1}{2}(\sigma_{\text{CC}} + \sigma_{\text{SS}}), \quad \epsilon_{\text{CS}} = (\epsilon_{\text{CC}} \epsilon_{\text{SS}})^{1/2}. \tag{1.35}
+$$<p>
+这些规则是近似的；特别是 $\epsilon$ 交叉项表达式，预计在大多数情况下并不合适（Delhommelle and Millié, 2001; Haslam et al., 2008）。</p>
+<p>在处理较大的分子时，可能有必要将几个原子建模为一个统一位点（unified site）。我们在 1.3 节中已经看到了丁烷的这种情况，类似的方法也用于苯的模型（Evans and Watts, 1976）。通过定义分子内位点的位置，相互作用位点模型的规范就完成了。通常，这些位置位于原子核的位置，键长从标准来源获得（CRC, 1984）。</p>
+<p>在使用从头算（ab initio）量子力学计算拟合许多经典对势的参数方面已经取得了快速进展。例如，基于密度泛函方法的对称性匹配微扰理论（symmetry-adapted perturbation theory, SAPT），可用于计算色散和静电相互作用的可分离且可移植的参数（McDaniel and Schmidt, 2013）。单体计算用于估算渐近性质，如电荷和极化率，而二聚体计算用于估算依赖于电荷密度重叠的参数。所得参数可以用于模拟中的简单函数形式，并且该技术最近已应用于离子液体的参数化和模拟（Son et al., 2016）.</p>
+<p>位点-位点 Lennard-Jones 势包含各向异性色散，其在长程具有正确的 $r^{-6}$ 径向依赖性。然而，这并不是二阶微扰理论得到的各向异性色散的精确结果。Burgos 等 (1982) 给出了用于模拟的适当函数形式的正确公式。其实施需要估算分子的极化率和极化率各向异性。</p>
+<p>也可以通过考虑各向异性位点-位点势来代替方程 (1.12) 中的 $v_{ab}(r_{ab})$，从而提高整体排斥-色散相互作用的准确性。换句话说，在氯分子的双原子模型中，不同分子中氯原子之间的原子间势能将取决于 $r_{ab}$ 以及 $r_{ab}$ 与分子内键之间的角度。这种类型的模型已被用于解释液态 $\text{Cl}_2, \text{Br}_2$ 和 $\text{I}_2$ 的液体和固体结构（Rodger et al., 1988a,b）。</p>
+<p>表示静电相互作用最直接的方法是通过 1.3 节讨论的部分电荷。为了尽量减少位点-位点距离的计算，可以使它们与 Lennard-Jones 位点重合，但这并不总是可取的或可能的；部分电荷位置的唯一物理约束是它们不应位于排斥核心区域之外，因为如果分子靠得太近，势能可能会发散。可以选择电荷的大小以复制已知的气相静电矩（Gray and Gubbins, 1984, 附录 D）。或者，可以将矩作为可调参数。例如，在仅代表四极-四极相互作用的简单的 $\text{N}_2$ 三位点模型中，使用给出比气相值低 10%–15% 的四极矩的电荷，可以获得与凝聚相性质的最佳吻合（Murthy et al., 1980）。然而，明智的策略是从气相值开始，并在改变部分电荷之前改变排斥核心参数 $\epsilon$ 和 $\sigma$。</p>
+<p>也可以使用理论计算来开发部分电荷。Bayly 等 (1993) 开发了广泛使用的约束静电势（restrained electrostatic potential, RESP）方法。在该技术中：
+(a) 分子被放置在 3D 点网格中； (b) 使用量子力学计算在排斥核心外部的每个网格点计算静电势； (c) 调整分子每个原子上的电荷，以尽可能准确地重现网格点处的静电势。</p>
+<p>通常，使用 Gaussian 代码的 6-31G* 级别（Frisch et al., 2009）可以获得足够准确的静电场量子力学估算值。为了使该拟合过程稳健并获得可在不同分子之间移植的电荷，有必要最小化拟合场的电荷的大小。这是通过在最小化中使用双曲线约束函数来实现的，该函数将电荷的大小拉向零。</p>
+<p>对于包含多达约 60 个原子的分子，可以使用 Stone 及其合作者开发的 camCASP 软件包从第一性原理计算分布多极子和极化率（Misquitta and Stone, 2013）。</p>
+
+<h3 class="relative group">调整模型势能
+    <div id="调整模型势能" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%b0%83%e6%95%b4%e6%a8%a1%e5%9e%8b%e5%8a%bf%e8%83%bd" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>初步猜测的势能可用于计算气体、液体和固相的许多性质；将这些结果与实验进行比较可用于改进势能，并在必要时重复该循环。第二维里系数由下式给出
+</p>
+$$
+B(T) = -\frac{2\pi}{\Omega^2} \int_0^\infty r_{ij}^2 dr_{ij} \int d\Omega_i \int d\Omega_j \left[ \exp[-v(r_{ij}, \Omega_i, \Omega_j)/k_{\text{B}}T] - 1 \right] \tag{1.36}
+$$<p>
+其中对于线性分子 $\Omega = 4\pi$，对于非线性分子 $\Omega = 8\pi^2$。使用非乘积算法（non-product algorithm）很容易计算这个多维积分（线性分子为四维，非线性分子为六维）（Murad, 1978）。$B(T)$ 的实验值已由 Dymond 和 Smith (1980) 汇编。应该对 Lennard-Jones $\epsilon$ 和 $\sigma$ 参数进行试错调整，同时保持任何键长和部分电荷固定，以便与实验 $B(T)$ 产生最接近的匹配。这将产生改进的势能，但仍然是基于对性质的势能。</p>
+<p>下一步是进行一系列液态的计算机模拟，如第 3 章和第 4 章所述。模拟的密度和温度应选择接近真实体系的正压曲线（orthobaric curve），即液-气共存线。这些模拟的输出，特别是总内能和压强，可以与实验值进行比较。共存压强很容易获得（Rowlinson and Swinton, 1982），内能可以从已知的蒸发潜热近似获得。调整能量参数 $\epsilon$ 以使其与沿正压曲线的内能良好拟合，并改变长度参数 $\sigma$ 以拟合压强。如果在现阶段未获得令人满意的拟合，则可以调整部分电荷。还可以调整势能参数以重现液体的结构性质，例如位点-位点对分布函数（见 2.6 节），这可以使用同位素替代从相干中子衍射研究中提取（Cole et al., 2006; Zeidler et al., 2012）。</p>
+<p>虽然固态不是本书的范畴，但它提供了对任何势能模型的敏感测试。使用实验观察到的晶体结构和改进的势能模型，可以将零温度下的晶格能与实验值进行比较（记得加上量子零点运动的校正）。此外，可以将对应于模型固体最小能量的晶格参数与通过衍射获得的值进行比较，还可以将用于获得声子、振动模式和模型固体色散曲线的晶格动力学计算结果（Neto et al., 1978）与实验进行比较。最后，我们可以问实验晶体结构是否确实是我们势能的最小能量结构。这些构成了对我们模型构建技能的严峻考验（Price, 2008）。</p>
+
+<h2 class="relative group">力场
+    <div id="力场" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8a%9b%e5%9c%ba" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>在着手模拟一个复杂的体系时，可能需要考虑 30 种不同的原子类型，并拟合数百种不同的分子内和分子间势能。人们大概不会想要从头开始构建势能模型。幸运的是，我们可以利用过去 50 年在开发一致性力场方面所做的大量工作（Bixon 和 Lifson, 1967; Lifson 和 Warshel, 1968; Ponder 和 Case, 2003）。</p>
+<p>在计算机模拟的语境中，力场是指用于描述一组原子的分子内和分子间势能的函数形式，以及决定给定构型能量的相应参数。这些函数和参数源自对单分子的实验工作以及精确的量子力学计算。它们通常通过使用计算机模拟比较计算出的凝聚相性质与实验结果来进行改进。这正是 1.4.3 节中描述的方法，但在更大的规模上进行，以便开发出的可移植参数可以用于许多不同的分子。表 1.2 给出了广泛使用的力场的一些例子。这个列表具有代表性，并不详尽。表中的各个力场都在不断更新和扩展。例如，OPLS 力场已被改进以允许对碳水化合物进行建模（Kony 等, 2002），并且 OPLS 和 AMBER 力场已被用作离子液体新力场的基础（Lopes 等, 2004）。扩展和版本通常在力场名称后加上 ffXX 规范来表示。在主要力场的网站上进行简短搜索，即可确定最新版本和最新发展。</p>
+<p>力场通常分为三类。第一类（Class I）力场通常具有如下类型的函数形式：</p>
+$$
+\begin{align*}
+\mathcal{V} =& \sum_{\text{bonds}} \tfrac{1}{2} k_r (r_{ij} - r_0)^2 + \sum_{\text{angles}} \tfrac{1}{2} k_\theta (\theta_{ijk} - \theta_0)^2 \\&+ \sum_{\text{torsions}} \sum_n k_{\phi, n} [\cos(n\phi_{ijkl} + \delta_n) + 1] \\&+ \sum_{\text{non-bonded pairs}} \left[ \frac{q_i q_j}{4\pi\epsilon_0 r_{ij}} + \frac{A_{ij}}{r_{ij}^{12}} - \frac{B_{ij}}{r_{ij}^6} \right]. \tag{1.37}
+\end{align*}
+$$<p>方程 (1.37) 中的第一项是对所有键的求和，平衡键长为 $r_0$。对于每对直接连接的原子 $ij$ 都有这一项。在某些力场中，谐振势可以被更真实的函数形式（如莫尔斯势）取代，或者键可以固定在其平衡值。第二项是对所有键角的求和。对于每组三个连接的原子 $ijk$，都有这一项，通常具有二次形式。第三项是对涉及四个连接原子 $ijkl$ 的所有扭转角的求和。原则上，这是具有不同 $n$ 值（重数，即围绕 $j-k$ 键旋转 $2\pi$ 出现的极小值数量）的三角函数展开；许多力场固定 $n=3$。该项还可以包括非正常扭转（improper torsions），其中定义角度的四个原子并非全部通过共价键连接；这些项主要用于强制 $sp^2$ 中心的平面性，并使用各种函数形式（Tuzun 等, 1997）。第四项是对非键相互作用（分子间和分子内）的求和。特别是，它描述了静电和排斥-色散相互作用。它总是排除同一分子中的 1-2 和 1-3 对。一些力场确实包括非键 1-4 相互作用，但描述这种相互作用的参数 $A'_{ij}, B'_{ij}$ 可能与相隔超过三个键的原子所用的值不同（在 CHARMM 的 param19 力场中使用 0.4 的比例因子（Brooks 等, 1983））。在一些力场中，排斥项（与 Lennard-Jones 势相关）被 $r_{ij}^{-9}$ 排斥所取代，这可以产生与排斥的直接量子计算更好的吻合（Hagler 等, 1979; Halgren, 1992）。排斥的指数形式 ($A \exp(-Br_{ij})$) 曾在 AMBER 力场的早期版本（MM2 和 MM3）中使用，但现在已被 $r_{ij}^{-12}$ 排斥所取代。排斥-色散势中参数的交叉相互作用通常使用 Lorentz-Berthelot 组合规则或替代方案（如 Slater-Kirkwood 公式）来描述（Slater 和 Kirkwood, 1931）。如果这些交叉相互作用在模型中很重要，它们可以直接通过拟合实验来确定。在第一类力场中，使用简单的库仑项来描述部分电荷之间的相互作用，代表分子间的静电相互作用。</p>
+<p>不同的原子在不同的环境中需要不同的参数，并且模型中的所有原子类型都必须指定。例如，在 GROMOS 力场 ffG45a3（Schuler 等, 2001）中，有 12 种类型的 C 原子，6 种 O，6 种 N，4 种 Cl，3 种 H，2 种 S，2 种 Cu，其余常见原子各一种类型。然后为原子类型的组合指定参数 $\{k_r, k_\theta, k_{\phi, n}, \delta_n, q_i, q_j, A_{ij}, B_{ij}\}$。例如，在肽链中，沿着骨架包含 C、N 和 $C_\alpha$ 原子类型（其中 C 是通过双键连接到氧的碳，$C_\alpha$ 是连接到氢和侧链的碳），我们将需要 $k_r$ 用于 C-N 伸缩，不同的 $k_r$ 用于 N-$C_\alpha$ 伸缩，$k_\theta$ 用于 C-N-$C_\alpha$ 弯曲，$k_{\phi, n}$ 用于 C-N-$C_\alpha$-C 扭转，以及骨架中其他弯曲和扭转的额外参数。</p>
+<p>全原子力场为系统中的每种类型的原子（包括氢）提供参数，而联合原子力场将每个末端甲基和每个亚甲基桥中的氢和碳原子视为单个相互作用中心。</p>
+<p>第二类（Class II）力场通常在伸缩势中添加三次或非谐项，并在力常数矩阵中定义显式的非对角元素。因此，力场将包含如下形式的项：
+</p>
+$$
+\begin{aligned}
+v^{\text{str-str}}(r_{12}, r_{23}) &= k_{12,23}(r_{12} - r_{12,0})(r_{23} - r_{23,0}) \\
+v^{\text{bend-str}}(\theta_{123}, r_{12}) &= k_{123,12}(\theta_{123} - \theta_{123,0})(r_{12} - r_{12,0})
+\end{aligned} \tag{1.38}
+$$<p>
+其中 $r_{12}$ 和 $r_{23}$ 是分子中两个相邻的键，它们包含角度 $\theta_{123}$。这些额外的势能代表了分子中的键、角和扭转不是独立的这一事实。大多数交叉项涉及两个内部坐标，Dinur 和 Hagler (1991) 已经使用量子力学计算表明，伸缩-伸缩、伸缩-弯曲、弯曲-弯曲、伸缩-扭转和弯曲-弯曲-扭转是重要的耦合项。当试图计算精确的振动频率时，在模型中包含交叉项是至关重要的。尽管增加了复杂性，但第二类力场（如 COMPASS 和 CFF）已在液态模拟中取得了良好的效果（Peng 等, 1997; Sun, 1998）。</p>
+<p>第三类（Class III）力场超越了基本规定，包括了分子间静电相互作用的更精确表示以及极化率的包含（如 1.3.3 节所述）。例如，AMOEBA 力场包括分布多极子以及通过相互作用张量的 Thole 修正得到的原子极化率。这一类也将包括用于模拟脂质、蛋白质和碳水化合物的粗粒化力场（如 MARTINI，见 1.3.4 节），以及专门设计用于模拟化学反应的力场（如 ReaxFF）。ReaxFF 包括特定共价键的键长和键级之间的一组关系。一旦确定了键级，就可以计算相关的键能。该过程导致键在适当的距离正确解离为分离的原子。</p>
+<p><strong>表 1.2 力场及其应用领域</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>力场 (Force field)</th>
+          <th>类别 (Class)</th>
+          <th>应用领域 (Domain of Application)</th>
+          <th>来源 (Source)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>OPLS</td>
+          <td>I</td>
+          <td>肽，小有机分子</td>
+          <td>Jorgensen et al. (1996)</td>
+      </tr>
+      <tr>
+          <td>CHARMM22</td>
+          <td>I</td>
+          <td>具有显式水的蛋白质</td>
+          <td>Mackerell et al. (1998)</td>
+      </tr>
+      <tr>
+          <td>CHARMM27</td>
+          <td>I</td>
+          <td>&ldquo;DNA, RNA, 和脂质&rdquo;</td>
+          <td>Mackerell et al. (1998)</td>
+      </tr>
+      <tr>
+          <td>AMBER ff99</td>
+          <td>I</td>
+          <td>肽，小有机分子，RESP 电荷</td>
+          <td>Wang et al. (2000)</td>
+      </tr>
+      <tr>
+          <td>GAFF</td>
+          <td>I</td>
+          <td>小有机分子，药物设计</td>
+          <td>Wang et al. (2004)</td>
+      </tr>
+      <tr>
+          <td>GROMOS ffG45a3</td>
+          <td>I</td>
+          <td>脂质，胶束</td>
+          <td>Schuler et al. (2001)</td>
+      </tr>
+      <tr>
+          <td>COMPASS</td>
+          <td>II</td>
+          <td>小分子，聚合物</td>
+          <td>Sun (1998)</td>
+      </tr>
+      <tr>
+          <td>clayFF</td>
+          <td>II</td>
+          <td>水合矿物</td>
+          <td>Cygan et al. (2004)</td>
+      </tr>
+      <tr>
+          <td>MM4</td>
+          <td>II</td>
+          <td>小有机分子，配位化合物</td>
+          <td>Allinger et al. (1996)</td>
+      </tr>
+      <tr>
+          <td>UFF</td>
+          <td>II</td>
+          <td>全周期表（包括锕系元素）</td>
+          <td>Rappe et al. (1992)</td>
+      </tr>
+      <tr>
+          <td>AMBER ff02</td>
+          <td>III</td>
+          <td>可极化原子</td>
+          <td>Cieplak et al. (2001)</td>
+      </tr>
+      <tr>
+          <td>AMOEBA</td>
+          <td>III</td>
+          <td>可极化多极子，分布多极子</td>
+          <td>Ponder et al. (2010)</td>
+      </tr>
+      <tr>
+          <td>MARTINI</td>
+          <td>III</td>
+          <td>粗粒化，蛋白质，脂质，聚合物</td>
+          <td>Marrink et al. (2007)</td>
+      </tr>
+      <tr>
+          <td>ReaxFF</td>
+          <td>III</td>
+          <td>化学反应</td>
+          <td>van Duin et al. (2001)</td>
+      </tr>
+  </tbody>
+</table>
+
+          
+          
+          
+        </div>
+        
+        
+  <details class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5">
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
+    Computer simulation of liquids -
+    这篇文章属于一个选集。
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § :
+        本文
+      </div>
+    
+  
+
+
+  </details>
+
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="../../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts\COMPUTER SIMULATION OF LIQUIDS_\Introduction\index.md"
+          data-oid-likes="likes_posts\COMPUTER SIMULATION OF LIQUIDS_\Introduction\index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="../../../posts/variation_method_and_secular_equation/context/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;量子化学中变分法与久期方程的推导
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="../../../posts/computer-simulation-of-liquids_/222/">
+              <span class="leading-6">
+                第二章&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          WentianGodlike
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="../../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

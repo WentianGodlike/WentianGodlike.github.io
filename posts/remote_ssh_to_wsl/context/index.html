@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="auto"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/remote_ssh_to_wsl/context/">
+  <link rel="canonical" href="http://localhost:1313/posts/remote_ssh_to_wsl/context/">
   
 
   
@@ -58,7 +58,7 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/remote_ssh_to_wsl/context/">
+  <meta property="og:url" content="http://localhost:1313/posts/remote_ssh_to_wsl/context/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
   <meta property="og:title" content="使用remote SSH远程访问另一台电脑上的WSL2虚拟机">
   <meta property="og:description" content="一些各种各样的blog与备忘">
@@ -226,7 +226,7 @@
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/remote_ssh_to_wsl\/context\/",
+    "url" : "http:\/\/localhost:1313\/posts\/remote_ssh_to_wsl\/context\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
@@ -240,19 +240,13 @@
     "keywords": ["杂项"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "911"
+    "wordCount": "940"
   }]
   </script>
 
 
 
   
-  
-    
-
-
-
-
   
 
   
@@ -831,7 +825,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-30T15:00:51&#43;08:00">2025 年 11 月 30 日</time><span class="px-2 text-primary-500">&middot;</span><span>911 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-30T15:00:51&#43;08:00">2025 年 11 月 30 日</time><span class="px-2 text-primary-500">&middot;</span><span>940 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -988,14 +982,30 @@
     
 </h1>
 <p>在 WSL 的终端中输入</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
 </span></span><span class="line"><span class="cl">sudo apt install openssh-server
-</span></span></code></pre></div><p>以安装服务端的 SSH 服务.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以安装服务端的 SSH 服务.</p>
 <p>按照需要可以修改 <code>/etc/ssh/sshd_config</code> 文件中的内容.</p>
 <p>修改后输入</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service ssh restart
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service ssh restart
 </span></span><span class="line"><span class="cl">hostname -I
-</span></span></code></pre></div><p>重启 SSH 服务, 并查看 WSL 的 IP 地址.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启 SSH 服务, 并查看 WSL 的 IP 地址.</p>
 
 <h1 class="relative group">在 Windows 系统上设置端口转发
     <div id="在-windows-系统上设置端口转发" class="anchor"></div>
@@ -1008,8 +1018,15 @@
 </h1>
 <p>因为外部电脑只能看到你的 Windows IP, 我们需要告诉 Windows:&quot; 把所有发给你 2222 端口的请求，都转交给 WSL2 的 22 端口&quot;.</p>
 <p>在管理员模式的 <code>PowerShell</code> 中输入</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenport</span><span class="p">=</span><span class="mf">2222</span> <span class="n">listenaddress</span><span class="p">=</span><span class="mf">0.0</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">0</span> <span class="n">connectport</span><span class="p">=</span><span class="mf">22</span> <span class="n">connectaddress</span><span class="p">=</span><span class="n">x</span><span class="p">.</span><span class="py">x</span><span class="p">.</span><span class="py">x</span><span class="p">.</span><span class="py">x</span>
-</span></span></code></pre></div><p>我们将 Windows 的 2222 端口转发到 WSL2 的 22 端口. 避免占用 Windows 默认的 22 端口, 防止冲突.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenport</span><span class="p">=</span><span class="mf">2222</span> <span class="n">listenaddress</span><span class="p">=</span><span class="mf">0.0</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">0</span> <span class="n">connectport</span><span class="p">=</span><span class="mf">22</span> <span class="n">connectaddress</span><span class="p">=</span><span class="n">x</span><span class="p">.</span><span class="py">x</span><span class="p">.</span><span class="py">x</span><span class="p">.</span><span class="py">x</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们将 Windows 的 2222 端口转发到 WSL2 的 22 端口. 避免占用 Windows 默认的 22 端口, 防止冲突.</p>
 <p>其中 <code>x.x.x.x</code> 是在 WSL 的 IP 地址.</p>
 
 <h1 class="relative group">配置 Windows 防火墙
@@ -1023,11 +1040,41 @@
 </h1>
 <p>Windows 防火墙默认会拦截外部对 2222 端口的访问, 需要手动放行.
 继续在管理员模式的 <code>PowerShell</code> 中输入</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Name</span> <span class="s2">&#34;WSL2_SSH&#34;</span> <span class="n">-DisplayName</span> <span class="s2">&#34;WSL2 SSH Access&#34;</span> <span class="n">-Enabled</span> <span class="n">True</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-LocalPort</span> <span class="mf">2222</span>
-</span></span></code></pre></div><p>即可开放 2222 端口.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="n">-Name</span> <span class="s2">&#34;WSL2_SSH&#34;</span> <span class="n">-DisplayName</span> <span class="s2">&#34;WSL2 SSH Access&#34;</span> <span class="n">-Enabled</span> <span class="n">True</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-LocalPort</span> <span class="mf">2222</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可开放 2222 端口.</p>
 <p>这样就可以通过 SSH remote 通过 2222 端口访问 windows 的 IP 地址从而访问 WSL 了.</p>
 <p>不过因为 WSL 的特性, 其 IP 地址每次 WSL 重启或者 Windows 重启都会变. 所以可以使用一个 <code>PowerShell</code> 脚本, 每次重启都运行一下, 即可自动更新端口转发的规则.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c">#wsl_setting.ps1</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c">#wsl_setting.ps1</span>
 </span></span><span class="line"><span class="cl"><span class="c"># 获取 WSL2 的当前 IP</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$wsl_ip</span> <span class="p">=</span> <span class="p">(</span><span class="n">wsl</span> <span class="n">hostname</span> <span class="n">-I</span><span class="p">).</span><span class="py">Trim</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
@@ -1046,7 +1093,9 @@
 </span></span><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-u</span> <span class="n">root</span> <span class="n">service</span> <span class="n">ssh</span> <span class="nb">start
 </span></span></span><span class="line"><span class="cl"><span class="nb"></span>
 </span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;转发规则已更新: Windows 2222 -&gt; WSL </span><span class="nv">$wsl_ip</span><span class="s2"> : 22&#34;</span>
-</span></span></code></pre></div>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 <h1 class="relative group">使用 Ed25519 秘钥对配置公钥私钥访问
     <div id="使用-ed25519-秘钥对配置公钥私钥访问" class="anchor"></div>
     
@@ -1062,17 +1111,39 @@
     target="_blank"
   >深入解析：SSH 密钥从 RSA 到 Ed25519</a>这一篇博客.</p>
 <p>假定已经安装好 SSH 客户端. 在客户端的<code>PowerShell</code>或者 CMD 中运行</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">ed25519</span> <span class="n">-C</span> <span class="s2">&#34;你的注释&#34;</span>
-</span></span></code></pre></div><p>以生成 Ed25519 密钥对. <code>-C</code> 参数是备注, 方便辨认.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">ed25519</span> <span class="n">-C</span> <span class="s2">&#34;你的注释&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以生成 Ed25519 密钥对. <code>-C</code> 参数是备注, 方便辨认.</p>
 <p>然后一路回车下去, 生成的秘钥保存在 <code>C:\Users\USERNAME\.ssh\</code> 目录中. 其中 <code>id_ed25519</code> 是私钥, <code>id_ed25519.pub</code> 是公钥.</p>
 <p>接下来手动将刚生成的 <code>id_ed25519.pub</code> 中的内容复制到 WSL 的 <code>~/.ssh/authorized_keys</code> 文件中即可.</p>
 <p>最后, 用 <code>vim</code> 或者其他方法配置 <code>/etc/ssh/sshd_config</code> 文件.需要保证</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PasswordAuthentication no
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PasswordAuthentication no
 </span></span><span class="line"><span class="cl">PubkeyAuthentication yes
-</span></span></code></pre></div><p>第一句话表明禁止通过密码访问, 第二句话表明允许通过秘钥访问. 这样就能彻底封死暴力破解的可能.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第一句话表明禁止通过密码访问, 第二句话表明允许通过秘钥访问. 这样就能彻底封死暴力破解的可能.
 最后使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service ssh restart
-</span></span></code></pre></div><p>重启 SSH 服务即可.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service ssh restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启 SSH 服务即可.</p>
 
           
           
@@ -1212,7 +1283,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="https://WentianGodlike.github.io/">
+  data-url="http://localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

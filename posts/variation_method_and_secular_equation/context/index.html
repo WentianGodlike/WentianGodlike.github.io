@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="auto"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/variation_method_and_secular_equation/context/">
+  <link rel="canonical" href="http://localhost:1313/posts/variation_method_and_secular_equation/context/">
   
 
   
@@ -58,7 +58,7 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/variation_method_and_secular_equation/context/">
+  <meta property="og:url" content="http://localhost:1313/posts/variation_method_and_secular_equation/context/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
   <meta property="og:title" content="量子化学中变分法与久期方程的推导">
   <meta property="og:description" content="一些各种各样的blog与备忘">
@@ -226,7 +226,7 @@
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/variation_method_and_secular_equation\/context\/",
+    "url" : "http:\/\/localhost:1313\/posts\/variation_method_and_secular_equation\/context\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
@@ -247,12 +247,6 @@
 
 
   
-  
-    
-
-
-
-
   
 
   
@@ -1001,6 +995,149 @@
       
       
       
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#变分理论">变分理论</a></li>
+    <li><a href="#线性变分函数与久期方程">线性变分函数与久期方程</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#变分理论">变分理论</a></li>
+    <li><a href="#线性变分函数与久期方程">线性变分函数与久期方程</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
@@ -1009,7 +1146,7 @@
         <div class="article-content max-w-prose mb-20">
           <p>为了处理包含相互作用粒子的体系 (例如原子或分子) 的与不含时$Schr\ddot odinger$ 方程, 必须采用近似方法. 变分法的意义在于能够通过测量体系有限的波函数, 对体系整体的能量与状态进行估计.</p>
 
-<h1 class="relative group">变分理论
+<h2 class="relative group">变分理论
     <div id="变分理论" class="anchor"></div>
     
     <span
@@ -1017,7 +1154,7 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%98%e5%88%86%e7%90%86%e8%ae%ba" aria-label="锚点">#</a>
     </span>
     
-</h1>
+</h2>
 <p>设一个系统的不含时 $Hamilton$ 算符 $\hat{H}$ , 其最低能量本征值为 $E_1$. 若 $\phi$ 是系统粒子坐标的一个归一化且性质良好的波函数, 并满足该系统的边界条件, 则</p>
 <p>\begin{equation}
 \int \phi^{*} \hat{H} \phi d\tau \geq E_1.\label{1-1}
@@ -1034,7 +1171,7 @@ $$
 $$<p>进一步, 应用本征函数的性质, 得:</p>
 $$
 \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} \hat{H}  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j\int \psi_i^{*} E_j  \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau.
-$$<p>因为所选择的本征函数彼此正交, 有 $\int \psi_i^{*} \psi_j d\tau = \delta_{ij}$, 且系数 $a_i, a_j$ 都为实数, 有
+$$<p>因为所选择的本征函数彼此正交, 有 $\int \psi_i^{\*} \psi_j d\tau = \delta_{ij}$, 且系数 $a_i, a_j$ 都为实数, 有
 \begin{equation}
 \sum_i \sum_j a_i^{*} a_j E_j \int \psi_i^{*} \psi_j d\tau = \sum_i \sum_j a_i^{*} a_j E_j \delta_{ij} = \sum_j |a_j|^2 E_j.\label{1-3}
 \end{equation}</p>
@@ -1061,7 +1198,7 @@ $$<p>考虑第一激发态, 能量为$E_2$. 如果想类似上文一样应用变
 <p>以此类推, $\langle \psi_1|\phi \rangle = 0$, 且 $\langle \psi_2|\phi \rangle = 0 $ 时, 有 $\int \phi^{*} \hat{H} \phi d\tau\geq E_2.$</p>
 <p>当 $\langle \psi_1|\phi \rangle = 0, \langle \psi_2|\phi \rangle = 0 , \langle \psi_3|\phi \rangle = 0$ 时, 有 $\int \phi^{*} \hat{H} \phi d\tau\geq E_4$ 等.</p>
 
-<h1 class="relative group">线性变分函数与久期方程
+<h2 class="relative group">线性变分函数与久期方程
     <div id="线性变分函数与久期方程" class="anchor"></div>
     
     <span
@@ -1069,7 +1206,7 @@ $$<p>考虑第一激发态, 能量为$E_2$. 如果想类似上文一样应用变
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ba%bf%e6%80%a7%e5%8f%98%e5%88%86%e5%87%bd%e6%95%b0%e4%b8%8e%e4%b9%85%e6%9c%9f%e6%96%b9%e7%a8%8b" aria-label="锚点">#</a>
     </span>
     
-</h1>
+</h2>
 <p>在分子研究中广泛使用的一种特殊变分函数是线性变分函数, 目标函数, 即线性所求波函数的本征函数是由 $n$ 个已知的线性无关函数 $f_i$ 的线性组合构成的.</p>
 $$
 \phi = \sum_i^n c_i f_i
@@ -1208,7 +1345,7 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
           
             <a
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../../posts/perturbation_theory/centext/">
+              href="../../../posts/perturbation_theory/context/">
               <span class="leading-6">
                 <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;微扰理论
               </span>
@@ -1314,7 +1451,7 @@ $$<p>如果这些函数构成一个完备集, 那么我们就能得到该系统�
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="https://WentianGodlike.github.io/">
+  data-url="http://localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

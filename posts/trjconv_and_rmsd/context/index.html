@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="auto"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/trjconv_and_rmsd/context/">
+  <link rel="canonical" href="http://localhost:1313/posts/trjconv_and_rmsd/context/">
   
 
   
@@ -58,7 +58,7 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/trjconv_and_rmsd/context/">
+  <meta property="og:url" content="http://localhost:1313/posts/trjconv_and_rmsd/context/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
   <meta property="og:title" content="trjconv中pbc参数对RMSD的影响">
   <meta property="og:description" content="一些各种各样的blog与备忘">
@@ -227,7 +227,7 @@
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/trjconv_and_rmsd\/context\/",
+    "url" : "http:\/\/localhost:1313\/posts\/trjconv_and_rmsd\/context\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
@@ -241,19 +241,13 @@
     "keywords": ["分子模拟","Gromacs"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "673"
+    "wordCount": "677"
   }]
   </script>
 
 
 
   
-  
-    
-
-
-
-
   
 
   
@@ -832,7 +826,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>673 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-11-18T14:09:49&#43;08:00">2025 年 11 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>677 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -989,8 +983,15 @@
           <p>rmsd 是通过分析轨迹中结构与参照结构位置偏移量的均方根, 以判断轨迹中构象是否稳定的参数.</p>
 <p>而 <code>mdrun</code> 生成的 <code>md.xtc</code> 轨迹与参照的初始结构 <code>md.tpr</code> 并未进行 PBC 的处理, 假定盒子的 x 轴为 0-16, 因此靠近右侧边界的分子会有一部分原子的 x 坐标为 1 左右.</p>
 <p>如果直接使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx rms -s md.tpr -f md.xtc -o rmsd.xvg -tu ps
-</span></span></code></pre></div><p>进行 RMSD 分析, 会得到一个这样的图像.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx rms -s md.tpr -f md.xtc -o rmsd.xvg -tu ps
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进行 RMSD 分析, 会得到一个这样的图像.
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -1002,10 +1003,24 @@
 
 这样的结果显然是有问题的. 因为在变化的过程中原子可能会穿越边界, x 坐标从接近 16 突变为 1 左右, 而参考结构中该原子的坐标为接近 16 的数值, 此时的 RMSD 图像会有一个突变的过程.</p>
 <p>如果使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx trjconv -s md.tpr -f md.xtc -o md_noPBC.xtc -pbc mol
-</span></span></code></pre></div><p>对轨迹进行处理, 再使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx rms -s md.tpr -f md_noPBC.xtc -o rmsd_noPBC_mol.xvg -tu ps
-</span></span></code></pre></div><p>生成 rmsd 图像如下
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx trjconv -s md.tpr -f md.xtc -o md_noPBC.xtc -pbc mol
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对轨迹进行处理, 再使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx rms -s md.tpr -f md_noPBC.xtc -o rmsd_noPBC_mol.xvg -tu ps
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成 rmsd 图像如下
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -1018,8 +1033,15 @@
 其中蓝色的线表示原始的 RMSD, 红色的线表示处理 PBC 之后的轨迹的 RMSD.</p>
 <p>此时的问题在于 RMSD 的初始值不是 0. 原因在于作为参照的初始结构并未进行 pbc 处理, 即参照结构的右侧分子的部分原子在盒子左侧, 但轨迹中的该原子被修正到了盒子右侧之外.</p>
 <p>使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx trjconv -s md.tpr -f md_noPBC1.xtc -o reference_noPBC1.gro -b 0 -e 0
-</span></span></code></pre></div><p>获取轨迹中第 0 帧作为参照, 得到图像
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gmx trjconv -s md.tpr -f md_noPBC1.xtc -o reference_noPBC1.gro -b 0 -e 0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>获取轨迹中第 0 帧作为参照, 得到图像
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -1092,7 +1114,7 @@
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../../posts/perturbation_theory/centext/">
+              href="../../../posts/perturbation_theory/context/">
               <span class="leading-6">
                 微扰理论&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
@@ -1182,7 +1204,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="https://WentianGodlike.github.io/">
+  data-url="http://localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
