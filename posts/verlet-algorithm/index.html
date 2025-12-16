@@ -15,8 +15,8 @@
 
   
   
-    <title>拉格朗日量与哈密顿量 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="拉格朗日量与哈密顿量 &middot; WentianGodlike&#39;s Blog">
+    <title>verlet算法 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="verlet算法 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
+  <link rel="canonical" href="https://WentianGodlike.github.io/posts/verlet-algorithm/">
   
 
   
@@ -58,21 +58,21 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
+  <meta property="og:url" content="https://WentianGodlike.github.io/posts/verlet-algorithm/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="拉格朗日量与哈密顿量">
+  <meta property="og:title" content="verlet算法">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-15T17:39:51+08:00">
-    <meta property="article:modified_time" content="2025-12-15T17:39:51+08:00">
+    <meta property="article:published_time" content="2025-12-16T21:19:51+08:00">
+    <meta property="article:modified_time" content="2025-12-16T21:19:51+08:00">
     <meta property="article:tag" content="分子模拟">
-      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/verlet-algorithm/">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="拉格朗日量与哈密顿量">
+  <meta name="twitter:title" content="verlet算法">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -222,26 +222,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "拉格朗日量与哈密顿量",
-    "headline": "拉格朗日量与哈密顿量",
+    "name": "verlet算法",
+    "headline": "verlet算法",
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/lagrangian-mechanics\/",
+    "url" : "https:\/\/WentianGodlike.github.io\/posts\/verlet-algorithm\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-12-15T17:39:51\u002b08:00",
-    "datePublished": "2025-12-15T17:39:51\u002b08:00",
+    "dateCreated": "2025-12-16T21:19:51\u002b08:00",
+    "datePublished": "2025-12-16T21:19:51\u002b08:00",
     
-    "dateModified": "2025-12-15T17:39:51\u002b08:00",
+    "dateModified": "2025-12-16T21:19:51\u002b08:00",
     
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2022"
+    "wordCount": "1920"
   }]
   </script>
 
@@ -802,8 +802,8 @@
 
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/lagrangian-mechanics/"
-      >拉格朗日量与哈密顿量</a
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/verlet-algorithm/"
+      >verlet算法</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -812,7 +812,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        拉格朗日量与哈密顿量
+        verlet算法
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -864,7 +864,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-15T17:39:51&#43;08:00">2025 年 12 月 15 日</time><span class="px-2 text-primary-500">&middot;</span><span>2022 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>1920 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -1017,10 +1017,14 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#广义量与最小作用原理">广义量与最小作用原理</a></li>
-    <li><a href="#泛函">泛函</a></li>
-    <li><a href="#欧拉-拉格朗日-euler-lagrange-方程">欧拉-拉格朗日 (Euler-Lagrange) 方程</a></li>
-    <li><a href="#勒让德变换与哈密顿量">勒让德变换与哈密顿量</a></li>
+    <li><a href="#原始--算法">原始  算法</a></li>
+    <li><a href="#速度--算法">速度  算法</a></li>
+    <li><a href="#算法理论基础"> 算法理论基础</a>
+      <ul>
+        <li><a href="#分解"> 分解</a></li>
+        <li><a href="#演化算符">演化算符</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1034,10 +1038,14 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#广义量与最小作用原理">广义量与最小作用原理</a></li>
-    <li><a href="#泛函">泛函</a></li>
-    <li><a href="#欧拉-拉格朗日-euler-lagrange-方程">欧拉-拉格朗日 (Euler-Lagrange) 方程</a></li>
-    <li><a href="#勒让德变换与哈密顿量">勒让德变换与哈密顿量</a></li>
+    <li><a href="#原始--算法">原始  算法</a></li>
+    <li><a href="#速度--算法">速度  算法</a></li>
+    <li><a href="#算法理论基础"> 算法理论基础</a>
+      <ul>
+        <li><a href="#分解"> 分解</a></li>
+        <li><a href="#演化算符">演化算符</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1167,18 +1175,18 @@
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/verlet-algorithm/">
-          § :
-          verlet算法
-        </a>
+        § :
+        本文
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/lagrangian-mechanics/">
+          § :
+          拉格朗日量与哈密顿量
+        </a>
       </div>
     
   
@@ -1188,159 +1196,147 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>拉格朗日力学 ($Lagrangian\text{ } Mechanics$) 的构建是继牛顿力学之后经典力学的一个飞跃. 传统的牛顿力学使用的是力与矢量进行分析, 而拉格朗日力学使用能量与几何对运动进行分析.</p>
-<p>拉格朗日量的定义为
-</p>
-$$
-\begin{equation}
-L = T - V = L(q,\dot{q},t).\label{lag}
-\end{equation}
-$$<p>式 \eqref{lag} 中 $L$ 为拉格朗日量($Lagrangian$), $T$ 为动能, $V$ 为势能. $q$ 为广义坐标, $\dot{q}=\frac{dq}{dt}$ 为广义速度, $t$ 为时间. 广义坐标, 广义速度的定义下文会进行讨论.</p>
-<p>在进行推导之前, 最重要的一点是放弃使用牛顿力学的思维, 如针对保守系统, 系统总能量 $E$ 是守恒量. 而拉格朗日量 $L$ 则不是一个守恒量. 举个简单的例子, 向上垂直以一定速度抛出一个小球, 假设小球仅受重力影响, 抛出时势能恰好为 $0$. 在抛出时总能量 $E=T+V$, 拉格朗日量 $L=T-V$, 此时二者都为一个正数, 而到最高点, 总能量 $E$ 还是一个正数, 而此时 $L$ 是一个负数.</p>
-<p>举这个例子是想说明两点, 第一是拉格朗日量并非是一个守恒量, 第二是拉格朗日量是一个过程量, 会随着时间剧烈变化.</p>
+          <p>简单来说, $verlet$ 算法的作用是求解牛顿运动方程 $F=ma$:根据当前时刻原子们的位置和受力, 算出它们下一时刻会在哪里.</p>
 
-<h2 class="relative group">广义量与最小作用原理
-    <div id="广义量与最小作用原理" class="anchor"></div>
+<h2 class="relative group">原始 $verlet$ 算法
+    <div id="原始--算法" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b9%bf%e4%b9%89%e9%87%8f%e4%b8%8e%e6%9c%80%e5%b0%8f%e4%bd%9c%e7%94%a8%e5%8e%9f%e7%90%86" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8e%9f%e5%a7%8b--%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>记 $q$ 为<code>广义坐标</code>. 与广义坐标相对的是狭义坐标也就是牛顿力学中常用的坐标, 量纲一般为米 (m). 广义坐标无量纲, 可以是笛卡尔坐标, 可以是极坐标, 也可以是能表示坐标的其他东西.</p>
-<p>记$\dot{q}=\frac{dq}{dt}$ 为 <code>广义速度</code> , 仅仅定义为广义坐标对时间的导数, 无其他含义.</p>
-<p>此外还有 <code>广义动量</code> $p$, 在牛顿力学中狭义动量定义为 $p=m\cdot v$, 广义动量则没有一个确切的表达方式, 仅仅是一个在拉格朗日量中与广义坐标 $q$ 的共轭量, 即 $p=\frac{\partial L}{\partial \dot q}$.</p>
-<p>产生广义量的原因是为了统一形式. 如牛顿力学在直角坐标系下十分好用, 但换到球坐标系, 柱坐标系下其表达形式就会产生一些复杂的项. 使用广义量能够在拉格朗日体系下确保形式的统一.</p>
-<p><strong>&ldquo;广义&quot;的本质, 就是把物理定律从具体的坐标系几何形状中解放出来, 变成一种纯粹的代数关系.</strong></p>
-<p>作用量 $S$ 定义为拉格朗日量 $L$ 对时间的积分
-</p>
-$$
-\begin{equation}
-S=\int L(q,\dot{q},t)dt.\label{action}
-\end{equation}
-$$<p>回到最小作用原理, 哈密顿原理指出: 真实的运动路径是使 &ldquo;作用量 ($S$) &quot; 取极值 (通常是最小值) 的那条路径.</p>
-<p>也就意味着 $\delta S=0$.</p>
-
-<h2 class="relative group">泛函
-    <div id="泛函" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b3%9b%e5%87%bd" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>泛函也就是作用于函数的函数. 可以敏锐地察觉到式 \eqref{action} 中的广义坐标 $q$ 是一个依赖时间的函数 $q(t)$, 所以根据定义 $S$ 就是一个泛函.</p>
-<p>如果时间不是连续的, 而是离散的, 比如电脑里的模拟. 此时可以将时间切分成 $n$ 个点, 即$t=t_1, t_2, \ldots, t_n,$ 此时广义坐标变化形成的路径也不会是一个连续的曲线而是一系列离散的点 $q(t)=\{q(t_1), q(t_2), \ldots, q(t_n)\}$. 此时作用量 $S$ 就会是一个 $n$ 个变量的多元函数
-</p>
-$$
-S(q_1, q_2, \dots, q_n) = \sum L(q_i, \frac{q_{i+1}-q_i}{\Delta t}) \Delta t.
-$$<p>
-此时如果 $\Delta t$ 相当小, 上式可以写为
-</p>
-$$
-\frac{\partial S}{\partial q_i} = 0 \quad (\text{对于每一个 } i).
-$$<p>而如果时间是连续的, 那么 $n$ 就会变得无穷大, 此时变量就会变得无穷多, $\partial$ 符号就会显得很乏力. 此时引入符号 $\delta$ .</p>
-<p>回顾普通微积分, 找函数的极值有两种方法, 一是导数为 $0$, 即$f'(x) = 0$ 或 $\frac{df}{dx} = 0$, 二是微分为 $0$, 即 $df$ 是 $dx$ 的高阶无穷小, $df = f'(x) dx = 0$.</p>
-<p>符号 $\delta$ 对应的是方法二, $\delta S$ 表示随着路径 $q(t)$ 变化了 $\delta q(t)$ 时作用量 $S$ 的变化量.</p>
-
-<h2 class="relative group">欧拉-拉格朗日 (Euler-Lagrange) 方程
-    <div id="欧拉-拉格朗日-euler-lagrange-方程" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%ac%a7%e6%8b%89-%e6%8b%89%e6%a0%bc%e6%9c%97%e6%97%a5-euler-lagrange-%e6%96%b9%e7%a8%8b" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>当然光有定义式是无法解决问题的. 顺着最小作用原理, 可以使用 <code>变分法</code> 继续往下推导.</p>
-<p>需要指出的是, 此处提到的变分法与另一篇 blog 中提到的量子化学中的变分法略有区别, 此处的变分法是泛函变分法, 让泛函对路径形状的一阶变分为 0, 得到的结果是一个微分方程, 而量子化学中的变分法是线性变分法, 让能量对系数的偏导数为 0, 要得到的是一个用于拟合的代数方程组.</p>
-<p>首先对于轨迹 $q(t)$ 引入一个微小扰动 $\delta q(t)$, 但保证起点与终点与原轨迹保持不变, 即 $\delta q(t_0)=\delta q(t_1)=0$.</p>
-<p>接下来使作用量 $S$ 确定为极值, 此时 $\delta S$ 对应于 $\delta q(t)$ 也应为 $0$. 即
-</p>
-$$
-\delta S = \delta \int_{t_0}^{t_1} L(q, \dot{q}, t) \, dt = \int_{t_0}^{t_1} \delta L \, dt = 0.
-$$<p>
-使用全微分表示 $\delta L$, 有
-</p>
-$$
-\delta L = \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\delta\dot q = \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q.
-$$<p>
-此时
-</p>
-$$
-\begin{equation}
-\delta S =\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q)dt=\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q)dt + \int_{t_0}^{t_1}(\frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q)dt=0.\label{3}
-\end{equation}
-$$<p>
-对于第二项, 使用<strong>分部积分法</strong>.
-</p>
-$$
-\begin{equation}
-\int_{t_0}^{t_1}\frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q dt=\left[\frac{\partial L}{\partial \dot q}\delta q\right]_{t_0}^{t_1}-\int_{t_0}^{t_1}\delta q \frac{d}{dt}\frac{\partial L}{\partial \dot q}dt=0.\label{4}
-\end{equation}
-$$<p>
-因为 $\delta q(t_0)=\delta q(t_1)=0$ 所以式 \eqref{4} 第一项为 $0$. 将式 \eqref{4} 结果代回式 \eqref{3}, 有
-</p>
-$$
-\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q -\delta q \frac{d}{dt}\frac{\partial L}{\partial \dot q})dt=\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot q})\delta qdt=0
-$$<p>
-因为 $\delta q(t)$ 是在两点之间任意选取的微小偏差, 要让这个积分对于任意 $\delta q$ 恒为 0, 唯一的办法就是中括号里的被积函数恒等于 0, 即
-</p>
-$$\begin{equation}
-\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot q}=0.\label{res}
-\end{equation}$$<p>
-式 \eqref{res} 被称为欧拉-拉格朗日 (Euler-Lagrange) 方程.</p>
-
-<h2 class="relative group">勒让德变换与哈密顿量
-    <div id="勒让德变换与哈密顿量" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8b%92%e8%ae%a9%e5%be%b7%e5%8f%98%e6%8d%a2%e4%b8%8e%e5%93%88%e5%af%86%e9%a1%bf%e9%87%8f" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>勒让德变换 ($Legendre\text{ }Transformation$) 在数学上是从一组独立变量到另一组独立变量的变换.</p>
-<p>可以通过这种方式, 让描述系统的变量 $\dot q$ 转换为 $p$. 这样可以在解欧拉-拉格朗日方程时将一个二阶偏微分方程降为两个对称的一阶偏微分方程.</p>
-<p>对拉格朗日量 $L$ 求全微分
-</p>
-$$\begin{equation}
-dL = \frac{\partial L}{\partial q}dq + \frac{\partial L}{\partial \dot q}d\dot q + \frac{\partial L}{\partial t}dt=\frac{\partial L}{\partial q}dq + d(\frac{\partial L}{\partial \dot q}\dot q) -\dot q d\frac{\partial L}{\partial \dot q} + \frac{\partial L}{\partial t}dt.\label{6}
-\end{equation}$$<p>
-将广义动量 $p=\frac{\partial L}{\partial \dot q}$ 与欧拉-拉格朗日方程 \eqref{res} 代入式 \eqref{6}, 且有
-</p>
-$$\begin{equation}\begin{aligned}
-dL =& \frac{d}{dt}\frac{\partial L}{\partial \dot q}dq + d(p\dot q) -\dot q dp + \frac{\partial L}{\partial t}dt = \dot p dq + d(p\dot q) -\dot q dp + \frac{\partial L}{\partial t}dt\\
-=&\frac{d}{dt}(pdq-qdp)+ d(p\dot q)+ \frac{\partial L}{\partial t}dt.
-\end{aligned}\label{7}\end{equation}$$<p>
-对于式 \eqref{7} , 右侧已经只依赖于 $q$, $p$ 和 $t$ 三个变量. 出于数学习惯 (也恰好符合物理形式) 将式\eqref{7} 写为
-</p>
-$$
-\begin{equation}
-d(p\dot q) - dL = \dot qdp - \dot pdq - \frac{\partial L}{\partial t}dt.\label{8}
-\end{equation}
-$$<p>
-定义哈密顿量 ($Hamiltonian$)
-</p>
-$$
-H(p,q,t) = p\dot{q} - L(q,\dot q,t).
-$$<p>
-将其全微分
-</p>
-$$
-\begin{equation}
-dH(p,q,t)=\frac{\partial H}{\partial p}dp+\frac{\partial H}{\partial q}dq+\frac{\partial H}{\partial t}dt\label{9}
-\end{equation}
-$$<p>
-将式 \eqref{8} 和式 \eqref{9} 对照, 得到
+<p>原始 $verlet$ 算法基于泰勒展开. 对于一个粒子在 $t$ 时刻的位置 $r(t)$, 对其向前向后各按照 $\Delta t$ 进行展开, 即
 </p>
 $$\begin{align}
-\dot q&=\frac{\partial H}{\partial p}\label{10},\\
-\dot p&=-\frac{\partial H}{\partial q}\label{11}.
+r(t+\Delta t) = r(t) + v(t)\Delta t + \frac{1}{2}a(t)\Delta t^2 + \frac{1}{6}b(t)\Delta t^3 + \dots\label{t+deltat},\\
+r(t-\Delta t) = r(t) - v(t)\Delta t + \frac{1}{2}a(t)\Delta t^2 - \frac{1}{6}b(t)\Delta t^3 + \dots\label{t-deltat}.
 \end{align}$$<p>
-式 \eqref{10} 和式 \eqref{11} 即为哈密顿正则方程 ($Hamilton's\text{ }Canonical\text{ }Equations$).</p>
+将 \eqref{t+deltat} 与 \eqref{t-deltat} 两式相加, 有
+</p>
+$$\begin{equation}
+r(t+\Delta t)+r(t-\Delta t)=2r(t)+a(t)\Delta t^2+O(\Delta t^4).\label{verlet-1}
+\end{equation}$$<p>
+式 \eqref{verlet-1} 即为 <code>$verlet$积分公式</code>. 使用 $O(\Delta t^4)$ 进行近似的原因很简单, 位置 $r(t)$ 的高阶导数难以计算, 因此简单的 $Euler$ 法
+</p>
+$$r(t + \delta t) = r(t) + v(t) \delta t + O(\delta t^2)$$<p>
+只能计算到 $v(t)(\Delta t)$, 局部误差为 $O(\delta t^2)$，全局误差是 $O(\delta t)$.</p>
+<p>而 $verlet$ 算法因为消去了 $b(t)(\Delta t^3)$ 项, 能够仅使用二阶导数 $a(t)(\Delta t^2)$ 将局部误差减小到 $O(\delta t^4)$, 全局误差缩小到 $O(\delta t^3)$.</p>
+<p>然而在 $MD$ 中需要粒子的速度来体现动能 $K$ 从而计算温度 $T$.</p>
+<p>如果只使用原始 $verlet$ 算法, 即将 \eqref{t+deltat} 与 \eqref{t-deltat} 两式相减来计算速度
+</p>
+$$
+v(t) = \frac{r(t+\Delta t) - r(t-\Delta t)}{2\Delta t}+O(\delta t^2).
+$$<p>
+这个公式的误差是 $O(\Delta t^2)$. 这意味着即使位置算得很准, 速度也是&quot;估算&quot;出来的.
+这不仅精度差 (误差 $\Delta t^2$), 而且必须要算出下一步位置后, 才能回头算出现在的速度.</p>
+
+<h2 class="relative group">速度 $verlet$ 算法
+    <div id="速度--算法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%80%9f%e5%ba%a6--%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>为了解决速度的问题，Swope 等人在 1982 年整理出了$ Velocity Verlet$ 形式. 它数学上和原始 $Verlet$ 等价, 但同时显式地计算位置和速度.</p>
+<p>首先根据 $t$ 时刻的力计算出加速度 $a$, 推断出 $t + \frac{1}{2}\Delta t$ 的速度
+</p>
+$$
+v(t + \frac{1}{2}\Delta t) = v(t) + \frac{1}{2}a(t)\Delta t.
+$$<p>
+再利用 $t + \frac{1}{2}\Delta t$ 时刻的速度计算出 $t + \Delta t$ 时刻的位置
+</p>
+$$r(t + \Delta t) = r(t) + v(t + \frac{1}{2}\Delta t)\Delta t.$$<p>
+在 $t + \Delta t$ 时刻的位置 $r(t + \Delta t)$ 计算新的力与加速度 $a(t+\Delta t)$ 并利用新的加速度计算 $t + \Delta t$ 的速度
+</p>
+$$v(t + \Delta t) = v(t + \frac{1}{2}\Delta t) + \frac{1}{2}a(t + \Delta t)\Delta t.$$<p>可能会惊讶, 速度 $verlet$ 算法似乎与经典 $verlet$ 算法没什么区别, 但前者精度比后者高.</p>
+<p>在计算机运算中, 对于经典 $verlet$ 算法, 当 $\Delta t$ 很小时, $r(t)$ 和 $r(t-\Delta t)$ 是两个非常接近的极大数值. 两个很大的数相减, 导致有效数字大量丢失.</p>
+<p>而对于速度 $verlet$ 算法而言, 其位置公式是 $r_{new}=r_{old}+\text{小量}$ 这种形式避免了两个大数相减, 能够保留更多的有效数字.</p>
+
+<h2 class="relative group">$verlet$ 算法理论基础
+    <div id="算法理论基础" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ae%97%e6%b3%95%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">$Trotter$ 分解
+    <div id="分解" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e8%a7%a3" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>假设有两个数字 $a$ 和 $b$, 显然有:
+</p>
+$$e^{a+b} = e^a \cdot e^b.$$<p>
+这对于普通数字是成立的. 但是, 在量子力学或统计力学中, 我们要处理的是算符或矩阵, 如 $A$ 和 $B$. 如果 $A$ 和 $B$ 不对易 ($AB \neq BA$)，那么：
+</p>
+$$e^{A+B} \neq e^A e^B.$$<p>
+Trotter 发现, 虽然 $e^{A+B} \neq e^A e^B$, 但如果指数上面的 $\Delta t$ 非常小, 可以有一个高精度的近似:
+</p>
+$$e^{(A+B)\Delta t} \approx e^{B \frac{\Delta t}{2}} e^{A \Delta t} e^{B \frac{\Delta t}{2}} + O(\Delta t^3).$$<p>
+这就是 $Trotter$ 分解. 它把一个复杂的&quot;混合指数&quot; $e^{A+B}$ 拆成了两个简单的&quot;独立指数&quot;的乘积.</p>
+
+<h3 class="relative group">演化算符
+    <div id="演化算符" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%bc%94%e5%8c%96%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>系统的随时间演化由刘维尔算符 $iL$ 控制, 即
+</p>
+$$f(t+\Delta t) = e^{iL \Delta t} f(t).$$<p>
+这里 $iL$ 包含了位置的变化 ($\frac{\partial}{\partial r}$) 和速度的变化 ($\frac{\partial}{\partial p}$).</p>
+<p>因为位置和速度耦合在一起, 直接求解 $e^{iL \Delta t}$ 较为困难. 所以在速度 $verlet$ 算法中本质是将演化算符使用 $Trotter$ 分解把算符近似为两个半步速度 $iL_2$ 和一个一步位置 $iL_1$
+</p>
+$$e^{iL\Delta t} \approx e^{\frac{iL_2 \Delta t}{2}} e^{iL_1 \Delta t} e^{\frac{iL_2 \Delta t}{2}}.$$<p>
+其中 $iL_1$ 只体现动量对位置的影响, $iL_2$ 只体现受力对动量的影响.</p>
+<p>那么为什么分解之后就能计算了呢? 数学上有个性质叫 &ldquo;移位算符&rdquo;, 即<strong>指数形式的微分算符作用在函数上等价于直接把变量平移 $c$</strong>, 也就是
+</p>
+$$e^{c \frac{\partial}{\partial x}} f(x) = f(x+c).$$<p>证明也比较简单. 对算符 $A$ 而言, 其指数函数并不是寻常意义的指数函数, 而是泰勒展开的一系列算符.
+</p>
+$$
+e^A = \sum_{n=0}^{\infty} \frac{1}{n!} A^n = 1 + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \dots + \frac{1}{i!}A^i.
+$$<p>
+令 $A = c \frac{d}{dx}$, 代入上式, 有
+</p>
+$$
+e^{c \frac{d}{dx}} = \sum_{n=0}^{\infty} \frac{1}{n!} \left( c \frac{d}{dx} \right)^n = \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n}{dx^n}
+$$<p>
+此时让指数算符作用于 $f(x)$, 有
+</p>
+$$\begin{aligned}
+\left( e^{c \frac{d}{dx}} \right) f(x) &= \left( \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n}{dx^n} \right) f(x) \\
+&= \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n f(x)}{dx^n} \\
+&= f(x) + c f'(x) + \frac{c^2}{2!} f''(x) + \frac{c^3}{3!} f'''(x) + \dots+ \frac{c^i}{i!} f^{(i)}(x).
+\end{aligned}$$<p>
+恰好就是 $f(x+c)$ 的泰勒展开.</p>
+<p>以这种方式拆分 $Liouville$ 算符, 能够保留一个很关键的性质 (辛性质): 尽管轨迹只是近似的, 无法精确守恒真实能量 $H$, 但却能严格守恒一个 &ldquo;影子$Hamilton$量&rdquo; $\tilde{H}$. 其可以写成
+</p>
+$$\tilde{H} = H + (\Delta t)^2 H_2 + (\Delta t)^4 H_4 + \dots$$<p>
+其中 $H$ 是真实能量, $H_2, H_4$ 是与系统导数有关的修正项.</p>
+<p>这样就带来了一个优势:</p>
+<p>$\tilde{H}$ 是守恒的:  对于 Verlet 算法, 虽然真实能量 $H$ 不守恒, 但影子能量 $\tilde{H}$ 是严格的常数 (在机器精度范围内). 且因为 $\Delta t$ 很小, $\tilde{H}$ 和 $H$ 相当接近
+</p>
+$$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
+换句话说, 系统将在相空间中的一条超曲面上运动, 而这条超曲面与真实的等能超曲面 &ldquo;接近&rdquo;. 所以 既然 $\tilde{H}$ 不变, 那么真实的能量 $H$ 就只能在 $\tilde{H}$ 附近小幅度震荡, 而永远不会发生大的偏差.</p>
+<p>至于辛 (Symplectic) 性质, 我的评价是跟鲁棒性一个水准的翻译.</p>
+<p>简单而言, 辛性质就是 &ldquo;保相体积&rdquo; 的性质, 也就是相空间中的某一超平面上不再添加或减少点, 对应着 $Liouville$ 定理.</p>
+<p>在相空间中, 辛性质的体现就是使统计力学的平均值计算成为可能且可信的.</p>
+<p>此外需要指出的是, 逻辑链条是: 分解保留了辛性质 $\rightarrow$ 辛性质保证了影子哈密顿量的存在 $\rightarrow$ 影子哈密顿量守恒.</p>
+<p>即, 如果一个离散映射是辛的 (保相体积) , 那么在数学上, 它一定可以被看作是某个连续哈密顿系统 ($\tilde{H}$) 的精确演化结果.</p>
 
           
           
@@ -1360,18 +1356,18 @@ $$\begin{align}
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/verlet-algorithm/">
-          § :
-          verlet算法
-        </a>
+        § :
+        本文
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/lagrangian-mechanics/">
+          § :
+          拉格朗日量与哈密顿量
+        </a>
       </div>
     
   
@@ -1399,8 +1395,8 @@ $$\begin{align}
           type="text/javascript"
           src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\Lagrangian Mechanics\index.md"
-          data-oid-likes="likes_posts\Lagrangian Mechanics\index.md"></script>
+          data-oid="views_posts\verlet algorithm\index.md"
+          data-oid-likes="likes_posts\verlet algorithm\index.md"></script>
       
     </section>
 
@@ -1418,32 +1414,19 @@ $$\begin{align}
           
             <a
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/remote_ssh_to_wsl/">
+              href="../../posts/lagrangian-mechanics/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;使用remote SSH远程访问另一台电脑上的WSL2虚拟机
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;拉格朗日量与哈密顿量
               </span>
             </a>
             
               <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-11-30T15:00:51&#43;08:00">2025 年 11 月 30 日</time>
+                <time datetime="2025-12-15T17:39:51&#43;08:00">2025 年 12 月 15 日</time>
               </span>
             
           
         </span>
         <span class="flex flex-col items-end">
-          
-            <a
-              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/verlet-algorithm/">
-              <span class="leading-6">
-                verlet算法&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
-              </span>
-            </a>
-            
-              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time>
-              </span>
-            
           
         </span>
       </div>
