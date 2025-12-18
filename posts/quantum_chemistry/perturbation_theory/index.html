@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="auto"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="zh-cn">
@@ -15,8 +15,8 @@
 
   
   
-    <title>拉格朗日量与哈密顿量 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="拉格朗日量与哈密顿量 &middot; WentianGodlike&#39;s Blog">
+    <title>微扰理论 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="微扰理论 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -24,11 +24,11 @@
     <meta name="description" content="一些各种各样的blog与备忘">
   
   
-    <meta name="keywords" content="分子模拟,">
+    <meta name="keywords" content="量子化学,">
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
+  <link rel="canonical" href="http://localhost:1313/posts/quantum_chemistry/perturbation_theory/">
   
 
   
@@ -58,22 +58,20 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
+  <meta property="og:url" content="http://localhost:1313/posts/quantum_chemistry/perturbation_theory/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="拉格朗日量与哈密顿量">
+  <meta property="og:title" content="微扰理论">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-15T17:39:51+08:00">
-    <meta property="article:modified_time" content="2025-12-15T17:39:51+08:00">
-    <meta property="article:tag" content="分子模拟">
-      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/constraint_dynamics/">
-      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/verlet-algorithm/">
+    <meta property="article:published_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:modified_time" content="2025-11-19T17:39:51+08:00">
+    <meta property="article:tag" content="量子化学">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="拉格朗日量与哈密顿量">
+  <meta name="twitter:title" content="微扰理论">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -119,14 +117,14 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
+    href="../../../css/main.bundle.min.c6872292afd217c3fec21a497812c297f820816f69a0a5a62e374d9404d977d9843a95591a1b550b15b96f149868e92758f3108e31411fa4e199074654ef72db.css"
     integrity="sha512-xocikq/SF8P&#43;whpJeBLCl/gggW9poKWmLjdNlATZd9mEOpVZGhtVCxW5bxSYaOknWPMQjjFBH6ThmQdGVO9y2w==">
 
   
   
   <script
     type="text/javascript"
-    src="../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    src="../../../js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
     integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
   
   
@@ -135,7 +133,7 @@
   
   
     
-    <script src="../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+    <script src="../../../lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
   
 
   
@@ -159,7 +157,7 @@
       defer
       type="text/javascript"
       id="script-bundle"
-      src="../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
+      src="../../../js/main.bundle.min.f16cf48651044bc66625c8008eb5605cc702530530daa081ce7e495e50adf778bef6cd0747382983caf5e5cc745c819dd7a969e17e545119dff14346f4fcb977.js"
       integrity="sha512-8Wz0hlEES8ZmJcgAjrVgXMcCUwUw2qCBzn5JXlCt93i&#43;9s0HRzgpg8r15cx0XIGd16lp4X5UURnf8UNG9Py5dw=="
       data-copy="复制"
       data-copied="已复制"></script>
@@ -168,7 +166,7 @@
   
   
 
-<script src="../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+<script src="../../../lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
 
 
 
@@ -211,10 +209,10 @@
 
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+    <link rel="manifest" href="../../../site.webmanifest">
   
 
   
@@ -223,38 +221,32 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "拉格朗日量与哈密顿量",
-    "headline": "拉格朗日量与哈密顿量",
+    "name": "微扰理论",
+    "headline": "微扰理论",
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/lagrangian-mechanics\/",
+    "url" : "http:\/\/localhost:1313\/posts\/quantum_chemistry\/perturbation_theory\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-12-15T17:39:51\u002b08:00",
-    "datePublished": "2025-12-15T17:39:51\u002b08:00",
+    "dateCreated": "2025-11-19T17:39:51\u002b08:00",
+    "datePublished": "2025-11-19T17:39:51\u002b08:00",
     
-    "dateModified": "2025-12-15T17:39:51\u002b08:00",
+    "dateModified": "2025-11-19T17:39:51\u002b08:00",
     
-    "keywords": ["分子模拟"],
+    "keywords": ["量子化学"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2022"
+    "wordCount": "1160"
   }]
   </script>
 
 
 
   
-  
-    
-
-
-
-
   
 
   
@@ -392,11 +384,11 @@
     
     
       <div>
-        <a href="../../" class="flex">
+        <a href="../../../" class="flex">
           <span class="sr-only">WentianGodlike&rsquo;s Blog</span>
           
             <img
-              src="../../img/logo.png"
+              src="../../../img/logo.png"
               width="470"
               height="470"
               class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
@@ -409,7 +401,7 @@
   <div class="flex flex-1 items-center justify-between">
     <nav class="flex space-x-3">
       
-        <a href="../../" class="text-base font-medium">
+        <a href="../../../" class="text-base font-medium">
           WentianGodlike&rsquo;s Blog
         </a>
       
@@ -420,7 +412,7 @@
       
         
   <a
-  href="../../posts/"
+  href="../../../posts/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="文章"
@@ -438,7 +430,7 @@
       
         
   <a
-  href="../../categories/"
+  href="../../../categories/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="分类"
@@ -456,7 +448,7 @@
       
         
   <a
-  href="../../tags/"
+  href="../../../tags/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="标签"
@@ -474,7 +466,7 @@
       
         
   <a
-  href="../../series/"
+  href="../../../series/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="专栏"
@@ -492,7 +484,7 @@
       
         
   <a
-  href="../../about/"
+  href="../../../about/"
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
   aria-label="关于"
@@ -626,7 +618,7 @@
               
   <li class="mt-1">
   <a
-    href="../../posts/"
+    href="../../../posts/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="文章"
@@ -646,7 +638,7 @@
               
   <li class="mt-1">
   <a
-    href="../../categories/"
+    href="../../../categories/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="分类"
@@ -666,7 +658,7 @@
               
   <li class="mt-1">
   <a
-    href="../../tags/"
+    href="../../../tags/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="标签"
@@ -686,7 +678,7 @@
               
   <li class="mt-1">
   <a
-    href="../../series/"
+    href="../../../series/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="专栏"
@@ -706,7 +698,7 @@
               
   <li class="mt-1">
   <a
-    href="../../about/"
+    href="../../../about/"
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
     aria-label="关于"
@@ -765,7 +757,7 @@
 
 <script
   type="text/javascript"
-  src="../../js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  src="../../../js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
   integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
   data-blur-id="menu-blur"></script>
 
@@ -789,22 +781,22 @@
     
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../"
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../"
       ></a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
   
   <li class="inline">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/"
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/"
       >posts</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/lagrangian-mechanics/"
-      >拉格朗日量与哈密顿量</a
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../../posts/quantum_chemistry/perturbation_theory/"
+      >微扰理论</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -813,7 +805,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        拉格朗日量与哈密顿量
+        微扰理论
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -865,7 +857,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-15T17:39:51&#43;08:00">2025 年 12 月 15 日</time><span class="px-2 text-primary-500">&middot;</span><span>2022 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>1160 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -889,11 +881,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] me-2" href="../../tags/%E5%88%86%E5%AD%90%E6%A8%A1%E6%8B%9F/">
+              <a class="relative mt-[0.5rem] me-2" href="../../../tags/%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6/">
                 <span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    分子模拟
+    量子化学
   </span>
 </span>
 
@@ -1018,10 +1010,11 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#广义量与最小作用原理">广义量与最小作用原理</a></li>
-    <li><a href="#泛函">泛函</a></li>
-    <li><a href="#欧拉-拉格朗日-euler-lagrange-方程">欧拉-拉格朗日 (Euler-Lagrange) 方程</a></li>
-    <li><a href="#勒让德变换与哈密顿量">勒让德变换与哈密顿量</a></li>
+    <li><a href="#非简并能级的微扰理论">非简并能级的微扰理论</a>
+      <ul>
+        <li><a href="#一阶修正">一阶修正</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1035,10 +1028,11 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#广义量与最小作用原理">广义量与最小作用原理</a></li>
-    <li><a href="#泛函">泛函</a></li>
-    <li><a href="#欧拉-拉格朗日-euler-lagrange-方程">欧拉-拉格朗日 (Euler-Lagrange) 方程</a></li>
-    <li><a href="#勒让德变换与哈密顿量">勒让德变换与哈密顿量</a></li>
+    <li><a href="#非简并能级的微扰理论">非简并能级的微扰理论</a>
+      <ul>
+        <li><a href="#一阶修正">一阶修正</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1154,252 +1148,154 @@
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
-  <details
-    class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5"
-    >
-    
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
-    分子模拟理论基础 -
-    这篇文章属于一个选集。
-  </summary>
-  
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/constraint_dynamics/">
-          § :
-          约束动力学(编辑中)
-        </a>
-      </div>
-    
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/verlet-algorithm/">
-          § :
-          verlet算法
-        </a>
-      </div>
-    
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
-      </div>
-    
-  
-
-
-  </details>
-
 
         <div class="article-content max-w-prose mb-20">
-          <p>拉格朗日力学 ($Lagrangian\text{ } Mechanics$) 的构建是继牛顿力学之后经典力学的一个飞跃. 传统的牛顿力学使用的是力与矢量进行分析, 而拉格朗日力学使用能量与几何对运动进行分析.</p>
-<p>拉格朗日量的定义为
-</p>
+          <p>量子化学计算中使用较为广泛的近似方法除了之前提到过的变分法, 还有一个方法是微扰法. 假设某系统的不含时 $Hamilton$ 算符为 $\hat H$ 且我们无法准确求解 $Schr\ddot odinger$ 方程 $\hat H \psi_n = E_n \psi_n$. 假设算符 $\hat H$ 由另一算符 $\hat H^{0} $ 通过某一微小扰动 $\hat H'$ 得到, 即 $\hat H = \hat H^{0}+\hat H'$. 其中 $\hat H^{0}\psi^{0}_n=E_n^{0}\psi^{0}_n$, 且此 $Schr\ddot odinger$ 方程可求解.</p>
+<p>此时我们的任务是设法将 $\hat H$ 与 $\hat H^0$ 关联起来. 引入一个实数 $\lambda \in [0, 1]$, 用以使 $\hat H^0$ 逐渐接近 $\hat H$ .自然有</p>
 $$
-\begin{equation}
-L = T - V = L(q,\dot{q},t).\label{lag}
-\end{equation}
-$$<p>式 \eqref{lag} 中 $L$ 为拉格朗日量($Lagrangian$), $T$ 为动能, $V$ 为势能. $q$ 为广义坐标, $\dot{q}=\frac{dq}{dt}$ 为广义速度, $t$ 为时间. 广义坐标, 广义速度的定义下文会进行讨论.</p>
-<p>在进行推导之前, 最重要的一点是放弃使用牛顿力学的思维, 如针对保守系统, 系统总能量 $E$ 是守恒量. 而拉格朗日量 $L$ 则不是一个守恒量. 举个简单的例子, 向上垂直以一定速度抛出一个小球, 假设小球仅受重力影响, 抛出时势能恰好为 $0$. 在抛出时总能量 $E=T+V$, 拉格朗日量 $L=T-V$, 此时二者都为一个正数, 而到最高点, 总能量 $E$ 还是一个正数, 而此时 $L$ 是一个负数.</p>
-<p>举这个例子是想说明两点, 第一是拉格朗日量并非是一个守恒量, 第二是拉格朗日量是一个过程量, 会随着时间剧烈变化.</p>
+\hat H = \hat H^0+\lambda\hat H',
+$$<p>当 $\lambda=0$ 时, 表示 $\hat H^0$, 当 $\lambda=1$ 时则表示 $\hat H$.</p>
+<p>简并与非简并能级的微扰处理方式有所不同.</p>
 
-<h2 class="relative group">广义量与最小作用原理
-    <div id="广义量与最小作用原理" class="anchor"></div>
+<h2 class="relative group">非简并能级的微扰理论
+    <div id="非简并能级的微扰理论" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b9%bf%e4%b9%89%e9%87%8f%e4%b8%8e%e6%9c%80%e5%b0%8f%e4%bd%9c%e7%94%a8%e5%8e%9f%e7%90%86" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%9d%9e%e7%ae%80%e5%b9%b6%e8%83%bd%e7%ba%a7%e7%9a%84%e5%be%ae%e6%89%b0%e7%90%86%e8%ae%ba" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>记 $q$ 为<code>广义坐标</code>. 与广义坐标相对的是狭义坐标也就是牛顿力学中常用的坐标, 量纲一般为米 (m). 广义坐标无量纲, 可以是笛卡尔坐标, 可以是极坐标, 也可以是能表示坐标的其他东西.</p>
-<p>记$\dot{q}=\frac{dq}{dt}$ 为 <code>广义速度</code> , 仅仅定义为广义坐标对时间的导数, 无其他含义.</p>
-<p>此外还有 <code>广义动量</code> $p$, 在牛顿力学中狭义动量定义为 $p=m\cdot v$, 广义动量则没有一个确切的表达方式, 仅仅是一个在拉格朗日量中与广义坐标 $q$ 的共轭量, 即 $p=\frac{\partial L}{\partial \dot q}$.</p>
-<p>产生广义量的原因是为了统一形式. 如牛顿力学在直角坐标系下十分好用, 但换到球坐标系, 柱坐标系下其表达形式就会产生一些复杂的项. 使用广义量能够在拉格朗日体系下确保形式的统一.</p>
-<p><strong>&ldquo;广义&quot;的本质, 就是把物理定律从具体的坐标系几何形状中解放出来, 变成一种纯粹的代数关系.</strong></p>
-<p>作用量 $S$ 定义为拉格朗日量 $L$ 对时间的积分
-</p>
+<p>对于 $Schr\ddot odinger$ 方程</p>
 $$
 \begin{equation}
-S=\int L(q,\dot{q},t)dt.\label{action}
+\hat H \psi_n = (\hat H^0+\lambda\hat H')\psi_n = E_n \psi_n,\label{1-1}
 \end{equation}
-$$<p>回到最小作用原理, 哈密顿原理指出: 真实的运动路径是使 &ldquo;作用量 ($S$) &quot; 取极值 (通常是最小值) 的那条路径.</p>
-<p>也就意味着 $\delta S=0$.</p>
+$$<p>除了坐标, 波函数 $\psi_n$ 同时也是参数 $\lambda\in [0,1]$ 的函数, 即 $\psi_n=\psi_n(q,\lambda)$, 其中参数 $q$ 表示坐标. 同理体系能量 $E_n=E_n(\lambda)$. 能量无关坐标 $q$, 因为相对于包含坐标的函数 $\psi_n$ 而言能量是一个常数.</p>
+<p>能量 $E_n=E_n(\lambda)$ 和 波函数 $\psi_n=\psi_n(q,\lambda)$ 分别对参数 $\lambda$ 使用 $Taylor$ 展开</p>
+$$
+\psi_n=\psi_n|_{\lambda=0}+\lambda \frac{\partial \psi_n}{\partial \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{\partial^2 \psi_n}{\partial \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0},
+$$$$
+E_n=E_n|_{\lambda=0}+\lambda \frac{d E_n}{d \lambda}|_{\lambda=0}+\frac{\lambda^2}{2!} \frac{d^2 \psi_n}{d \lambda^2}|_{\lambda=0}+\ldots+\frac{\lambda^k}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}
+$$<p>显然当 $\lambda\rightarrow0$ 时, $\psi_n |  _{\lambda=0}=\psi_n^{(0)} $, $E _n| _{\lambda=0}=E_n^{(0)}$. 记</p>
+$$
+\psi_n^{(k)}\equiv\frac{1}{k!} \frac{\partial^k \psi_n}{\partial \lambda^k}|_{\lambda=0}, E_n^{(k)}\equiv\frac{1}{k!} \frac{d^k \psi_n}{d \lambda^k}|_{\lambda=0}.
+$$<p>此时 $\psi_n$ 和 $E_n$ 可以表示为</p>
+$$
+\begin{equation}
+\psi_n=\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)},\label{1-2}
+\end{equation}
+$$$$
+\begin{equation}
+E_n=E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)}.\label{1-3}
+\end{equation}
+$$<p>称 $\psi_n^{(k)}$ 和 $E_n^{(k)}$ 为对 $\psi_n$ 和 $E_n$ 的 <code>k 阶修正</code>. 对于上述级数我们希望其在 $\lambda=1$ 处收敛, 但通常而言无法满足这一条件. 但哪怕这些级数发散, 应用修正后也可以有一个不错的近似效果.</p>
+<p>对于微扰法, 一般使用 $\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle=1$ 与 $\langle \psi_n^{(0)}|\psi_n\rangle=1$ 作为归一化条件, 称为 <code>间接归一化</code>. 如果 $\psi_n$ 不满足归一化条件, 可以乘一个系数 $1/\langle \psi_n^{(0)}|\psi_n\rangle$ 使其归一化. 后一个条件主要作用为简化计算, 因为应用此条件之后, 第 $0$ 修正项与其他各阶修正项之间彼此正交. 若必要也可在计算最后将这个系数除掉以取得原始结果.</p>
+<p>将归一化条件代回式 \eqref{1-2} 中并左乘 $\psi_n^{(0)*}$再积分, 有</p>
+$$
+\int \psi_n^{(0)*}\psi_nd\tau=\langle \psi_n^{(0)}|\psi_n\rangle=\langle \psi_n^{(0)}|\psi_n^{(0)}\rangle+\lambda\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+\ldots+\lambda^k\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle,
+$$<p>因为 $\lambda$ 不一定为 $0$, 应用归一化条件可得
+</p>
+$$\langle \psi_n^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_n^{(0)}|\psi_n^{(2)}\rangle=\ldots=\langle \psi_n^{(0)}|\psi_n^{(k)}\rangle=0.$$<p>将式 \eqref{1-2} 和 \eqref{1-3} 代入 $Schr\ddot odinger$ 方程 \eqref{1-1} 中, 有</p>
+$$
+(\hat H^0+\lambda\hat H')(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})=(E_n^{(0)}+\lambda E_n^{(1)}+\lambda^2 E_n^{(2)}+\ldots+\lambda^k E_n^{(k)})(\psi_n^{(0)}+\lambda\psi_n^{(1)}+\lambda^2\psi_n^{(2)}+\ldots+\lambda^k\psi_n^{(k)})
+$$<p>合并相同次数的 $\lambda$, 有</p>
+$$
+\begin{equation}
+(\hat H^0\psi_n^{(0)})+\lambda(\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)})+\lambda^2(\hat H' \psi_n^{(1)}+\hat H^0\psi_n^{(2)})+\ldots=E_n^{(0)}\psi_n^{(0)}+\lambda(E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)})+\lambda^2(E_n^{(2)}\psi_n^{(0)}+E_n^{(1)}\psi_n^{(1)}+E_n^{(0)}\psi_n^{(2)})+\ldots.\label{1-4}
+\end{equation}
+$$<p>因为 $\lambda$ 不一定为 $0$, 要使上式成立, 必须使 $\lambda$ 的系数依次相等.</p>
+<p>对 $\lambda^0$, 式 \eqref{1-4} 退化为 $Schr\ddot odinger$ 方程 $\hat H^0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}$.</p>
 
-<h2 class="relative group">泛函
-    <div id="泛函" class="anchor"></div>
+<h3 class="relative group">一阶修正
+    <div id="一阶修正" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b3%9b%e5%87%bd" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%80%e9%98%b6%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
     </span>
     
-</h2>
-<p>泛函也就是作用于函数的函数. 可以敏锐地察觉到式 \eqref{action} 中的广义坐标 $q$ 是一个依赖时间的函数 $q(t)$, 所以根据定义 $S$ 就是一个泛函.</p>
-<p>如果时间不是连续的, 而是离散的, 比如电脑里的模拟. 此时可以将时间切分成 $n$ 个点, 即$t=t_1, t_2, \ldots, t_n,$ 此时广义坐标变化形成的路径也不会是一个连续的曲线而是一系列离散的点 $q(t)=\{q(t_1), q(t_2), \ldots, q(t_n)\}$. 此时作用量 $S$ 就会是一个 $n$ 个变量的多元函数
-</p>
+</h3>
+<p>对 $\lambda^1$, 有</p>
 $$
-S(q_1, q_2, \dots, q_n) = \sum L(q_i, \frac{q_{i+1}-q_i}{\Delta t}) \Delta t.
-$$<p>
-此时如果 $\Delta t$ 相当小, 上式可以写为
-</p>
+\begin{equation}
+\hat H' \psi_n^{(0)}+\hat H^0\psi_n^{(1)}=E_n^{(1)}\psi_n^{(0)}+E_n^{(0)}\psi_n^{(1)}.\label{1-5}
+\end{equation}
+$$<p>对式 \eqref{1-5} 两边同时左乘 $\psi_m^{(0)*}$ 再积分, 有</p>
 $$
-\frac{\partial S}{\partial q_i} = 0 \quad (\text{对于每一个 } i).
-$$<p>而如果时间是连续的, 那么 $n$ 就会变得无穷大, 此时变量就会变得无穷多, $\partial$ 符号就会显得很乏力. 此时引入符号 $\delta$ .</p>
-<p>回顾普通微积分, 找函数的极值有两种方法, 一是导数为 $0$, 即$f'(x) = 0$ 或 $\frac{df}{dx} = 0$, 二是微分为 $0$, 即 $df$ 是 $dx$ 的高阶无穷小, $df = f'(x) dx = 0$.</p>
-<p>符号 $\delta$ 对应的是方法二, $\delta S$ 表示随着路径 $q(t)$ 变化了 $\delta q(t)$ 时作用量 $S$ 的变化量.</p>
-
-<h2 class="relative group">欧拉-拉格朗日 (Euler-Lagrange) 方程
-    <div id="欧拉-拉格朗日-euler-lagrange-方程" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%ac%a7%e6%8b%89-%e6%8b%89%e6%a0%bc%e6%9c%97%e6%97%a5-euler-lagrange-%e6%96%b9%e7%a8%8b" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>当然光有定义式是无法解决问题的. 顺着最小作用原理, 可以使用 <code>变分法</code> 继续往下推导.</p>
-<p>需要指出的是, 此处提到的变分法与另一篇 blog 中提到的量子化学中的变分法略有区别, 此处的变分法是泛函变分法, 让泛函对路径形状的一阶变分为 0, 得到的结果是一个微分方程, 而量子化学中的变分法是线性变分法, 让能量对系数的偏导数为 0, 要得到的是一个用于拟合的代数方程组.</p>
-<p>首先对于轨迹 $q(t)$ 引入一个微小扰动 $\delta q(t)$, 但保证起点与终点与原轨迹保持不变, 即 $\delta q(t_0)=\delta q(t_1)=0$.</p>
-<p>接下来使作用量 $S$ 确定为极值, 此时 $\delta S$ 对应于 $\delta q(t)$ 也应为 $0$. 即
-</p>
+\begin{equation}
+\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=E_n^{(1)}\langle \psi_m^{(0)}|\psi_n^{(0)}\rangle+E_n^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.\label{1-6}
+\end{equation}
+$$<p>因为 $\hat H^0$ 是 $Hermitian$ 算符, 满足</p>
 $$
-\delta S = \delta \int_{t_0}^{t_1} L(q, \dot{q}, t) \, dt = \int_{t_0}^{t_1} \delta L \, dt = 0.
-$$<p>
-使用全微分表示 $\delta L$, 有
-</p>
+\langle \psi_m^{(0)}|\hat H^0|\psi_n^{(1)}\rangle=\langle \psi_n^{(1)}|\hat H^0|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_n^{(1)}|\psi_m^{(0)}\rangle^*=E_m^{(0)}\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.
+$$<p>代回式 \eqref{1-6} 并稍加化简, 有</p>
 $$
-\delta L = \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\delta\dot q = \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q.
-$$<p>
-此时
+\begin{equation}
+(E_m^{(0)}-E_n^{(0)})\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=E_n^{(1)}\delta_{nm}-\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle.\label{1-7}
+\end{equation}
+$$<p>当 $m=n$ 时, $E_n^{(1)}$变为 $\hat H'$的均值</p>
+$$
+\langle \psi_n^{(0)}|\hat H'|\psi_n^{(0)}\rangle=E_n^{(1)}=\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$<p>此时可以得到能量 $E_n$ 的一阶修正</p>
+$$
+E_n\approx E_n^{(0)}+E_n^{(1)}=E_n^{(0)}+\int \psi_n^{(0)*}\hat H'\psi_n^{(0)}d\tau.
+$$<p>对于波函数的一阶修正, 将$\psi_n^{(1)}$ 使用完备正交基 $\psi_k^{(0)}$ 展开
 </p>
 $$
 \begin{equation}
-\delta S =\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q)dt=\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q)dt + \int_{t_0}^{t_1}(\frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q)dt=0.\label{3}
+\psi_n^{(1)}=\sum_k a_k\psi_k^{(0)}.\label{1-8}
 \end{equation}
 $$<p>
-对于第二项, 使用<strong>分部积分法</strong>.
+两边同时乘 $\psi_m^{(0)*}$ 并积分, 有
+</p>
+$$
+\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=\sum_k a_k\langle \psi_m^{(0)}|\psi_k^{(0)}\rangle=\sum_k\delta_{mk}a_k.
+$$<p>
+当 $m=k$ 时, $\delta_{mk}a_k$ 才有值 $a_m$. 此时上式变为
+</p>
+$$
+\langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=a_m.
+$$<p>
+因此可以将式 \eqref{1-8} 转为更习惯的记法
 </p>
 $$
 \begin{equation}
-\int_{t_0}^{t_1}\frac{\partial L}{\partial \dot q}\frac{d}{dt}\delta q dt=\left[\frac{\partial L}{\partial \dot q}\delta q\right]_{t_0}^{t_1}-\int_{t_0}^{t_1}\delta q \frac{d}{dt}\frac{\partial L}{\partial \dot q}dt=0.\label{4}
+\psi_n^{(1)}=\sum_m a_m\psi_m^{(0)}, \text{ 其中 } a_m= \langle \psi_m^{(0)}|\psi_n^{(1)}\rangle.\label{1-9}
 \end{equation}
 $$<p>
-因为 $\delta q(t_0)=\delta q(t_1)=0$ 所以式 \eqref{4} 第一项为 $0$. 将式 \eqref{4} 结果代回式 \eqref{3}, 有
+将式 \eqref{1-9} 中的 $a_m$ 代回式 \eqref{1-7}, 且假设 $n\neq m $, 此时 $\delta_{nm}=0$
 </p>
 $$
-\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}\delta q -\delta q \frac{d}{dt}\frac{\partial L}{\partial \dot q})dt=\int_{t_0}^{t_1}(\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot q})\delta qdt=0
+(E_m^{(0)}-E_n^{(0)})a_m=\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle
 $$<p>
-因为 $\delta q(t)$ 是在两点之间任意选取的微小偏差, 要让这个积分对于任意 $\delta q$ 恒为 0, 唯一的办法就是中括号里的被积函数恒等于 0, 即
-</p>
-$$\begin{equation}
-\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot q}=0.\label{res}
-\end{equation}$$<p>
-式 \eqref{res} 被称为欧拉-拉格朗日 (Euler-Lagrange) 方程.</p>
-
-<h2 class="relative group">勒让德变换与哈密顿量
-    <div id="勒让德变换与哈密顿量" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8b%92%e8%ae%a9%e5%be%b7%e5%8f%98%e6%8d%a2%e4%b8%8e%e5%93%88%e5%af%86%e9%a1%bf%e9%87%8f" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>勒让德变换 ($Legendre\text{ }Transformation$) 在数学上是从一组独立变量到另一组独立变量的变换.</p>
-<p>可以通过这种方式, 让描述系统的变量 $\dot q$ 转换为 $p$. 这样可以在解欧拉-拉格朗日方程时将一个二阶偏微分方程降为两个对称的一阶偏微分方程.</p>
-<p>对拉格朗日量 $L$ 求全微分
-</p>
-$$\begin{equation}
-dL = \frac{\partial L}{\partial q}dq + \frac{\partial L}{\partial \dot q}d\dot q + \frac{\partial L}{\partial t}dt=\frac{\partial L}{\partial q}dq + d(\frac{\partial L}{\partial \dot q}\dot q) -\dot q d\frac{\partial L}{\partial \dot q} + \frac{\partial L}{\partial t}dt.\label{6}
-\end{equation}$$<p>
-将广义动量 $p=\frac{\partial L}{\partial \dot q}$ 与欧拉-拉格朗日方程 \eqref{res} 代入式 \eqref{6}, 且有
-</p>
-$$\begin{equation}\begin{aligned}
-dL =& \frac{d}{dt}\frac{\partial L}{\partial \dot q}dq + d(p\dot q) -\dot q dp + \frac{\partial L}{\partial t}dt = \dot p dq + d(p\dot q) -\dot q dp + \frac{\partial L}{\partial t}dt\\
-=&\frac{d}{dt}(pdq-qdp)+ d(p\dot q)+ \frac{\partial L}{\partial t}dt.
-\end{aligned}\label{7}\end{equation}$$<p>
-对于式 \eqref{7} , 右侧已经只依赖于 $q$, $p$ 和 $t$ 三个变量. 出于数学习惯 (也恰好符合物理形式) 将式\eqref{7} 写为
+那么 $a_m$ 也可表示为
 </p>
 $$
-\begin{equation}
-d(p\dot q) - dL = \dot qdp - \dot pdq - \frac{\partial L}{\partial t}dt.\label{8}
-\end{equation}
+a_m=\frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}.
 $$<p>
-定义哈密顿量 ($Hamiltonian$)
+将新的 $a_m$ 代回式 \eqref{1-9}
 </p>
 $$
-H(p,q,t) = p\dot{q} - L(q,\dot q,t).
+\psi_n^{(1)}=\sum_m \frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}\psi_m^{(0)}, n\neq m.
 $$<p>
-将其全微分
+而如果当 $n=m$, 式 \eqref{1-9} 中的 $a_m$则变为
 </p>
 $$
-\begin{equation}
-dH(p,q,t)=\frac{\partial H}{\partial p}dp+\frac{\partial H}{\partial q}dq+\frac{\partial H}{\partial t}dt\label{9}
-\end{equation}
+a_m= \langle \psi_m^{(0)}|\psi_n^{(1)}\rangle=\langle \psi_m^{(0)}|\psi_m^{(1)}\rangle.
 $$<p>
-将式 \eqref{8} 和式 \eqref{9} 对照, 得到
+根据间接归一化条件, 有 $\langle \psi_m^{(0)}|\psi_m^{(1)}\rangle=0$. 所以对于 $\psi_n^{(1)}$ 则无需考虑 $n=m$ 项.</p>
+<p>综上, 当 $\lambda=1$ 时 $\psi_n$ 可以记为
 </p>
-$$\begin{align}
-\dot q&=\frac{\partial H}{\partial p}\label{10},\\
-\dot p&=-\frac{\partial H}{\partial q}\label{11}.
-\end{align}$$<p>
-式 \eqref{10} 和式 \eqref{11} 即为哈密顿正则方程 ($Hamilton's\text{ }Canonical\text{ }Equations$).</p>
-
+$$
+\psi_n\approx\psi_n^{(0)}+\sum_{n\neq m} \frac{\langle \psi_m^{(0)}|\hat H'|\psi_n^{(0)}\rangle}{(E_m^{(0)}-E_n^{(0)})}\psi_m^{(0)}.
+$$
           
           
           
         </div>
         
         
-  <details class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5">
-    
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
-    分子模拟理论基础 -
-    这篇文章属于一个选集。
-  </summary>
-  
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/constraint_dynamics/">
-          § :
-          约束动力学(编辑中)
-        </a>
-      </div>
-    
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/verlet-algorithm/">
-          § :
-          verlet算法
-        </a>
-      </div>
-    
-  
-    
-      <div
-        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
-      </div>
-    
-  
-
-
-  </details>
-
 
         
 
@@ -1418,10 +1314,10 @@ $$\begin{align}
         
         <script
           type="text/javascript"
-          src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          src="../../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\Lagrangian Mechanics\index.md"
-          data-oid-likes="likes_posts\Lagrangian Mechanics\index.md"></script>
+          data-oid="views_posts\quantum_chemistry\perturbation_theory\index.md"
+          data-oid-likes="likes_posts\quantum_chemistry\perturbation_theory\index.md"></script>
       
     </section>
 
@@ -1437,32 +1333,19 @@ $$\begin{align}
       <div class="flex justify-between pt-3">
         <span class="flex flex-col">
           
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/remote_ssh_to_wsl/">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;使用remote SSH远程访问另一台电脑上的WSL2虚拟机
-              </span>
-            </a>
-            
-              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-11-30T15:00:51&#43;08:00">2025 年 11 月 30 日</time>
-              </span>
-            
-          
         </span>
         <span class="flex flex-col items-end">
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/verlet-algorithm/">
+              href="../../../posts/quantum_chemistry/variation_method_and_secular_equation/">
               <span class="leading-6">
-                verlet算法&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                量子化学中变分法与久期方程的推导&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             
               <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time>
+                <time datetime="2025-11-19T17:39:51&#43;08:00">2025 年 11 月 19 日</time>
               </span>
             
           
@@ -1537,7 +1420,7 @@ $$\begin{align}
   
   <script
     type="text/javascript"
-    src="../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    src="../../../js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
     integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
@@ -1545,7 +1428,7 @@ $$\begin{align}
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
-  data-url="https://WentianGodlike.github.io/">
+  data-url="http://localhost:1313/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
