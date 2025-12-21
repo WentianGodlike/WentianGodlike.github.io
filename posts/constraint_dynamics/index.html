@@ -243,7 +243,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2863"
+    "wordCount": "2785"
   }]
   </script>
 
@@ -866,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>2863 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+      <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>2785 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
     
 
     
@@ -1019,10 +1019,15 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#位置修正">位置修正</a></li>
-    <li><a href="#速度修正">速度修正</a></li>
+    <li><a href="#shake-算法">SHAKE 算法</a></li>
+    <li><a href="#rattle-算法">RATTLE 算法</a></li>
     <li><a href="#键角约束">键角约束</a></li>
-    <li><a href="#求解">求解</a></li>
+    <li><a href="#求解">求解</a>
+      <ul>
+        <li><a href="#特殊情况">特殊情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#lincs-算法">LINCS 算法</a></li>
     <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
@@ -1037,10 +1042,15 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#位置修正">位置修正</a></li>
-    <li><a href="#速度修正">速度修正</a></li>
+    <li><a href="#shake-算法">SHAKE 算法</a></li>
+    <li><a href="#rattle-算法">RATTLE 算法</a></li>
     <li><a href="#键角约束">键角约束</a></li>
-    <li><a href="#求解">求解</a></li>
+    <li><a href="#求解">求解</a>
+      <ul>
+        <li><a href="#特殊情况">特殊情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#lincs-算法">LINCS 算法</a></li>
     <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
@@ -1215,143 +1225,105 @@
           <p>在约束动力学中, 某些任意选定的自由度 (如键长) 被约束固定, 而其他自由度则在分子间和分子内作用力的影响下自由演化. 约束动力学方法实际上利用了一组未定的乘子来表征沿键方向的作用力大小, 以维持键长恒定. 首先在不存在约束力的情况下求解一个时间步的运动方程, 用以确定这些约束力的大小并据此修正原子的位置.</p>
 <p>约束动力学最大优势在于简化复杂的多原子液体模拟, 只需额外添加基于分子几何结构的约束模块即可.</p>
 <p>这对于 <code>柔性</code> 分子而言是一个非常大的优化. 柔性, 也就是分子的键长和键角能够在一定程度上变化的分子. 与之相对的是 <code>刚性</code>, 也就是键长和键角都被固定的分子, 更进一步, 也就是分子内部没有任何相对运动.</p>
-<p>最初的 <code>$SHAKE$</code> 算法专为 $verlet$ 算法而设计,后续提出的 <code>$RATTLE$</code> 算法用以适配速度 $verlet$ 算法.</p>
-<p>假设存在一个 $H_2O$ 分子, 结构为 $H-O-H$, 依次编号为 $1,2,3$. 固定两根键的长度, 但允许键角变化, 以模拟势能的变化. $r_i$ 表示原子 $i$ 的 $Cartesian$ 坐标.</p>
-<p>由欧几里得公式, 定义函数 $\chi_{ij}^{(r)}(t)$ 为原子 $i,j$ 之间键长与 $i,j$ 之间距离的差值, 即
-</p>
-$$\begin{equation}\begin{aligned}
-\chi_{12}^{(r)}(t) = |r_{12}(t)|^2 - d_{12}^2 = 0,\quad
-\chi_{23}^{(r)}(t) = |r_{23}(t)|^2 - d_{23}^2 = 0.
-\end{aligned}\label{r-res}\end{equation}$$<p>
-对时间求导, 因为 $d_{12}^2$ 是常数且点乘满足交换律有
-</p>
-$$
-\frac{d}{dt}r_{12}(t)\cdot r_{12}(t)+r_{12}(t)\cdot\frac{d}{dt}r_{12}(t)=0.
-$$<p>
-所以有
-</p>
-$$
-v_{12}(t) \cdot r_{12}(t) = 0.
-$$<p>
-并定义
-</p>
-$$
-\begin{equation}
-\chi_{ij}^{(v)}(t)\equiv v_{ij}(t) \cdot r_{ij}(t).\label{v-res}
-\end{equation}$$<p>
-根据牛顿运动定律
-</p>
-$$
-m_i\ddot {r}_i=f_i+g_i,
-$$<p>
-其中 $f_i$ 为第 $i$ 个原子所受的外力, $g_i$ 为对第 $i$ 个原子施加约束的力.</p>
-<p>接下来使用 $Lagrange$ 乘数法.</p>
-<p>在经典力学中，对于一个完整约束 (如键长固定 $\chi(r) = 0$), 约束力 $g$ 有一个极其重要的几何性质: <strong>约束力总是垂直于约束曲面</strong>, 即一个标量函数 $\chi$ 的梯度向量 $\nabla \chi$ 恰好代表了该等势面的法线方向.</p>
-<p>因此, 约束力力 $g_i$ 正比于这个约束函数的梯度
-</p>
-$$
-g_i \propto \nabla_{r_i} \chi.
-$$<p>
-因为不知道约束力具体有多大, 所以需要引入一个待定系数来表示其大小, 即 $Lagrange$ 乘子 $\Lambda_{12}$ 对应约束 $\chi_{12}^{(r)}$; $\Lambda_{23}$ 对应约束 $\chi_{23}^{(r)}$ .这样就得到各原子的约束力
-</p>
-$$
-\begin{align*}
-g_1 &= \underbrace{\Lambda_{12} \nabla_{r_2} \chi_{12}^{(r)}}_{\text{来自键1-2的力}}=2\Lambda_{12}r_{12}, \\
-g_2 &= \underbrace{\Lambda_{12} \nabla_{r_2} \chi_{12}^{(r)}}_{\text{来自键1-2的力}} + \underbrace{\Lambda_{23} \nabla_{r_2} \chi_{23}^{(r)}}_{\text{来自键2-3的力}}=-2\Lambda_{12} r_{12}+2\Lambda_{23} r_{23},\\
-g_3 &= \underbrace{\Lambda_{23} \nabla_{r_2} \chi_{23}^{(r)}}_{\text{来自键2-3的力}}=-2\Lambda_{23} r_{23}.
-\end{align*}$$<p>
-对 $verlet$ 算法的两个阶段, 即生成半步速度的 $kick$ 和生成一步位置的 $draft$ 阶段
-</p>
-$$\begin{align*}
-v'_{i}(t+\frac{1}{2}\delta t)&=v_{i}(t)+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t,\\
-r'_{i}(t+\delta t)&=r_{i}(t)+v_{i}(t)\delta t+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t^2,
-\end{align*}$$<p>
-分别使用对原子 $i$ 引入引入位置约束 $g_i^{(r)}$ 和速度修正力 $g_i^{(v)}$, 此时对于一步位置, 有
-</p>
-$$
-r_i(t+\delta t)=r_{i}(t)+v_{i}(t)\delta t+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t^2+\frac{1}{2}\frac{g_i^{(r)}}{m_i}\delta t^2.
-$$
-<h2 class="relative group">位置修正
-    <div id="位置修正" class="anchor"></div>
+<p>在推导之前, 先进行定义的描述.</p>
+<p>考虑一个包含 $N$ 个原子和 $K$ 个完整约束 (一般而言是键长) 的系统.</p>
+<ul>
+<li>$\mathbf{r}(t) \in \mathbb{R}^{3N}$: 包含所有粒子坐标的向量, 有
+$$\mathbf{r} =
+\begin{pmatrix}
+x_1 , y_1 , z_1 ,
+x_2 , y_2 , z_2 ,
+\ldots ,
+x_N , y_N , z_N
+\end{pmatrix}^T_{3N \times 1}.$$</li>
+<li>$\mathbf{M} \in \mathbb{R}^{3N \times 3N}$: 对角质量矩阵, 元素为 $m_i$.有
+$$\mathbf{M} = \text{diag}(m_1, m_1, m_1, m_2, m_2, m_2, \dots, m_N, m_N, m_N).$$</li>
+<li>$g_k(\mathbf{r},t) = |\mathbf{r}_{i_k}(t) - \mathbf{r}_{j_k}(t)|^2 - d_k^2 = 0$: 第 $k$ 个约束方程, 其中 $d_k$ 是键长.
+需要注意的是, $\mathbf{r}_{i_k}(t)-\mathbf{r}_{j_k}(t)$ 的下标表示第 $k$ 组相对位置, 即第 $k$ 组 $\mathbf{r}_{i}(t) - \mathbf{r}_{j}(t)$.</li>
+<li>$\mathbf{B}(t) \in \mathbb{R}^{K \times 3N}$ 为坐标相对于约束的梯度, 即
+$$\mathbf{B}_{ki}(t) = \frac{\partial g_k(t)}{\partial r_i(t)},$$
+其中 $B_k$ 表示键的方向向量.</li>
+</ul>
+<p>最初的 <code>$SHAKE$</code> 算法专为 $Leap-frog$ 积分器而设计, 后续提出的 <code>$RATTLE$</code> 算法用以适配速度 $verlet$ 算法.</p>
+
+<h2 class="relative group">SHAKE 算法
+    <div id="shake-算法" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bd%8d%e7%bd%ae%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#shake-%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>对于第一个氢原子, 包含
+<p>假设系统遵循牛顿力学方程, 在蛙跳算法中, 我们不仅要更新位置, 还要保证更新后的位置 $\mathbf{r}(t+\Delta t)$ 精确满足约束 $g_k[\mathbf{r}(t+\Delta t)] = 0$.</p>
+<p>首先忽略约束力 $g$, 能得到未受约束力的下一步位置
 </p>
 $$
-\frac{1}{2}\frac{g_1(t)}{m_1}\delta t^2=\frac{\Lambda_{12}r_{12}}{m_1}\delta t^2.
+\mathbf{r}^{unc}(t+\Delta t) = \mathbf{r}(t) + \mathbf{v}^{unc}(t+\frac{1}{2}\Delta t) \Delta t,
 $$<p>
-将质量 $m_1$, 距离 $r_{12}$ 融入 $\Lambda_{12}$, 定义为 $\lambda_{12}^{(r)}$, 即 $\lambda_{12}^{(r)}\equiv\frac{\Lambda_{12}r_{12}}{m_1}$, 得到
+其中
 </p>
 $$
-\frac{1}{2}\frac{g_1(t)}{m_1}\delta t^2=\lambda_{12}\delta t^2.
+\mathbf{v}^{unc}(t+\frac{1}{2}\Delta t) = \mathbf{v}(t-\frac{1}{2}\Delta t) + \Delta t \mathbf{M}^{-1} \mathbf{F}(t).
 $$<p>
-类似地定义 $\lambda_{23}^{(r)}\equiv\frac{\Lambda_{23}r_{23}}{m_3}$, 得到
+接下来引入位置修正力, 引入 $Lagrange$ 乘子向量 $\lambda$ 以体现每个约束下力的大小, 所以约束力可以写为 $\mathbf{B}^T \boldsymbol{\lambda}$, 有
 </p>
 $$
-\begin{equation}
-\begin{aligned}
-(\frac{1}{2}\delta t^2) g_1^{(r)}(t) &= \lambda_{12}^{(r)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_2^{(r)}(t) &= \lambda_{23}^{(r)} r_{23}(t) - \lambda_{12}^{(r)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_3^{(r)}(t) &= -\lambda_{23}^{(r)} r_{23}(t).
-\end{aligned}\label{3r}\end{equation}$$<p>
-\eqref{3r} 的目的在于确保 \eqref{r-res} 成立. 此时能够计算得到一步距离
+\mathbf{r}(t+\Delta t) = \mathbf{r}^{unc}(t+\Delta t) + {\Delta t}\mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\lambda}.
+$$<p>
+简化计算, 可以将 $\Delta t$ 合并进 $\boldsymbol{\lambda}$, 即$\boldsymbol{\gamma} = \Delta t\boldsymbol{\lambda}$, 此时有
 </p>
-$$\begin{align}
-r_{12}(t+\delta t)=r'_{12}(t+\delta t)+(m_1^{-1}+m_2^{-2})\lambda_{12}^{(r)}r_{12}(t)-m_2^{-1}\lambda_{23}^{(r)}r_{23}(t),\label{r_12}\\
-r_{23}(t+\delta t)=r'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(r)}r_{23}(t)-m_2^{-1}\lambda_{12}^{(r)}r_{12}(t).\label{r_23}
-\end{align}$$<p>
-接下来能够通过式 \eqref{r_12} 和 \eqref{r_23} 取模平方
+$$
+\mathbf{r}(t+\Delta t) = \mathbf{r}^{unc}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\gamma}.
+$$<p>
+所以可以相当简单地将约束表示为
 </p>
-$$\begin{align*}
-|r_{12}(t+\delta t)|^2=|r_{12}(t)|^2=d_{12}^2,\\
-|r_{23}(t+\delta t)|^2=|r_{23}(t)|^2=d_{23}^2.
-\end{align*}$$<p>
-并联立, 获得关于 $\lambda_{12}^{(r)}$ 和 $\lambda_{23}^{(r)}$ 的方程组. 这就是 $SHAKE$ 算法的流程.</p>
-
-<h2 class="relative group">速度修正
-    <div id="速度修正" class="anchor"></div>
+$$
+g_k[\mathbf{r}^{unc}(t+\Delta t) - \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\gamma}] = 0, \quad \forall k.
+$$
+<h2 class="relative group">RATTLE 算法
+    <div id="rattle-算法" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%80%9f%e5%ba%a6%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#rattle-%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>相对于 $SHAKE$ 算法, $RATTLE$ 算法针对的是速度 $Verlet$ 算法, 引入了速度修正.</p>
-<p>半步速度则根据
+<p>对约束条件 $|\mathbf{r}_{i_k}(t) + \mathbf{r}_{j_k}(t)|^2 - d_k^2 = 0$ 求导可以得到速度约束条件 $\dot g_k(t)=\mathbf{r}(t) \cdot \mathbf{v}(t) = 0$, 等价于 $\mathbf{B}(t) \cdot \mathbf{v}(t) = 0$.</p>
+<p>$SHAKE$ 仅修正位置, 导致速度实际上不满足约束导数 (即 $\mathbf{r}(t) \cdot \mathbf{v}(t) \neq 0$). $RATTLE$ 基于速度 $Verlet$ 算法, 能够同时实现位置与速度的更新.</p>
+<p>首先更新无约束的半步速度与一步位置, 有
+</p>
+$$\begin{align*}
+\mathbf{v}^{unc}(t+\frac{1}{2}\Delta t) &= \mathbf{v}(t) + \frac{\Delta t}{2} \mathbf{M}^{-1} \mathbf{F}(t),\\
+\mathbf{r}^{unc}(t) &= \mathbf{r}(t) + \Delta t \mathbf{v}^{unc}(t+\frac{1}{2}\Delta t).
+\end{align*}$$<p>
+相同地, 引入 $Lagrange$ 乘子向量 $\lambda_R$ 使得约束条件 $g_k$ 成立, 有
 </p>
 $$
-v_i(t+\frac{1}{2}\delta t)=v_i(t)+\frac{1}{2}\frac{f_i(t)}{m_i}\delta t+\frac{1}{2}\frac{g_i^{(r)}(t)}{m_i}\delta t
+\mathbf{r}(t+\Delta t) = \mathbf{r}^{unc}(t+\Delta t) + {\Delta t}\mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\lambda}_R.
 $$<p>
-进行更新. 进而可以得到未施加约束的与施加约束的一步速度
-</p>
-$$\begin{align}
-v'_i(t+\delta t)&=v_i(t+\frac{1}{2}\delta t)+\frac{1}{2}\frac{f_i(t+\delta t)}{m_i}\delta t,\nonumber\\
-v_i(t+\delta t)&=v'_i(t+\delta t)+\frac{1}{2}\frac{g_i^{(v)}(t+\delta t)}{m_i}\delta t.\label{v-}
-\end{align}$$<p>
-类似地, 可以根据 \eqref{v-} 得到一个与 \eqref{3r} 类似的一组 $\lambda_{ij}^{(v)}$ 与 $g_{i}^{(v)}$ 如下
+进一步, 也是 $RATTLE$ 算法的精髓, 就是同时更新一步速度 $\mathbf{v}(t+\Delta t)$, 使其满足速度约束条件 $\dot g_k(t+\Delta t)=\mathbf{r}(t+\Delta t) \cdot \mathbf{v}(t+\Delta t) = 0$.
+首先使用速度 $verlet$ 算法获取无约束一步速度
 </p>
 $$
-\begin{equation}
-\begin{aligned}
-(\frac{1}{2}\delta t^2) g_1^{(v)}(t) &= \lambda_{12}^{(v)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_2^{(v)}(t) &= \lambda_{23}^{(v)} r_{23}(t) - \lambda_{12}^{(v)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_3^{(v)}(t) &= -\lambda_{23}^{(v)} r_{23}(t).
-\end{aligned}\label{3v}\end{equation}$$<p>
-这组方程的目的是为了保证使速度 $v_i(t+\delta t)$ 满足 \eqref{v-res}. 类似 \eqref{r_12} 和 \eqref{r_23} 得到
+\mathbf{v}^{unc}(t+\Delta t) = \mathbf{v}(t+\frac{1}{2}\Delta t) + \frac{\Delta t}{2} \mathbf{M}^{-1} \mathbf{F}(t+\Delta t).
+$$<p>
+然后引入速度乘子 $\mu$, 有
 </p>
-$$\begin{align}
-v_{12}(t+\delta t)=v'_{12}(t+\delta t)+(m_1^{-1}+m_2^{-2})\lambda_{12}^{(v)}r_{12}(t)-m_2^{-1}\lambda_{23}^{(v)}r_{23}(t),\label{v_12}\\
-v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{23}(t)-m_2^{-1}\lambda_{12}^{(v)}r_{12}(t).\label{v_23}
-\end{align}$$<p>
-其中 $r_{12},r_{23}$ 为已知量, 未知量只有 $\lambda_{12}^{(v)}$ 与 $\lambda_{23}^{(v)}$.</p>
-<p>所以将 \eqref{v_12} 和\eqref{v_23} 代入 \eqref{v-res} 即可求得 $\lambda_{12}^{(v)}$ 与 $\lambda_{23}^{(v)}$.</p>
-
+$$
+\mathbf{v}(t+\Delta t) = \mathbf{v}^{unc}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t+\Delta t) \boldsymbol{\mu}.
+$$<p>
+由 $\mathbf{B}(t+\Delta t) \cdot \mathbf{v}(t+\Delta t) = 0$ 得
+</p>
+$$
+\mathbf{B}(t+\Delta t) \left[ \mathbf{v}^{unc}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t+\Delta t) \boldsymbol{\mu} \right] = 0.
+$$<p>
+整理, 得
+</p>
+$$
+    \mathbf{B}(t+\Delta t) \mathbf{M}^{-1} \mathbf{B}^T(t+\Delta t) \boldsymbol{\mu} = - \mathbf{B}(t+\Delta t) \mathbf{v}^{unc}(t+\Delta t).
+$$
 <h2 class="relative group">键角约束
     <div id="键角约束" class="anchor"></div>
     
@@ -1376,6 +1348,16 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
 <p>速度约束 $\lambda^{(v)}$ 是个一次线性方程组.</p>
 <p>对于小分子还好, 但对于蛋白质等大分子, 动辄成千上万个约束, 解一个一次线性方程组实际上是求矩阵的逆, 当约束一多, 对于时间复杂度的影响是致命的 (一次求逆的时间复杂度是 $O(N^3)$).</p>
 <p>另一种替代方案是逐个, 循环地处理各项约束条件, 依次调整坐标, 以使每项约束条件都能得到满足. 这个过程需要反复执行, 直到所有约束条件都得到满足. 这就是 $SHAKE$ 和 $RATTLE$ 算法的逻辑所在. 并且如果该过程迭代至收敛, 则它将保持 $Verlet$ 算法或速度 $Verlet$ 算法的辛特性.</p>
+
+<h3 class="relative group">特殊情况
+    <div id="特殊情况" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%89%b9%e6%ae%8a%e6%83%85%e5%86%b5" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
 <p>但是这些算法对于一些特殊的分子不管用, 如线性分子 $CS_2$ 和平面分子苯 $C_6H_6$.</p>
 <p>首先引入 <code>自由度</code> 概念. 对于每一个分子, 有三个平动自由度, 即在 $x,y,z$ 三个方向上进行平动, 也有三个转动自由度, 即绕 $x,y,z$ 三个轴进行转动.</p>
 <p>对于 $CS_2$ 分子, 其有三个平动自由度, 但只能绕两个轴旋转, 不能绕自身所在的直线旋转. 因为在经典力学和统计力学中这种沿着键轴的自转不构成一个有效的自由度(无法储存动能, 也不改变分子的空间构型). 所以 $CS_2$ 有 $5$ 个自由度. 而三个原子完全独立运动有 $3\times 3=9$ 个坐标, 故需要 $9-5=4$ 个方程来施加约束.</p>
@@ -1389,6 +1371,17 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
 <p>对于柔性分子而言, 共识是约束键长, 但让键角和扭转角依据势能进行演化.</p>
 <p>这是出于程序效率的考量. 对于刚性的三角型分子单元, $RATTLE/SHAKE$ 算法的迭代收敛异常缓慢, 这通常迫使我们减小时间步长. 那这还不如不去管这个约束. 此外, 键长的振动频率很高, 将其约束为定值不会产生较大影响, 但键角变化会较为显著且变化评率较低, 将其约束会破坏构象变化, 得不偿失.</p>
 
+<h2 class="relative group">LINCS 算法
+    <div id="lincs-算法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lincs-%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>$LINCS$ (Linear Constraint Solver) 由 Hess 等人在 1997 年提出. 与传统的 $SHAKE/RATTLE$ 算法不同, $LINCS$ 不依赖迭代求解, 而是基于矩阵级数展开的线性投影方法.</p>
+
 <h2 class="relative group">总结
     <div id="总结" class="anchor"></div>
     
@@ -1401,6 +1394,9 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
 <p>首先明确一下 $SHAKE$ 算法 和 $RATTLE$ 算法的区别.</p>
 <p>$SHAKE$ 算法针对的是经典的 $Verlet$ 算法, 只显式更新位置, 通过位置来推出速度. 所以 $SHAKE$ 只修正位置.</p>
 <p>而 $RATTLE$ 算法既显式更新位置, 又显式更新速度. 所以 $RATTLE$ 既修正位置, 又修正速度.</p>
+<p>类比一下开车. $SHAKE$ 相当于在导航时将车的位置拉回路中间, 而 $RATTLE$ 则相当于既把车头拉回路中间, 又将方向盘摆正.</p>
+<p>其次在软件使用方面, 对于 $GROMACS$ 一般默认采用 $LINCS$ 算法, 且 $GROMACS$ 常用 $Leap-Frog$ 积分器, 所以使用的是 $SHAKE$, 除非强制开启速度 $verlet$ 算法.</p>
+<p>而对于 $LAMMPS$, 设定使用 $verlet$ 算法时, 哪怕使用 <code>fix shake</code> 命令, 其在运行中也会使用 $RATTLE$ 来进行速度修正.</p>
 <p>最后针对实际应用, 一般而言仅需考虑键长约束, 而使键角根据势能进行演化.</p>
 
           
