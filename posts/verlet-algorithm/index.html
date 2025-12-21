@@ -243,7 +243,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2041"
+    "wordCount": "2040"
   }]
   </script>
 
@@ -866,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>2041 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>2040 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
     
 
     
@@ -1021,6 +1021,7 @@
   <ul>
     <li><a href="#原始-verlet-算法">原始 verlet 算法</a></li>
     <li><a href="#速度-verlet-算法">速度 verlet 算法</a></li>
+    <li><a href="#蛙跳算法">蛙跳算法</a></li>
     <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
         <li><a href="#trotter-分解">Trotter 分解</a></li>
@@ -1043,6 +1044,7 @@
   <ul>
     <li><a href="#原始-verlet-算法">原始 verlet 算法</a></li>
     <li><a href="#速度-verlet-算法">速度 verlet 算法</a></li>
+    <li><a href="#蛙跳算法">蛙跳算法</a></li>
     <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
         <li><a href="#trotter-分解">Trotter 分解</a></li>
@@ -1278,9 +1280,18 @@ $$r(t + \Delta t) = r(t) + v(t + \frac{1}{2}\Delta t)\Delta t.$$<p>
 </p>
 $$v(t + \Delta t) = v(t + \frac{1}{2}\Delta t) + \frac{1}{2}a(t + \Delta t)\Delta t.$$<p>可能会惊讶, 速度 $verlet$ 算法似乎与经典 $verlet$ 算法没什么区别, 但前者精度比后者高.</p>
 <p>在计算机运算中, 对于经典 $verlet$ 算法, 当 $\Delta t$ 很小时, $r(t)$ 和 $r(t-\Delta t)$ 是两个非常接近的极大数值. 两个很大的数相减, 导致有效数字大量丢失.</p>
-<p>而对于速度 $verlet$ 算法而言, 其位置公式是 $r_{new}=r_{old}+\text{小量}$ 这种形式避免了两个大数相减, 能够保留更多的有效数字.
-##蛙跳算法
-蛙跳算法的思路与速度 $verlet$ 算法十分类似, 除了每半步存储速度, 每一步存储位置以外基本一样.</p>
+<p>而对于速度 $verlet$ 算法而言, 其位置公式是 $r_{new}=r_{old}+\text{小量}$ 这种形式避免了两个大数相减, 能够保留更多的有效数字.</p>
+
+<h2 class="relative group">蛙跳算法
+    <div id="蛙跳算法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%9b%99%e8%b7%b3%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>蛙跳算法的思路与速度 $verlet$ 算法十分类似, 除了每半步存储速度, 每一步存储位置以外基本一样.</p>
 <p>更新速度采用
 </p>
 $$
