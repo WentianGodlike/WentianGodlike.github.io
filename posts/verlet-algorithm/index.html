@@ -68,6 +68,7 @@
     <meta property="article:published_time" content="2025-12-16T21:19:51+08:00">
     <meta property="article:modified_time" content="2025-12-16T21:19:51+08:00">
     <meta property="article:tag" content="分子模拟">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/liouville_theorem/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/constraint_dynamics/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
 
@@ -242,7 +243,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1920"
+    "wordCount": "1923"
   }]
   </script>
 
@@ -865,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>1920 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>1923 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -1018,12 +1019,13 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#原始--算法">原始  算法</a></li>
+    <li><a href="#原始-verlet-算法">原始 verlet 算法</a></li>
     <li><a href="#速度--算法">速度  算法</a></li>
-    <li><a href="#算法理论基础"> 算法理论基础</a>
+    <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
-        <li><a href="#分解"> 分解</a></li>
-        <li><a href="#演化算符">演化算符</a></li>
+        <li><a href="#trotter-分解">Trotter 分解</a></li>
+        <li><a href="#移位算符">移位算符</a></li>
+        <li><a href="#影子--量">影子  量</a></li>
       </ul>
     </li>
   </ul>
@@ -1039,12 +1041,13 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#原始--算法">原始  算法</a></li>
+    <li><a href="#原始-verlet-算法">原始 verlet 算法</a></li>
     <li><a href="#速度--算法">速度  算法</a></li>
-    <li><a href="#算法理论基础"> 算法理论基础</a>
+    <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
-        <li><a href="#分解"> 分解</a></li>
-        <li><a href="#演化算符">演化算符</a></li>
+        <li><a href="#trotter-分解">Trotter 分解</a></li>
+        <li><a href="#移位算符">移位算符</a></li>
+        <li><a href="#影子--量">影子  量</a></li>
       </ul>
     </li>
   </ul>
@@ -1176,6 +1179,16 @@
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="../../posts/liouville_theorem/">
+          § :
+          Liouville定理
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
         <a href="../../posts/constraint_dynamics/">
           § :
           约束动力学
@@ -1209,12 +1222,12 @@
         <div class="article-content max-w-prose mb-20">
           <p>简单来说, $verlet$ 算法的作用是求解牛顿运动方程 $F=ma$:根据当前时刻原子们的位置和受力, 算出它们下一时刻会在哪里.</p>
 
-<h2 class="relative group">原始 $verlet$ 算法
-    <div id="原始--算法" class="anchor"></div>
+<h2 class="relative group">原始 verlet 算法
+    <div id="原始-verlet-算法" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8e%9f%e5%a7%8b--%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8e%9f%e5%a7%8b-verlet-%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
     </span>
     
 </h2>
@@ -1267,22 +1280,22 @@ $$v(t + \Delta t) = v(t + \frac{1}{2}\Delta t) + \frac{1}{2}a(t + \Delta t)\Delt
 <p>在计算机运算中, 对于经典 $verlet$ 算法, 当 $\Delta t$ 很小时, $r(t)$ 和 $r(t-\Delta t)$ 是两个非常接近的极大数值. 两个很大的数相减, 导致有效数字大量丢失.</p>
 <p>而对于速度 $verlet$ 算法而言, 其位置公式是 $r_{new}=r_{old}+\text{小量}$ 这种形式避免了两个大数相减, 能够保留更多的有效数字.</p>
 
-<h2 class="relative group">$verlet$ 算法理论基础
-    <div id="算法理论基础" class="anchor"></div>
+<h2 class="relative group">verlet 算法理论基础
+    <div id="verlet-算法理论基础" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ae%97%e6%b3%95%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#verlet-%e7%ae%97%e6%b3%95%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80" aria-label="锚点">#</a>
     </span>
     
 </h2>
 
-<h3 class="relative group">$Trotter$ 分解
-    <div id="分解" class="anchor"></div>
+<h3 class="relative group">Trotter 分解
+    <div id="trotter-分解" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e8%a7%a3" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#trotter-%e5%88%86%e8%a7%a3" aria-label="锚点">#</a>
     </span>
     
 </h3>
@@ -1297,19 +1310,19 @@ Trotter 发现, 虽然 $e^{A+B} \neq e^A e^B$, 但如果指数上面的 $\Delta 
 $$e^{(A+B)\Delta t} \approx e^{B \frac{\Delta t}{2}} e^{A \Delta t} e^{B \frac{\Delta t}{2}} + O(\Delta t^3).$$<p>
 这就是 $Trotter$ 分解. 它把一个复杂的&quot;混合指数&quot; $e^{A+B}$ 拆成了两个简单的&quot;独立指数&quot;的乘积.</p>
 
-<h3 class="relative group">演化算符
-    <div id="演化算符" class="anchor"></div>
+<h3 class="relative group">移位算符
+    <div id="移位算符" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%bc%94%e5%8c%96%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a7%bb%e4%bd%8d%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a>
     </span>
     
 </h3>
-<p>系统的随时间演化由刘维尔算符 $iL$ 控制, 即
+<p>系统的随时间演化由 $Liouville$ 算符 $iL$ 控制, 即
 </p>
 $$f(t+\Delta t) = e^{iL \Delta t} f(t).$$<p>
-这里 $iL$ 包含了位置的变化 ($\frac{\partial}{\partial r}$) 和速度的变化 ($\frac{\partial}{\partial p}$).</p>
+这里 $iL$ 包含了位置的变化 ($\frac{\partial}{\partial q}$) 和速度的变化 ($\frac{\partial}{\partial p}$).</p>
 <p>因为位置和速度耦合在一起, 直接求解 $e^{iL \Delta t}$ 较为困难. 所以在速度 $verlet$ 算法中本质是将演化算符使用 $Trotter$ 分解把算符近似为两个半步速度 $iL_2$ 和一个一步位置 $iL_1$
 </p>
 $$e^{iL\Delta t} \approx e^{\frac{iL_2 \Delta t}{2}} e^{iL_1 \Delta t} e^{\frac{iL_2 \Delta t}{2}}.$$<p>
@@ -1334,6 +1347,16 @@ $$\begin{aligned}
 &= f(x) + c f'(x) + \frac{c^2}{2!} f''(x) + \frac{c^3}{3!} f'''(x) + \dots+ \frac{c^i}{i!} f^{(i)}(x).
 \end{aligned}$$<p>
 恰好就是 $f(x+c)$ 的泰勒展开.</p>
+
+<h3 class="relative group">影子 $Hamilton$ 量
+    <div id="影子--量" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bd%b1%e5%ad%90--%e9%87%8f" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
 <p>以这种方式拆分 $Liouville$ 算符, 能够保留一个很关键的性质 (辛性质): 尽管轨迹只是近似的, 无法精确守恒真实能量 $H$, 但却能严格守恒一个 &ldquo;影子$Hamilton$量&rdquo; $\tilde{H}$. 其可以写成
 </p>
 $$\tilde{H} = H + (\Delta t)^2 H_2 + (\Delta t)^4 H_4 + \dots$$<p>
@@ -1363,6 +1386,16 @@ $$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
     这篇文章属于一个选集。
   </summary>
   
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="../../posts/liouville_theorem/">
+          § :
+          Liouville定理
+        </a>
+      </div>
+    
   
     
       <div

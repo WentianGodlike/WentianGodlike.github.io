@@ -15,8 +15,8 @@
 
   
   
-    <title>约束动力学 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="约束动力学 &middot; WentianGodlike&#39;s Blog">
+    <title>Liouville定理 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="Liouville定理 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <link rel="canonical" href="https://WentianGodlike.github.io/posts/constraint_dynamics/">
+  <link rel="canonical" href="https://WentianGodlike.github.io/posts/liouville_theorem/">
   
 
   
@@ -58,23 +58,23 @@
   
 
   
-  <meta property="og:url" content="https://WentianGodlike.github.io/posts/constraint_dynamics/">
+  <meta property="og:url" content="https://WentianGodlike.github.io/posts/liouville_theorem/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="约束动力学">
+  <meta property="og:title" content="Liouville定理">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-18T18:48:51+08:00">
-    <meta property="article:modified_time" content="2025-12-18T18:48:51+08:00">
+    <meta property="article:published_time" content="2025-12-21T15:19:51+08:00">
+    <meta property="article:modified_time" content="2025-12-21T15:19:51+08:00">
     <meta property="article:tag" content="分子模拟">
-      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/liouville_theorem/">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/constraint_dynamics/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/verlet-algorithm/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="约束动力学">
+  <meta name="twitter:title" content="Liouville定理">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -224,26 +224,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "约束动力学",
-    "headline": "约束动力学",
+    "name": "Liouville定理",
+    "headline": "Liouville定理",
     
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/WentianGodlike.github.io\/posts\/constraint_dynamics\/",
+    "url" : "https:\/\/WentianGodlike.github.io\/posts\/liouville_theorem\/",
     "author" : {
       "@type": "Person",
       "name": "WentianGodlike"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-12-18T18:48:51\u002b08:00",
-    "datePublished": "2025-12-18T18:48:51\u002b08:00",
+    "dateCreated": "2025-12-21T15:19:51\u002b08:00",
+    "datePublished": "2025-12-21T15:19:51\u002b08:00",
     
-    "dateModified": "2025-12-18T18:48:51\u002b08:00",
+    "dateModified": "2025-12-21T15:19:51\u002b08:00",
     
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2863"
+    "wordCount": "1038"
   }]
   </script>
 
@@ -804,8 +804,8 @@
 
   
   <li class="hidden">
-    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/constraint_dynamics/"
-      >约束动力学</a
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/liouville_theorem/"
+      >Liouville定理</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -814,7 +814,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        约束动力学
+        Liouville定理
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -866,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>2863 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+      <time datetime="2025-12-21T15:19:51&#43;08:00">2025 年 12 月 21 日</time><span class="px-2 text-primary-500">&middot;</span><span>1038 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
     
 
     
@@ -1019,11 +1019,9 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#位置修正">位置修正</a></li>
-    <li><a href="#速度修正">速度修正</a></li>
-    <li><a href="#键角约束">键角约束</a></li>
-    <li><a href="#求解">求解</a></li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#相空间与系综">相空间与系综</a></li>
+    <li><a href="#liouville-定理">Liouville 定理</a></li>
+    <li><a href="#解的形式">解的形式</a></li>
   </ul>
 </nav>
   </div>
@@ -1037,11 +1035,9 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#位置修正">位置修正</a></li>
-    <li><a href="#速度修正">速度修正</a></li>
-    <li><a href="#键角约束">键角约束</a></li>
-    <li><a href="#求解">求解</a></li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#相空间与系综">相空间与系综</a></li>
+    <li><a href="#liouville-定理">Liouville 定理</a></li>
+    <li><a href="#解的形式">解的形式</a></li>
   </ul>
 </nav>
   </div>
@@ -1171,18 +1167,18 @@
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/liouville_theorem/">
-          § :
-          Liouville定理
-        </a>
+        § :
+        本文
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/constraint_dynamics/">
+          § :
+          约束动力学
+        </a>
       </div>
     
   
@@ -1212,196 +1208,121 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>在约束动力学中, 某些任意选定的自由度 (如键长) 被约束固定, 而其他自由度则在分子间和分子内作用力的影响下自由演化. 约束动力学方法实际上利用了一组未定的乘子来表征沿键方向的作用力大小, 以维持键长恒定. 首先在不存在约束力的情况下求解一个时间步的运动方程, 用以确定这些约束力的大小并据此修正原子的位置.</p>
-<p>约束动力学最大优势在于简化复杂的多原子液体模拟, 只需额外添加基于分子几何结构的约束模块即可.</p>
-<p>这对于 <code>柔性</code> 分子而言是一个非常大的优化. 柔性, 也就是分子的键长和键角能够在一定程度上变化的分子. 与之相对的是 <code>刚性</code>, 也就是键长和键角都被固定的分子, 更进一步, 也就是分子内部没有任何相对运动.</p>
-<p>最初的 <code>$SHAKE$</code> 算法专为 $verlet$ 算法而设计,后续提出的 <code>$RATTLE$</code> 算法用以适配速度 $verlet$ 算法.</p>
-<p>假设存在一个 $H_2O$ 分子, 结构为 $H-O-H$, 依次编号为 $1,2,3$. 固定两根键的长度, 但允许键角变化, 以模拟势能的变化. $r_i$ 表示原子 $i$ 的 $Cartesian$ 坐标.</p>
-<p>由欧几里得公式, 定义函数 $\chi_{ij}^{(r)}(t)$ 为原子 $i,j$ 之间键长与 $i,j$ 之间距离的差值, 即
+          <p>$Liouville$ 定理和 $Liouville$ 方程不仅是统计力学的基础, 也是现代分子动力学 ($MD$) 算法设计的核心理论依据.</p>
+
+<h2 class="relative group">相空间与系综
+    <div id="相空间与系综" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%9b%b8%e7%a9%ba%e9%97%b4%e4%b8%8e%e7%b3%bb%e7%bb%bc" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>假定有包含 $N$ 个粒子的体系, 可以使用 $6N$ 个维度, 即 $3N$ 个广义坐标 $q$ 和 $3N$ 个共轭动量 $p$ 进行表示, 对应 $Hamilton$ 力学体系的表示方法. 这个 $6N$ 维的空间就称为 <code>相空间</code>.</p>
+<p>记状态 $\Gamma(p,q)$ 表示相空间中的一个点, 自然这个系统的演化是由 $Hamilton$ 量 $H(p,q)$ 控制的. 所以有
 </p>
-$$\begin{equation}\begin{aligned}
-\chi_{12}^{(r)}(t) = |r_{12}(t)|^2 - d_{12}^2 = 0,\quad
-\chi_{23}^{(r)}(t) = |r_{23}(t)|^2 - d_{23}^2 = 0.
-\end{aligned}\label{r-res}\end{equation}$$<p>
-对时间求导, 因为 $d_{12}^2$ 是常数且点乘满足交换律有
-</p>
-$$
-\frac{d}{dt}r_{12}(t)\cdot r_{12}(t)+r_{12}(t)\cdot\frac{d}{dt}r_{12}(t)=0.
-$$<p>
-所以有
-</p>
-$$
-v_{12}(t) \cdot r_{12}(t) = 0.
-$$<p>
-并定义
-</p>
-$$
-\begin{equation}
-\chi_{ij}^{(v)}(t)\equiv v_{ij}(t) \cdot r_{ij}(t).\label{v-res}
+$$\begin{equation}
+\dot q_i=\frac{\partial H}{\partial p_i},\quad\dot p_i=-\frac{\partial H}{\partial q_i}.\label{Hami}
 \end{equation}$$<p>
-根据牛顿运动定律
+对于一个不显式依赖时间, 能量守恒的系统 (保守系统) 而言, $Hamilton$ 量就是能量. \eqref{Hami} 决定着点在相空间中的运动, 轨道是永不自交的曲线, 不同的轨道也互不相交. 若是 $Hamilton$ 量守恒, 则这些轨迹曲线将始终保持在 $6N-1$ 维的超平面上. 如果系统能量不守恒, 而是处于 $E-\Delta E $ 与 $E+\Delta E$ 之间, 则轨迹也将会处于 $E-\Delta E\leq H(p,q)\leq E+\Delta E$ 之间.</p>
+<p>对于一个由大量粒子组成的体系, 且宏观上达到平衡, 对其物理性质 $A$ 的测定往往会持续一段时间 $\delta t$ . 在 $\delta t$ 的时间间隔中, 宏观而言其物理性质未发生变化, 但其相空间的状态已经发生显著变化. 可以认为, 对 $A$ 的测量是时间间隔 $\delta t$ 的平均, 即
 </p>
 $$
-m_i\ddot {r}_i=f_i+g_i,
+\langle A \rangle=\frac{1}{\delta t}\int_{t}^{t+\delta t}dtA(p(t),q(t)).
 $$<p>
-其中 $f_i$ 为第 $i$ 个原子所受的外力, $g_i$ 为对第 $i$ 个原子施加约束的力.</p>
-<p>接下来使用 $Lagrange$ 乘数法.</p>
-<p>在经典力学中，对于一个完整约束 (如键长固定 $\chi(r) = 0$), 约束力 $g$ 有一个极其重要的几何性质: <strong>约束力总是垂直于约束曲面</strong>, 即一个标量函数 $\chi$ 的梯度向量 $\nabla \chi$ 恰好代表了该等势面的法线方向.</p>
-<p>因此, 约束力力 $g_i$ 正比于这个约束函数的梯度
+一般为了数学方便, 会让 $\delta t\rightarrow\infty$. 但即便如此, 也难以获取 $A(p(t),q(t))$ 的表达式. 所以引入了各态历经假设: <strong>在足够长的时间内, 代表系统的点在系统的能量曲面上各个区域停留的时间相同</strong>.</p>
+<p>那么就可以换一种表述
 </p>
-$$
-g_i \propto \nabla_{r_i} \chi.
-$$<p>
-因为不知道约束力具体有多大, 所以需要引入一个待定系数来表示其大小, 即 $Lagrange$ 乘子 $\Lambda_{12}$ 对应约束 $\chi_{12}^{(r)}$; $\Lambda_{23}$ 对应约束 $\chi_{23}^{(r)}$ .这样就得到各原子的约束力
-</p>
-$$
-\begin{align*}
-g_1 &= \underbrace{\Lambda_{12} \nabla_{r_2} \chi_{12}^{(r)}}_{\text{来自键1-2的力}}=2\Lambda_{12}r_{12}, \\
-g_2 &= \underbrace{\Lambda_{12} \nabla_{r_2} \chi_{12}^{(r)}}_{\text{来自键1-2的力}} + \underbrace{\Lambda_{23} \nabla_{r_2} \chi_{23}^{(r)}}_{\text{来自键2-3的力}}=-2\Lambda_{12} r_{12}+2\Lambda_{23} r_{23},\\
-g_3 &= \underbrace{\Lambda_{23} \nabla_{r_2} \chi_{23}^{(r)}}_{\text{来自键2-3的力}}=-2\Lambda_{23} r_{23}.
-\end{align*}$$<p>
-对 $verlet$ 算法的两个阶段, 即生成半步速度的 $kick$ 和生成一步位置的 $draft$ 阶段
-</p>
-$$\begin{align*}
-v'_{i}(t+\frac{1}{2}\delta t)&=v_{i}(t)+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t,\\
-r'_{i}(t+\delta t)&=r_{i}(t)+v_{i}(t)\delta t+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t^2,
-\end{align*}$$<p>
-分别使用对原子 $i$ 引入引入位置约束 $g_i^{(r)}$ 和速度修正力 $g_i^{(v)}$, 此时对于一步位置, 有
-</p>
-$$
-r_i(t+\delta t)=r_{i}(t)+v_{i}(t)\delta t+\frac{1}{2}\frac{f_{i}(t)}{m_{i}}\delta t^2+\frac{1}{2}\frac{g_i^{(r)}}{m_i}\delta t^2.
-$$
-<h2 class="relative group">位置修正
-    <div id="位置修正" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bd%8d%e7%bd%ae%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>对于第一个氢原子, 包含
-</p>
-$$
-\frac{1}{2}\frac{g_1(t)}{m_1}\delta t^2=\frac{\Lambda_{12}r_{12}}{m_1}\delta t^2.
-$$<p>
-将质量 $m_1$, 距离 $r_{12}$ 融入 $\Lambda_{12}$, 定义为 $\lambda_{12}^{(r)}$, 即 $\lambda_{12}^{(r)}\equiv\frac{\Lambda_{12}r_{12}}{m_1}$, 得到
-</p>
-$$
-\frac{1}{2}\frac{g_1(t)}{m_1}\delta t^2=\lambda_{12}\delta t^2.
-$$<p>
-类似地定义 $\lambda_{23}^{(r)}\equiv\frac{\Lambda_{23}r_{23}}{m_3}$, 得到
-</p>
-$$
-\begin{equation}
-\begin{aligned}
-(\frac{1}{2}\delta t^2) g_1^{(r)}(t) &= \lambda_{12}^{(r)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_2^{(r)}(t) &= \lambda_{23}^{(r)} r_{23}(t) - \lambda_{12}^{(r)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_3^{(r)}(t) &= -\lambda_{23}^{(r)} r_{23}(t).
-\end{aligned}\label{3r}\end{equation}$$<p>
-\eqref{3r} 的目的在于确保 \eqref{r-res} 成立. 此时能够计算得到一步距离
-</p>
-$$\begin{align}
-r_{12}(t+\delta t)=r'_{12}(t+\delta t)+(m_1^{-1}+m_2^{-2})\lambda_{12}^{(r)}r_{12}(t)-m_2^{-1}\lambda_{23}^{(r)}r_{23}(t),\label{r_12}\\
-r_{23}(t+\delta t)=r'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(r)}r_{23}(t)-m_2^{-1}\lambda_{12}^{(r)}r_{12}(t).\label{r_23}
-\end{align}$$<p>
-接下来能够通过式 \eqref{r_12} 和 \eqref{r_23} 取模平方
-</p>
-$$\begin{align*}
-|r_{12}(t+\delta t)|^2=|r_{12}(t)|^2=d_{12}^2,\\
-|r_{23}(t+\delta t)|^2=|r_{23}(t)|^2=d_{23}^2.
-\end{align*}$$<p>
-并联立, 获得关于 $\lambda_{12}^{(r)}$ 和 $\lambda_{23}^{(r)}$ 的方程组. 这就是 $SHAKE$ 算法的流程.</p>
+$$\begin{equation}
+\langle A \rangle=\int dpdq \rho(p,q,t)A(p,q).\label{ens}
+\end{equation}$$<p>
+\eqref{ens} 被称为系综平均. 所以可以将 <code>系综</code> 定义为 <strong>大量具有相同宏观性质的系统的集合</strong>.</p>
 
-<h2 class="relative group">速度修正
-    <div id="速度修正" class="anchor"></div>
+<h2 class="relative group">Liouville 定理
+    <div id="liouville-定理" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%80%9f%e5%ba%a6%e4%bf%ae%e6%ad%a3" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#liouville-%e5%ae%9a%e7%90%86" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>相对于 $SHAKE$ 算法, $RATTLE$ 算法针对的是速度 $Verlet$ 算法, 引入了速度修正.</p>
-<p>半步速度则根据
+<p>$Liouville$ 定理可以表述为沿着 $Hamilton$ 系统的运动轨迹, 相空间密度保持不变, 即
 </p>
 $$
-v_i(t+\frac{1}{2}\delta t)=v_i(t)+\frac{1}{2}\frac{f_i(t)}{m_i}\delta t+\frac{1}{2}\frac{g_i^{(r)}(t)}{m_i}\delta t
+\frac{d\rho(p,q,t)}{dt}=0.
 $$<p>
-进行更新. 进而可以得到未施加约束的与施加约束的一步速度
+证明过程也很简单, 首先因为相空间中某系统的点不会凭空产生或消失, 所以
 </p>
-$$\begin{align}
-v'_i(t+\delta t)&=v_i(t+\frac{1}{2}\delta t)+\frac{1}{2}\frac{f_i(t+\delta t)}{m_i}\delta t,\nonumber\\
-v_i(t+\delta t)&=v'_i(t+\delta t)+\frac{1}{2}\frac{g_i^{(v)}(t+\delta t)}{m_i}\delta t.\label{v-}
-\end{align}$$<p>
-类似地, 可以根据 \eqref{v-} 得到一个与 \eqref{3r} 类似的一组 $\lambda_{ij}^{(v)}$ 与 $g_{i}^{(v)}$ 如下
+$$\begin{equation}
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho v) = 0.\label{liu}
+\end{equation}$$<p>
+其中:</p>
+<ul>
+<li>$v$ 是速度, 即广义坐标与广义动量随时间的变化率 $v=(\dot{p},\dot{q})$.</li>
+<li>$\nabla$ 是散度算符 $\nabla = (\frac{\partial}{\partial q_i},\frac{\partial}{\partial p_i})$.</li>
+<li>散度 $\nabla \cdot (\rho v)$ 表示流出的速度减去流入的速度.</li>
+</ul>
+<p>展开\eqref{liu} , 有
 </p>
 $$
-\begin{equation}
-\begin{aligned}
-(\frac{1}{2}\delta t^2) g_1^{(v)}(t) &= \lambda_{12}^{(v)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_2^{(v)}(t) &= \lambda_{23}^{(v)} r_{23}(t) - \lambda_{12}^{(v)} r_{12}(t),\\
-(\frac{1}{2}\delta t^2) g_3^{(v)}(t) &= -\lambda_{23}^{(v)} r_{23}(t).
-\end{aligned}\label{3v}\end{equation}$$<p>
-这组方程的目的是为了保证使速度 $v_i(t+\delta t)$ 满足 \eqref{v-res}. 类似 \eqref{r_12} 和 \eqref{r_23} 得到
+\frac{\partial \rho}{\partial t} + \underbrace{\sum_{i=1}^{3N} \left( \frac{\partial \rho}{\partial q_i}\dot{q}_i + \frac{\partial \rho}{\partial p_i}\dot{p}_i \right)}_{v \cdot \nabla \rho} + \rho \underbrace{\sum_{i=1}^{3N} \left( \frac{\partial \dot{q}_i}{\partial q_i} + \frac{\partial \dot{p}_i}{\partial p_i} \right)}_{\nabla \cdot v} = 0.
+$$<p>
+对第三项代入 $Hamilton$ 方程, 有
 </p>
-$$\begin{align}
-v_{12}(t+\delta t)=v'_{12}(t+\delta t)+(m_1^{-1}+m_2^{-2})\lambda_{12}^{(v)}r_{12}(t)-m_2^{-1}\lambda_{23}^{(v)}r_{23}(t),\label{v_12}\\
-v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{23}(t)-m_2^{-1}\lambda_{12}^{(v)}r_{12}(t).\label{v_23}
-\end{align}$$<p>
-其中 $r_{12},r_{23}$ 为已知量, 未知量只有 $\lambda_{12}^{(v)}$ 与 $\lambda_{23}^{(v)}$.</p>
-<p>所以将 \eqref{v_12} 和\eqref{v_23} 代入 \eqref{v-res} 即可求得 $\lambda_{12}^{(v)}$ 与 $\lambda_{23}^{(v)}$.</p>
-
-<h2 class="relative group">键角约束
-    <div id="键角约束" class="anchor"></div>
+$$
+\nabla \cdot v = \sum_{i=1}^{3N} \left( \frac{\partial}{\partial q_i}\left( \frac{\partial H}{\partial p_i} \right) + \frac{\partial}{\partial p_i}\left( - \frac{\partial H}{\partial q_i} \right) \right).
+$$<p>
+假定 $H$ 二次可微
+</p>
+$$
+\frac{\partial^2 H}{\partial q_i \partial p_i} = \frac{\partial^2 H}{\partial p_i \partial q_i}.
+$$<p>
+所以
+</p>
+$$
+\nabla \cdot v = \sum_{i=1}^{3N} \left( \frac{\partial^2 H}{\partial q_i \partial p_i} - \frac{\partial^2 H}{\partial p_i \partial q_i} \right) = 0.
+$$<p>
+也就是说
+</p>
+$$
+\frac{d\rho}{d t}=\frac{\partial\rho}{\partial t}+v\nabla\rho=0.
+$$<p>进一步考虑 $\rho(p,q,t)$ 随时间的演化 $\frac{\partial\rho}{\partial t}=-v\nabla\rho$. 将 $Hamilton$ 方程代入
+</p>
+$$
+\frac{\partial \rho}{\partial t} = - \sum_{i=1}^{3N} \left( \dot{{q}}_i \frac{\partial \rho}{\partial {q}_i} + \dot{{p}}_i \frac{\partial \rho}{\partial {p}_i} \right),
+$$<p>
+有
+</p>
+$$\begin{equation}
+\frac{\partial \rho}{\partial t} = - \sum_{i=1}^{3N} \left( \frac{\partial H}{\partial {p}_i} \frac{\partial \rho}{\partial {q}_i} - \frac{\partial H}{\partial {q}_i} \frac{\partial \rho}{\partial p_i} \right) = -\{\rho, H\}.\label{liue}\end{equation}
+$$<p>
+称\eqref{liue} 为 $Liouville$ 方程. 定义 $Liouville$ 算符
+</p>
+$$
+iL = \{\cdot, H\} = \sum_{i} \left( \frac{\partial H}{\partial {p}_i} \frac{\partial}{\partial {q}_i} - \frac{\partial H}{\partial {q}_i} \frac{\partial}{\partial {p}_i} \right).
+$$<p>
+于是 $Liouville$ 方程可以写为
+</p>
+$$
+\frac{\partial \rho}{\partial t} = -iL \rho.
+$$
+<h2 class="relative group">解的形式
+    <div id="解的形式" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%94%ae%e8%a7%92%e7%ba%a6%e6%9d%9f" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%a7%a3%e7%9a%84%e5%bd%a2%e5%bc%8f" aria-label="锚点">#</a>
     </span>
     
 </h2>
-<p>对于键角, 处理方法也并不困难, 由三角形的性质可以知道, 三角形的三边长固定, 则三个内角角度也可以知道. 以 $H_2O$ 分子为例, 仅需再添加一个 $r_{13}$ 和 $v_{13}$ 项即可约束键角.</p>
-
-<h2 class="relative group">求解
-    <div id="求解" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b1%82%e8%a7%a3" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>位置约束 $\lambda^{(r)}$ 是一个非线性二次方程, 但根据假设, $g=\lambda r$ 呈现线性关系, 所以由 \eqref{3r}, $\lambda\propto \delta t^2$, 也就是说这个二次项很小可以忽略. 这些方程可以采用迭代方式求解. 首先略去二次项, 求解剩余的线性方程. 然后将得到的近似解代入二次项中, 从而得到新的线性方程, 进而获得 $\lambda^{(r)}$ 的更精确估计值, 如此反复进行即可得到解.</p>
-<p>速度约束 $\lambda^{(v)}$ 是个一次线性方程组.</p>
-<p>对于小分子还好, 但对于蛋白质等大分子, 动辄成千上万个约束, 解一个一次线性方程组实际上是求矩阵的逆, 当约束一多, 对于时间复杂度的影响是致命的 (一次求逆的时间复杂度是 $O(N^3)$).</p>
-<p>另一种替代方案是逐个, 循环地处理各项约束条件, 依次调整坐标, 以使每项约束条件都能得到满足. 这个过程需要反复执行, 直到所有约束条件都得到满足. 这就是 $SHAKE$ 和 $RATTLE$ 算法的逻辑所在. 并且如果该过程迭代至收敛, 则它将保持 $Verlet$ 算法或速度 $Verlet$ 算法的辛特性.</p>
-<p>但是这些算法对于一些特殊的分子不管用, 如线性分子 $CS_2$ 和平面分子苯 $C_6H_6$.</p>
-<p>首先引入 <code>自由度</code> 概念. 对于每一个分子, 有三个平动自由度, 即在 $x,y,z$ 三个方向上进行平动, 也有三个转动自由度, 即绕 $x,y,z$ 三个轴进行转动.</p>
-<p>对于 $CS_2$ 分子, 其有三个平动自由度, 但只能绕两个轴旋转, 不能绕自身所在的直线旋转. 因为在经典力学和统计力学中这种沿着键轴的自转不构成一个有效的自由度(无法储存动能, 也不改变分子的空间构型). 所以 $CS_2$ 有 $5$ 个自由度. 而三个原子完全独立运动有 $3\times 3=9$ 个坐标, 故需要 $9-5=4$ 个方程来施加约束.</p>
-<p>但只能提供 $3$ 个约束, 即两个键的键长和键角, 不够 $4$ 个来让其变成刚体.</p>
-<p>对于苯而言, 其作为刚体有 $6$ 个自由度, 需要的约束有 $6\times 3-6=12$ 个 (6个原子组成六边形), 当然可以设法通过固定对角线, 固定各原子的距离找到这样 $12$ 个约束条件, 但将其写成矩阵, 会惊讶地发现这个矩阵的行列式为 $0$, 所有的约束都在一个平面内, 没有任何约束能防止原子 &ldquo;跑出平面&rdquo;. 数学上表现为方程组线性相关, 无法求逆.</p>
-<p>针对这种问题, 有两种方案.</p>
-<p>一是选取一组足以确定分子几何结构的原子子集, 对这些原子施加约束条件, 并将其余原子的坐标表示为以主要 &ldquo;核心&rdquo; 原子坐标为系数的线性组合.</p>
-<p>二是使用一些替代算法. 如 $SETTLE$ 和 $LINCS$ 等. 对于小分子, 可以使用 $SETTLE$ 算法, 也就是直接代数求解.</p>
-<p>对于线性和环状分子, 可以使用 $LINCS$ 算法. 其利用最小作用原理重写受约束的运动方程, 通过对接不受约束的位置施加矩阵校正, 从而将沿 &ldquo;旧&rdquo; 键方向投影的键长调整至正确值. 若再加入针对键旋转的校正, 这一方法无需迭代即可达到相当高的精度, 并据称其计算速度比 $SHAKE$ 快数倍, 同时在大时间步长下也表现出更优异的收敛特性.</p>
-<p>对于完全刚性的分子, 基于四元数参数或旋转矩阵的辛积分算法似乎是最简单的方法. 一旦在分子模型中引入任何非刚性的要素, 约束动力学就成了一个有吸引力的选择.</p>
-<p>对于柔性分子而言, 共识是约束键长, 但让键角和扭转角依据势能进行演化.</p>
-<p>这是出于程序效率的考量. 对于刚性的三角型分子单元, $RATTLE/SHAKE$ 算法的迭代收敛异常缓慢, 这通常迫使我们减小时间步长. 那这还不如不去管这个约束. 此外, 键长的振动频率很高, 将其约束为定值不会产生较大影响, 但键角变化会较为显著且变化评率较低, 将其约束会破坏构象变化, 得不偿失.</p>
-
-<h2 class="relative group">总结
-    <div id="总结" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#</a>
-    </span>
-    
-</h2>
-<p>首先明确一下 $SHAKE$ 算法 和 $RATTLE$ 算法的区别.</p>
-<p>$SHAKE$ 算法针对的是经典的 $Verlet$ 算法, 只显式更新位置, 通过位置来推出速度. 所以 $SHAKE$ 只修正位置.</p>
-<p>而 $RATTLE$ 算法既显式更新位置, 又显式更新速度. 所以 $RATTLE$ 既修正位置, 又修正速度.</p>
-<p>最后针对实际应用, 一般而言仅需考虑键长约束, 而使键角根据势能进行演化.</p>
+<p>刘维尔方程是一个一阶线性微分方程, 其形式解是指数算符. 若 $H$ 不显式依赖时间, 则可以写为
+</p>
+$$
+\rho(p,q, t) = e^{-iLt} \rho(p,q, 0).
+$$<p>
+定义 $U(t) = e^{-iLt}$ 为 <code>传播子</code>, 作用为使 $t=0$ 时刻的状态变为 $t$ 时刻的状态.</p>
 
           
           
@@ -1421,18 +1342,18 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/liouville_theorem/">
-          § :
-          Liouville定理
-        </a>
+        § :
+        本文
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/constraint_dynamics/">
+          § :
+          约束动力学
+        </a>
       </div>
     
   
@@ -1480,8 +1401,8 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
           type="text/javascript"
           src="../../js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\constraint_dynamics\index.md"
-          data-oid-likes="likes_posts\constraint_dynamics\index.md"></script>
+          data-oid="views_posts\Liouville_theorem\index.md"
+          data-oid-likes="likes_posts\Liouville_theorem\index.md"></script>
       
     </section>
 
@@ -1499,32 +1420,19 @@ v_{23}(t+\delta t)=v'_{23}(t+\delta t)+(m_2^{-1}+m_3^{-2})\lambda_{23}^{(v)}r_{2
           
             <a
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/verlet-algorithm/">
+              href="../../posts/constraint_dynamics/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;verlet算法
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;约束动力学
               </span>
             </a>
             
               <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time>
+                <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time>
               </span>
             
           
         </span>
         <span class="flex flex-col items-end">
-          
-            <a
-              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/liouville_theorem/">
-              <span class="leading-6">
-                Liouville定理&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
-              </span>
-            </a>
-            
-              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-21T15:19:51&#43;08:00">2025 年 12 月 21 日</time>
-              </span>
-            
           
         </span>
       </div>
