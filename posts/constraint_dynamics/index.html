@@ -243,7 +243,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2785"
+    "wordCount": "3592"
   }]
   </script>
 
@@ -866,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>2785 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+      <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time><span class="px-2 text-primary-500">&middot;</span><span>3592 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
     
 
     
@@ -1024,6 +1024,7 @@
     <li><a href="#键角约束">键角约束</a></li>
     <li><a href="#求解">求解</a>
       <ul>
+        <li><a href="#能使用迭代法的原因">能使用迭代法的原因</a></li>
         <li><a href="#特殊情况">特殊情况</a></li>
       </ul>
     </li>
@@ -1047,6 +1048,7 @@
     <li><a href="#键角约束">键角约束</a></li>
     <li><a href="#求解">求解</a>
       <ul>
+        <li><a href="#能使用迭代法的原因">能使用迭代法的原因</a></li>
         <li><a href="#特殊情况">特殊情况</a></li>
       </ul>
     </li>
@@ -1242,10 +1244,14 @@ $$\mathbf{M} = \text{diag}(m_1, m_1, m_1, m_2, m_2, m_2, \dots, m_N, m_N, m_N).$
 需要注意的是, $\mathbf{r}_{i_k}(t)-\mathbf{r}_{j_k}(t)$ 的下标表示第 $k$ 组相对位置, 即第 $k$ 组 $\mathbf{r}_{i}(t) - \mathbf{r}_{j}(t)$.</li>
 <li>$\mathbf{B}(t) \in \mathbb{R}^{K \times 3N}$ 为坐标相对于约束的梯度, 即
 $$\mathbf{B}_{ki}(t) = \frac{\partial g_k(t)}{\partial r_i(t)},$$
-其中 $B_k$ 表示键的方向向量.</li>
+其中 $B_k$ 表示键的方向向量, 但大小包含因子 $2|\mathbf{r}_{ij}|$.</li>
 </ul>
-<p>最初的 <code>$SHAKE$</code> 算法专为 $Leap-frog$ 积分器而设计, 后续提出的 <code>$RATTLE$</code> 算法用以适配速度 $verlet$ 算法.</p>
-
+<p>对于 $SHAKE$ 算法, 只需确保每个位置约束
+</p>
+$$g_k(\mathbf{r},t) = |\mathbf{r}_{i_k}(t) - \mathbf{r}_{j_k}(t)|^2 - d_k^2 = 0$$<p>
+满足即可, 对于 $RATTLE$ 算法, 则还需满足速度约束
+</p>
+$$\dot g_k(t)=\mathbf{r}(t) \cdot \mathbf{v}(t) = 0.$$
 <h2 class="relative group">SHAKE 算法
     <div id="shake-算法" class="anchor"></div>
     
@@ -1255,6 +1261,7 @@ $$\mathbf{B}_{ki}(t) = \frac{\partial g_k(t)}{\partial r_i(t)},$$
     </span>
     
 </h2>
+<p>以 $Leap-Frog$ 算法为例.</p>
 <p>假设系统遵循牛顿力学方程, 在蛙跳算法中, 我们不仅要更新位置, 还要保证更新后的位置 $\mathbf{r}(t+\Delta t)$ 精确满足约束 $g_k[\mathbf{r}(t+\Delta t)] = 0$.</p>
 <p>首先忽略约束力 $g$, 能得到未受约束力的下一步位置
 </p>
@@ -1271,15 +1278,10 @@ $$<p>
 $$
 \mathbf{r}(t+\Delta t) = \mathbf{r}^{unc}(t+\Delta t) + {\Delta t}\mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\lambda}.
 $$<p>
-简化计算, 可以将 $\Delta t$ 合并进 $\boldsymbol{\lambda}$, 即$\boldsymbol{\gamma} = \Delta t\boldsymbol{\lambda}$, 此时有
-</p>
-$$
-\mathbf{r}(t+\Delta t) = \mathbf{r}^{unc}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\gamma}.
-$$<p>
 所以可以相当简单地将约束表示为
 </p>
 $$
-g_k[\mathbf{r}^{unc}(t+\Delta t) - \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\gamma}] = 0, \quad \forall k.
+g_k[\mathbf{r}^{unc}(t+\Delta t) - \mathbf{M}^{-1} \mathbf{B}^T(t) \Delta t\boldsymbol{\lambda}] = 0, \quad \forall k.
 $$
 <h2 class="relative group">RATTLE 算法
     <div id="rattle-算法" class="anchor"></div>
@@ -1290,6 +1292,7 @@ $$
     </span>
     
 </h2>
+<p>以速度 $Verlet$ 算法为例.</p>
 <p>对约束条件 $|\mathbf{r}_{i_k}(t) + \mathbf{r}_{j_k}(t)|^2 - d_k^2 = 0$ 求导可以得到速度约束条件 $\dot g_k(t)=\mathbf{r}(t) \cdot \mathbf{v}(t) = 0$, 等价于 $\mathbf{B}(t) \cdot \mathbf{v}(t) = 0$.</p>
 <p>$SHAKE$ 仅修正位置, 导致速度实际上不满足约束导数 (即 $\mathbf{r}(t) \cdot \mathbf{v}(t) \neq 0$). $RATTLE$ 基于速度 $Verlet$ 算法, 能够同时实现位置与速度的更新.</p>
 <p>首先更新无约束的半步速度与一步位置, 有
@@ -1344,10 +1347,51 @@ $$
     </span>
     
 </h2>
-<p>位置约束 $\lambda^{(r)}$ 是一个非线性二次方程, 但根据假设, $g=\lambda r$ 呈现线性关系, 所以由 \eqref{3r}, $\lambda\propto \delta t^2$, 也就是说这个二次项很小可以忽略. 这些方程可以采用迭代方式求解. 首先略去二次项, 求解剩余的线性方程. 然后将得到的近似解代入二次项中, 从而得到新的线性方程, 进而获得 $\lambda^{(r)}$ 的更精确估计值, 如此反复进行即可得到解.</p>
-<p>速度约束 $\lambda^{(v)}$ 是个一次线性方程组.</p>
-<p>对于小分子还好, 但对于蛋白质等大分子, 动辄成千上万个约束, 解一个一次线性方程组实际上是求矩阵的逆, 当约束一多, 对于时间复杂度的影响是致命的 (一次求逆的时间复杂度是 $O(N^3)$).</p>
-<p>另一种替代方案是逐个, 循环地处理各项约束条件, 依次调整坐标, 以使每项约束条件都能得到满足. 这个过程需要反复执行, 直到所有约束条件都得到满足. 这就是 $SHAKE$ 和 $RATTLE$ 算法的逻辑所在. 并且如果该过程迭代至收敛, 则它将保持 $Verlet$ 算法或速度 $Verlet$ 算法的辛特性.</p>
+<p>对于位置约束 $\boldsymbol{\lambda}$ 与 $\boldsymbol{\lambda_R}$, 二者求解方式基本一致, 以 $\boldsymbol{\lambda}$ 为例, 令 $\boldsymbol{\gamma} = \Delta t^2 \boldsymbol{\lambda}$ 以简化计算, 则有
+</p>
+$$
+g_k[\mathbf{r}^{unc}(t+\Delta t) - \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\gamma}] = 0, \quad \forall k.
+$$<p>
+这是一个关于 $\boldsymbol{\gamma}$ 的非线性方程组. 使用迭代法求解.</p>
+<p>对第 $k$ 个约束方程在 $\mathbf{r}^{unc}(t+\Delta t)$ 处进行泰勒展开并保留一阶项
+</p>
+$$
+g_k(\mathbf{r}(t+\Delta t)) \approx g_k(\mathbf{r}^{unc}(t+\Delta t)) + \nabla g_k(\mathbf{r}^{unc}(t+\Delta t)) \cdot \delta (\mathbf{r}) = 0,
+$$<p>
+其中 $\delta (\mathbf{r}) = \mathbf{r}(t+\Delta t)-\mathbf{r}= \mathbf{M}^{-1} \mathbf{B}^T(T) \boldsymbol{\gamma}$, 并近似认为一步之内键的方向变化不大, 即 $\nabla g_k(\mathbf{r}^{unc}(t+\Delta t))=\mathbf{B}_k^T(t)$, 此时得到一个线性方程组</p>
+$$g_k(\mathbf{r}^{unc}(t+\Delta t)) + \sum_{j=1}^K \left[ \nabla g_k(\mathbf{r}^{unc}(t+\Delta t)) \cdot \mathbf{M}^{-1} \nabla g_j^T(\mathbf{r}^{unc}(t+\Delta t)) \right] \gamma_j = 0.$$<p>
+化简, 将 $g_k(\mathbf{r}^{unc}(t+\Delta t))$ 组合到一起, 写成矩阵形式, 即为
+</p>
+$$
+(\mathbf{B}(t) \mathbf{M}^{-1} \mathbf{B}^T(t)) \boldsymbol{\gamma} = - g(\mathbf{r}^{unc}(t+\Delta t)).
+$$<p>
+针对上面这个矩阵, 可以用迭代法求解, 具体步骤为</p>
+<ul>
+<li>首先计算所有约束的破坏程度 $g_k(\mathbf{r})$.</li>
+<li>对于每一个约束 $k$，假设其他约束不变，计算修正量 $\gamma_k$
+$$\gamma_k = \frac{d_k^2 - |\mathbf{r}_{ij}^{unc}|^2}{2 \mathbf{r}_{ij, n} \cdot \mathbf{M}_{ij}^{-1} \cdot \mathbf{r}_{ij, unc}}.$$</li>
+<li>使用修正量 $\gamma_k$ 更新两个原子的位置 $\mathbf{r}_{i}, \mathbf{r}_{j}$.</li>
+<li>重复上述三步, 直到所有约束误差 $|\sigma_k| < \text{tolerance}$.
+速度约束 $\lambda^{(v)}$ 是个一次线性方程组.</li>
+</ul>
+<p>但对于 $RATTLE$ 的速度约束, 其存在耦合对角项, 即存在非对角元素非零的情况. 原因很简单, 对于水 $H_1-O-H_2$ 而言, 假设要修正 $O-H_1$ 的键长, 因为要移动中心的 $O$ 原子, 势必也会影响到 $O-H_2$ 的键长. 所以一样采用上述迭代法求解.</p>
+
+<h3 class="relative group">能使用迭代法的原因
+    <div id="能使用迭代法的原因" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%83%bd%e4%bd%bf%e7%94%a8%e8%bf%ad%e4%bb%a3%e6%b3%95%e7%9a%84%e5%8e%9f%e5%9b%a0" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>要求矩阵 $\mathbf{B}\mathbf{M}^{-1}\mathbf{B}^T$ 对角占优, 即
+</p>
+$$
+|A_{kk}| > \sum_{j \neq k} |A_{kj}|.
+$$<p>
+其中对角项 $A_{kk}$ 大致正比于 $\frac{1}{m_A} + \frac{1}{m_B}$ (键两端原子的质量倒数和), 非对角项 $A_{kj}$ 大致正比于 $\frac{\cos \theta}{m_{shared}}$ (共享原子的质量倒数乘以键角余弦).</p>
+<p>所以只要 键角 $\theta$ 不要接近 0° 或 180°, 且共享原子的质量不是无穷小, 对角项通常远大于非对角项.</p>
 
 <h3 class="relative group">特殊情况
     <div id="特殊情况" class="anchor"></div>
@@ -1381,6 +1425,77 @@ $$
     
 </h2>
 <p>$LINCS$ (Linear Constraint Solver) 由 Hess 等人在 1997 年提出. 与传统的 $SHAKE/RATTLE$ 算法不同, $LINCS$ 不依赖迭代求解, 而是基于矩阵级数展开的线性投影方法.</p>
+<p>对于 $LINCS$ 而言其约束条件定义与 $SHAKE$ 和 $RATTLE$ 略有不同.</p>
+<p>定义约束条件 $g'_k(\mathbf{r},t) = |\mathbf{r}_{i_k}(t) - \mathbf{r}_{j_k}(t)| - d_k = 0$, $\mathbf{B}_{ki}(t) = \frac{\partial g'_k(t)}{\partial r_i(t)}$.</p>
+<p>此处 $\mathbf{B}_{ki}(t)$ 就是键 $k$ 的方向向量.</p>
+<p>首先 $LINCS$ 是通过投影来解 $g'(t+\Delta t)=0$ 的. 将新的键长投影到键的方向上, 并假设从 $t$ 时刻的位置到 $t+\Delta t$ 时刻的位置旋转角变化不大, 有
+</p>
+$$B(t) \cdot (\mathbf{r}(t+\Delta t) - \mathbf{r}^{unc}(t+\Delta t)) = \mathbf{d} - \mathbf{l}_{unc},$$<p>
+其中 $\mathbf{d}$ 是键长列向量, $\mathbf{l}_{unc}$ 表示每个约束条件中的原子在时刻 $t+\Delta t$ 未施加约束时的距离即 $|\mathbf{r}_{i}(t+\Delta t)-\mathbf{r}_{j}(t+\Delta t)|$ 组成的列向量.</p>
+<p>此时代入 $Leap-Frog$ 的位置更新公式, 有
+</p>
+$$
+\mathbf{B}(t) (\mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\lambda}') = \mathbf{d} - \mathbf{l}_{unc}.
+$$<p>
+令 $\mathbf{A}=\mathbf{B}(t) \mathbf{M}^{-1} \mathbf{B}^T(t)$ 表示连接某一相同原子的键 $k$ 和键 $j$ 的加权点积. 并定义 $\mathbf{D}$ 为$\mathbf{A}$ 的对角元素组成的矩阵. 将 $\mathbf{A}$ 分解为
+</p>
+$$
+\mathbf{A} = \mathbf{D}^{1/2} (\mathbf{I} - \mathbf{S}) \mathbf{D}^{1/2},
+$$<p>
+其中 $I$ 为单位矩阵. 由此得到耦合矩阵 $S$ 定义
+</p>
+$$
+\mathbf{S} = \mathbf{I} - \mathbf{D}^{-1/2} \mathbf{A} \mathbf{D}^{-1/2}.
+$$<p>
+对于耦合矩阵 $S$, 其表示耦合强度. $S_{kj} = - \frac{A_{kj}}{\sqrt{A_{kk} A_{jj}}}$ 且 $S_{kk}=0$, 所以有
+</p>
+$$
+S_{kj} \propto \frac{\mathbf{b}_k \cdot \mathbf{b}_j}{m_{shared}} = \frac{|\mathbf{b}_k| |\mathbf{b}_j| \cos \theta_{kj}}{m_{shared}}.
+$$<p>
+所以可以对 $\mathbf{A}\cdot\boldsymbol{\lambda}'=\mathbf{d} - \mathbf{l}_{unc}$ 施加变换
+</p>
+$$
+\mathbf{A}\mathbf{D}^{1/2}\mathbf{D}^{-1/2}\cdot\boldsymbol{\lambda}'=\mathbf{d} - \mathbf{l}_{unc},
+$$<p>
+</p>
+$$
+\mathbf{D}^{-1/2}\mathbf{A}\mathbf{D}^{-1/2}\mathbf{D}^{1/2}\cdot\boldsymbol{\lambda}'=\mathbf{D}^{-1/2}(\mathbf{d} - \mathbf{l}_{unc}),
+$$<p>
+</p>
+$$
+\mathbf{D}^{-1/2}\mathbf{D}^{1/2} (\mathbf{I} - \mathbf{S}) \mathbf{D}^{1/2}\mathbf{D}^{-1/2}\mathbf{D}^{1/2}\cdot\boldsymbol{\lambda}'=\mathbf{D}^{-1/2}(\mathbf{d} - \mathbf{l}_{unc}),
+$$<p>
+</p>
+$$
+(\mathbf{I} - \mathbf{S})\cdot\boldsymbol{\lambda}''=\mathbf{D}^{-1/2}(\mathbf{d} - \mathbf{l}_{unc}).
+$$<p>
+其中 $\boldsymbol{\lambda}''=\mathbf{D}^{1/2}\cdot\boldsymbol{\lambda}'$, 施加变换的目的是为了得到 $Neumann$ 级数的标准形式, 从而使用其进行求解. 根据 $Neumann$ 级数
+</p>
+$$
+(\mathbf{I} - \mathbf{S})^{-1} = \mathbf{I} + \mathbf{S} + \mathbf{S}^2 + \mathbf{S}^3 + \dots + \mathbf{S}^n,
+$$<p>
+可以将 $\boldsymbol{\lambda}''$ 表示为
+</p>
+$$
+\boldsymbol{\lambda}''= (\mathbf{I} +\sum_1^L \mathbf{S}^i)\mathbf{D}^{-1/2}(\mathbf{d} - \mathbf{l}_{unc}).
+$$<p>
+将上式解得 $\boldsymbol{\lambda}''$ 可以逆向推得 $\boldsymbol{\lambda}'$, 再通过
+</p>
+$$
+\mathbf{r}_{proj}(t+\Delta t) = \mathbf{r}_{unc}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t) \boldsymbol{\lambda}'
+$$<p>
+获得 $\mathbf{r}_{proj}(t+\Delta t)$.</p>
+<p>因为在计算时存在一个近似 $B(t+\Delta t)=B(t)$, 所以如此得到位置 $\mathbf{r}_{proj}(t+\Delta t)$ 所推算得到的键长可能会比实际上的键长略长, 据此可以得到新的键长列向量 $\mathbf{l}_{corr}$. 再需要引入修正 $d_{corr,k} = \sqrt{2d_k^2 - l_k^2}$, 获得误差向量 $\mathbf{d}_{corr}-\mathbf{l}_{corr}$ 取一个新的修正 $\boldsymbol{\lambda}_{corr}$, 复用方程
+</p>
+$$
+\mathbf{A}\cdot\boldsymbol{\lambda}_{corr}=\mathbf{d}_{corr}-\mathbf{l}_{corr}.
+$$<p>
+用一样的方法求解后得到 $\boldsymbol{\lambda}_{corr}$, 使用
+</p>
+$$
+\mathbf{r}(t+\Delta t) = \mathbf{r}_{proj}(t+\Delta t) + \mathbf{M}^{-1} \mathbf{B}^T(t+\Delta t) \boldsymbol{\lambda}_{corr}(t)
+$$<p>
+即可得到最终的下一步坐标 $\mathbf{r}(t+\Delta t)$.</p>
 
 <h2 class="relative group">总结
     <div id="总结" class="anchor"></div>
@@ -1392,7 +1507,7 @@ $$
     
 </h2>
 <p>首先明确一下 $SHAKE$ 算法 和 $RATTLE$ 算法的区别.</p>
-<p>$SHAKE$ 算法针对的是经典的 $Verlet$ 算法, 只显式更新位置, 通过位置来推出速度. 所以 $SHAKE$ 只修正位置.</p>
+<p>$SHAKE$ 算法针对的是经典的 $Verlet$ 算法或基于其优化而来的 $Leap-Frog$ 算法, 只显式更新位置, 通过位置来推出速度. 所以 $SHAKE$ 只修正位置.</p>
 <p>而 $RATTLE$ 算法既显式更新位置, 又显式更新速度. 所以 $RATTLE$ 既修正位置, 又修正速度.</p>
 <p>类比一下开车. $SHAKE$ 相当于在导航时将车的位置拉回路中间, 而 $RATTLE$ 则相当于既把车头拉回路中间, 又将方向盘摆正.</p>
 <p>其次在软件使用方面, 对于 $GROMACS$ 一般默认采用 $LINCS$ 算法, 且 $GROMACS$ 常用 $Leap-Frog$ 积分器, 所以使用的是 $SHAKE$, 除非强制开启速度 $verlet$ 算法.</p>

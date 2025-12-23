@@ -243,7 +243,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2040"
+    "wordCount": "2070"
   }]
   </script>
 
@@ -866,7 +866,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>2040 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>2070 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
     
 
     
@@ -1239,12 +1239,12 @@ $$\begin{align}
 r(t+\Delta t) = r(t) + v(t)\Delta t + \frac{1}{2}a(t)\Delta t^2 + \frac{1}{6}b(t)\Delta t^3 + \dots\label{t+deltat},\\
 r(t-\Delta t) = r(t) - v(t)\Delta t + \frac{1}{2}a(t)\Delta t^2 - \frac{1}{6}b(t)\Delta t^3 + \dots\label{t-deltat}.
 \end{align}$$<p>
-将 \eqref{t+\Delta t} 与 \eqref{t-\Delta t} 两式相加, 有
+将 \eqref{t+deltat} 与 \eqref{t-deltat} 两式相加, 有
 </p>
 $$\begin{equation}
 r(t+\Delta t)+r(t-\Delta t)=2r(t)+a(t)\Delta t^2+O(\Delta t^4).\label{verlet-1}
 \end{equation}$$<p>
-式 \eqref{verlet-1} 即为 <code>$verlet$积分公式</code>. 使用 $O(\Delta t^4)$ 进行近似的原因很简单, 位置 $r(t)$ 的高阶导数难以计算, 因此简单的 $Euler$ 法
+式 \eqref{verlet-1} 即为 <code>$verlet$积分公式</code>. 即根据前一时刻的位置与当前时刻的位置与受力能得到下一时刻的位置. 使用 $O(\Delta t^4)$ 进行近似的原因很简单, 位置 $r(t)$ 的高阶导数难以计算, 因此简单的 $Euler$ 法
 </p>
 $$r(t + \Delta t) = r(t) + v(t) \Delta t + O(\Delta t^2)$$<p>
 只能计算到 $v(t)(\Delta t)$, 局部误差为 $O(\Delta t^2)$，全局误差是 $O(\Delta t)$.</p>
