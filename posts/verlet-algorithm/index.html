@@ -68,9 +68,11 @@
     <meta property="article:published_time" content="2025-12-16T21:19:51+08:00">
     <meta property="article:modified_time" content="2025-12-16T21:19:51+08:00">
     <meta property="article:tag" content="分子模拟">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/liouville_theorem/">
       <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/constraint_dynamics/">
-      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/lagrangian-mechanics/">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/constant_temperature_molecular_dynamics/">
+      <meta property="og:see_also" content="https://WentianGodlike.github.io/posts/ewald_sum/">
 
   
   <meta name="twitter:card" content="summary">
@@ -243,7 +245,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2070"
+    "wordCount": "1645"
   }]
   </script>
 
@@ -866,7 +868,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>2070 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-12-16T21:19:51&#43;08:00">2025 年 12 月 16 日</time><span class="px-2 text-primary-500">&middot;</span><span>1645 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -1024,8 +1026,6 @@
     <li><a href="#蛙跳算法">蛙跳算法</a></li>
     <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
-        <li><a href="#trotter-分解">Trotter 分解</a></li>
-        <li><a href="#移位算符">移位算符</a></li>
         <li><a href="#影子--量">影子  量</a></li>
       </ul>
     </li>
@@ -1047,8 +1047,6 @@
     <li><a href="#蛙跳算法">蛙跳算法</a></li>
     <li><a href="#verlet-算法理论基础">verlet 算法理论基础</a>
       <ul>
-        <li><a href="#trotter-分解">Trotter 分解</a></li>
-        <li><a href="#移位算符">移位算符</a></li>
         <li><a href="#影子--量">影子  量</a></li>
       </ul>
     </li>
@@ -1181,10 +1179,28 @@
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="../../posts/lagrangian-mechanics/">
+          § :
+          拉格朗日量与哈密顿量
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
         <a href="../../posts/liouville_theorem/">
           § :
           Liouville定理
         </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § :
+        本文
       </div>
     
   
@@ -1201,17 +1217,19 @@
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/constant_temperature_molecular_dynamics/">
+          § :
+          恒温分子动力学模拟
+        </a>
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/lagrangian-mechanics/">
+        <a href="../../posts/ewald_sum/">
           § :
-          拉格朗日量与哈密顿量
+          Ewald求和(编辑中)
         </a>
       </div>
     
@@ -1311,64 +1329,17 @@ $$r(t + \Delta t) = r(t) + v(t + \frac{1}{2}\Delta t)\Delta t.$$<p>
     </span>
     
 </h2>
-
-<h3 class="relative group">Trotter 分解
-    <div id="trotter-分解" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#trotter-%e5%88%86%e8%a7%a3" aria-label="锚点">#</a>
-    </span>
-    
-</h3>
-<p>假设有两个数字 $a$ 和 $b$, 显然有:
-</p>
-$$e^{a+b} = e^a \cdot e^b.$$<p>
-这对于普通数字是成立的. 但是, 在量子力学或统计力学中, 我们要处理的是算符或矩阵, 如 $A$ 和 $B$. 如果 $A$ 和 $B$ 不对易 ($AB \neq BA$)，那么：
-</p>
-$$e^{A+B} \neq e^A e^B.$$<p>
-Trotter 发现, 虽然 $e^{A+B} \neq e^A e^B$, 但如果指数上面的 $\Delta t$ 非常小, 可以有一个高精度的近似:
-</p>
-$$e^{(A+B)\Delta t} \approx e^{B \frac{\Delta t}{2}} e^{A \Delta t} e^{B \frac{\Delta t}{2}} + O(\Delta t^3).$$<p>
-这就是 $Trotter$ 分解. 它把一个复杂的&quot;混合指数&quot; $e^{A+B}$ 拆成了两个简单的&quot;独立指数&quot;的乘积.</p>
-
-<h3 class="relative group">移位算符
-    <div id="移位算符" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a7%bb%e4%bd%8d%e7%ae%97%e7%ac%a6" aria-label="锚点">#</a>
-    </span>
-    
-</h3>
 <p>系统的随时间演化由 $Liouville$ 算符 $iL$ 控制, 即
 </p>
 $$f(t+\Delta t) = e^{iL \Delta t} f(t).$$<p>
 这里 $iL$ 包含了位置的变化 ($\frac{\partial}{\partial q}$) 和速度的变化 ($\frac{\partial}{\partial p}$).</p>
-<p>因为位置和速度耦合在一起, 直接求解 $e^{iL \Delta t}$ 较为困难. 所以在速度 $verlet$ 算法中本质是将演化算符使用 $Trotter$ 分解把算符近似为两个半步速度 $iL_2$ 和一个一步位置 $iL_1$
+<p>因为位置和速度耦合在一起, 直接求解 $e^{iL \Delta t}$ 较为困难. 所以在速度 $verlet$ 算法中本质是将演化算符使用<a
+  href="https://WentianGodlike.github.io/posts/liouville_theorem/"> $Trotter$ 分解</a> 把算符近似为两个半步速度 $iL_2$ 和一个一步位置 $iL_1$
 </p>
 $$e^{iL\Delta t} \approx e^{\frac{iL_2 \Delta t}{2}} e^{iL_1 \Delta t} e^{\frac{iL_2 \Delta t}{2}}.$$<p>
 其中 $iL_1$ 只体现动量对位置的影响, $iL_2$ 只体现受力对动量的影响.</p>
-<p>那么为什么分解之后就能计算了呢? 数学上有个性质叫 &ldquo;移位算符&rdquo;, 即<strong>指数形式的微分算符作用在函数上等价于直接把变量平移 $c$</strong>, 也就是
-</p>
-$$e^{c \frac{\partial}{\partial x}} f(x) = f(x+c).$$<p>证明也比较简单. 对算符 $A$ 而言, 其指数函数并不是寻常意义的指数函数, 而是泰勒展开的一系列算符.
-</p>
-$$
-e^A = \sum_{n=0}^{\infty} \frac{1}{n!} A^n = 1 + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \dots + \frac{1}{i!}A^i.
-$$<p>
-令 $A = c \frac{d}{dx}$, 代入上式, 有
-</p>
-$$
-e^{c \frac{d}{dx}} = \sum_{n=0}^{\infty} \frac{1}{n!} \left( c \frac{d}{dx} \right)^n = \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n}{dx^n}
-$$<p>
-此时让指数算符作用于 $f(x)$, 有
-</p>
-$$\begin{aligned}
-\left( e^{c \frac{d}{dx}} \right) f(x) &= \left( \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n}{dx^n} \right) f(x) \\
-&= \sum_{n=0}^{\infty} \frac{c^n}{n!} \frac{d^n f(x)}{dx^n} \\
-&= f(x) + c f'(x) + \frac{c^2}{2!} f''(x) + \frac{c^3}{3!} f'''(x) + \dots+ \frac{c^i}{i!} f^{(i)}(x).
-\end{aligned}$$<p>
-恰好就是 $f(x+c)$ 的泰勒展开.</p>
+<p>且根据 <a
+  href="https://WentianGodlike.github.io/posts/liouville_theorem/">移位算符</a> 的性质, 更好计算.</p>
 
 <h3 class="relative group">影子 $Hamilton$ 量
     <div id="影子--量" class="anchor"></div>
@@ -1412,10 +1383,28 @@ $$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="../../posts/lagrangian-mechanics/">
+          § :
+          拉格朗日量与哈密顿量
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
         <a href="../../posts/liouville_theorem/">
           § :
           Liouville定理
         </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § :
+        本文
       </div>
     
   
@@ -1432,17 +1421,19 @@ $$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        § :
-        本文
+        <a href="../../posts/constant_temperature_molecular_dynamics/">
+          § :
+          恒温分子动力学模拟
+        </a>
       </div>
     
   
     
       <div
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-        <a href="../../posts/lagrangian-mechanics/">
+        <a href="../../posts/ewald_sum/">
           § :
-          拉格朗日量与哈密顿量
+          Ewald求和(编辑中)
         </a>
       </div>
     
@@ -1490,14 +1481,14 @@ $$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
           
             <a
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/lagrangian-mechanics/">
+              href="../../posts/constraint_dynamics/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;拉格朗日量与哈密顿量
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;约束动力学
               </span>
             </a>
             
               <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-15T17:39:51&#43;08:00">2025 年 12 月 15 日</time>
+                <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time>
               </span>
             
           
@@ -1506,14 +1497,14 @@ $$|H(t) - \tilde{H}| \approx O(\Delta t^2).$$<p>
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="../../posts/constraint_dynamics/">
+              href="../../posts/liouville_theorem/">
               <span class="leading-6">
-                约束动力学&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Liouville定理&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             
               <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-12-18T18:48:51&#43;08:00">2025 年 12 月 18 日</time>
+                <time datetime="2025-12-21T15:19:51&#43;08:00">2025 年 12 月 21 日</time>
               </span>
             
           
