@@ -245,7 +245,7 @@
     "keywords": ["分子模拟"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "163"
+    "wordCount": "607"
   }]
   </script>
 
@@ -868,7 +868,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-19T18:19:51&#43;08:00">2025 年 12 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>163 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
+      <time datetime="2025-12-19T18:19:51&#43;08:00">2025 年 12 月 19 日</time><span class="px-2 text-primary-500">&middot;</span><span>607 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -1086,8 +1086,26 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>在很多情况下, 我们希望在正则系综 (NVT) 下进行模拟, 此时如何限制温度在想要的范围内就是一个关键的问题. 通常可以使用恒温器来实线温度的控制.</p>
-<p>需要指出的是, 使用恒温器并不一定能确保系统真正处于平衡状态. 有一些著名的例子表明, 不同自由度似乎具有不同的温度. 这种情况有时是由于恒温器参数选择不当所致, 而在某些情况下, 误差的根源甚至相当微妙.</p>
-
+<p>需要指出的是, 使用恒温器并不一定能确保系统真正处于平衡状态. 有一些的例子表明, 不同自由度似乎具有不同的温度. 这种情况有时是由于恒温器参数选择不当所致, 而在某些情况下, 误差的根源甚至相当微妙.</p>
+<p>自20世纪80年代以来, 人们在开发用于恒温恒压采样的确定性分子动力学算法方面开展了大量研究工作. 在大多数情况下, 这一过程涉及建立经过修正的运动方程, 其中所期望的分布正是这些方程的定态解, 通常假定该定态解即为平衡态解.</p>
+<p>接下来的步骤是开发一种稳定的数值算法, 以对这些方程进行积分求解. $Liouville$ 算符分裂法能够直接连接动力学的理论框架与数值方法. 然而实际情况较为复杂, 因为许多时候这些方程并非 $Hamilton$ 方程, 也不具备辛结构. 这促使人们开始关注非哈密顿系统的统计力学问题, 同时也催生了将动力学方程转化为哈密顿形式的方案, 以便能够采用传统方法加以处理.</p>
+<p>在分子动力学算法中, 最粗略地实现温度的确定性控制方法是在每一步中将速度按照因子 $\sqrt{\frac{T}{\mathcal{T}}}$ 重新标度, 其中 $\mathcal{T}$ 是当前使用动能推出的温度, $T$ 是目标热力学温度. 定义
+</p>
+$$\begin{align*}
+\dot{\mathbf{r}}&=\mathbf{v}=\frac{\mathbf{p}}{m},\\
+\dot{\mathbf{p}}&=\mathbf{F}-\xi(\mathbf{r},\mathbf{p}) \mathbf{p},
+\end{align*}$$<p>
+其中 $\mathbf{r}=\{r_i\}, \mathbf{p}=\{p_i\}$, $\xi$ 被称为 &ldquo;摩擦系数&rdquo;, 因为它在方程中的形式和阻力 (与速度成正比) 非常相似.</p>
+<p>因为要使当前温度保持恒定, 即 $\dot{\mathcal{T}}=0$. 换句话说是使动能保持恒定, 即
+</p>
+$$
+\frac{d}{dt}\sum_i\frac{\mathbf{p}_i^2}{2m_i}=\sum_i\frac{\mathbf{p}_i\dot{\mathbf{p}_i}}{m_i}=\sum_i\frac{\mathbf{p}_i(\mathbf{F}_i-\xi p_i)}{m_i}=0.
+$$<p>
+拆分化简, 有
+</p>
+$$
+\xi = \frac{\sum_i \mathbf{p}_i \cdot \mathbf{F}_i / m_i}{\sum_i \mathbf{p}_i^2 / m_i}.
+$$
           
           
           
@@ -1273,7 +1291,7 @@
     
       <p class="text-sm text-neutral-500 dark:text-neutral-400">
           &copy;
-          2025
+          2026
           WentianGodlike
       </p>
     
