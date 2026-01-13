@@ -15,8 +15,8 @@
 
   
   
-    <title>力场参数优化与建模 &middot; WentianGodlike&#39;s Blog</title>
-    <meta name="title" content="力场参数优化与建模 &middot; WentianGodlike&#39;s Blog">
+    <title>拓扑结构建立与优化 &middot; WentianGodlike&#39;s Blog</title>
+    <meta name="title" content="拓扑结构建立与优化 &middot; WentianGodlike&#39;s Blog">
   
 
   
@@ -60,7 +60,7 @@
   
   <meta property="og:url" content="https://WentianGodlike.github.io/posts/force_field_parameter_optimization/">
   <meta property="og:site_name" content="WentianGodlike&#39;s Blog">
-  <meta property="og:title" content="力场参数优化与建模">
+  <meta property="og:title" content="拓扑结构建立与优化">
   <meta property="og:description" content="一些各种各样的blog与备忘">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
@@ -73,7 +73,7 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="力场参数优化与建模">
+  <meta name="twitter:title" content="拓扑结构建立与优化">
   <meta name="twitter:description" content="一些各种各样的blog与备忘">
 
   
@@ -225,8 +225,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "力场参数优化与建模",
-    "headline": "力场参数优化与建模",
+    "name": "拓扑结构建立与优化",
+    "headline": "拓扑结构建立与优化",
     
     
     "inLanguage": "zh-cn",
@@ -244,7 +244,7 @@
     "keywords": ["分子动力学模拟","量子化学","LAMMPS"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1816"
+    "wordCount": "1844"
   }]
   </script>
 
@@ -792,7 +792,7 @@
   
   <li class="hidden">
     <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="../../posts/force_field_parameter_optimization/"
-      >力场参数优化与建模</a
+      >拓扑结构建立与优化</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -801,7 +801,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        力场参数优化与建模
+        拓扑结构建立与优化
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -853,7 +853,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-01-02T14:45:51&#43;08:00">2026 年 1 月 2 日</time><span class="px-2 text-primary-500">&middot;</span><span>1816 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+      <time datetime="2026-01-02T14:45:51&#43;08:00">2026 年 1 月 2 日</time><span class="px-2 text-primary-500">&middot;</span><span>1844 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
     
 
     
@@ -1166,8 +1166,8 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>在分子动力学模拟实践中, 经常会遇到目标分子没有力场参数的情况, 如 GAFF 力场不具备对 B 原子的优化. 但我们的项目硬要我们对这些不受支持的原子进行模拟, 怎么办?</p>
-<p>当然是<strong>自己手动生成一下力场参数</strong>咯.</p>
+          <p>在分子动力学模拟实践中, 经常会遇到目标分子没有拓扑参数的情况, 如 GAFF 力场不具备对 B 原子的优化. 但我们的项目硬要我们对这些不受支持的原子进行模拟, 怎么办?</p>
+<p>当然是<strong>自己手动生成一下拓扑结构</strong>咯.</p>
 
 <h2 class="relative group">力场
     <div id="力场" class="anchor"></div>
@@ -1181,7 +1181,7 @@
 <p>力场参数不了解确切的原子的量子化学性质.</p>
 <p>换句话说, 力场只是根据原子的编号, 电荷数以及质量, 代入一套公式进行计算. 举个例子, 对于索引是 2 的 B 原子而言, 力场只知道它的质量大概是 10.8, 电荷大概是 0.5, 类型是 3 (这个 3 只是个例子, LAMMPS 中随意指定原子类型的序号), 其他一概不知, 所以可以把 2 号原子的质量改为 80, 力场也不会报错.</p>
 <p>而这些, 如原子索引和原子类型, 决定着原子在力场中如何运动, 如碰撞, Lennard-Jones 势的参数等.</p>
-<p>所以既然如此, 就可以用量子化学的手段, 手动计算用到的原子的参数, 结合现有力场, 实现对力场的优化, 使其满足分子动力学模拟的需要.</p>
+<p>一般而言, 原子之间的成键方式会以枚举的形式存储在力场参数文件中, 此时需要我们用量子化学的手段, 手动计算用到的原子的参数, 结合现有力场, 实现对力场的优化, 使其满足分子动力学模拟的需要.</p>
 
 <h2 class="relative group">工具准备
     <div id="工具准备" class="anchor"></div>
